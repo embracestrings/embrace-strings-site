@@ -15,9 +15,9 @@ const chinrestItems = [
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Chinrest", href: "/chinrest", dropdown: chinrestItems },
-  { label: "About", href: "/about" },
   { label: "Setup", href: "/setup" },
   { label: "Testing", href: "/testing" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
