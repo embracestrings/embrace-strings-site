@@ -64,7 +64,7 @@ export default function Header() {
         <div className="relative flex min-h-16 w-full items-center justify-between px-4 sm:px-6 md:min-h-20 lg:px-0 lg:py-2">
 
           {/* Left: desktop nav */}
-          <div className="relative z-10 flex min-h-0 min-w-0 flex-1 items-center gap-2 lg:absolute lg:left-0 lg:top-0 lg:bottom-0 lg:z-20 lg:flex-none lg:max-w-[36%] lg:pl-4 xl:pl-6">
+          <div className="relative z-10 flex min-h-0 min-w-0 flex-1 items-center gap-2 lg:absolute lg:left-0 lg:top-0 lg:bottom-0 lg:z-20 lg:flex-none lg:max-w-[40%] lg:pl-4 xl:pl-6">
             {/* Mobile hamburger */}
             <button
               className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#ba9e78]/40 bg-[#f2f2f3] text-[#16335b] transition hover:border-[#ba9e78]/70 lg:hidden"
@@ -81,7 +81,7 @@ export default function Header() {
 
             {/* Desktop nav links */}
             <ul
-              className="hidden min-w-0 flex-nowrap items-center justify-start gap-x-3 gap-y-1 font-display text-[11px] font-medium tracking-[0.12em] lg:flex xl:gap-x-5 xl:text-[12px]"
+              className="hidden min-w-0 flex-nowrap items-center justify-start gap-x-4 gap-y-1 font-display text-[14px] font-medium tracking-[0.12em] lg:flex xl:gap-x-6 xl:text-[16px]"
               style={{ fontFamily: "var(--font-cormorant, serif)" }}
               aria-label="Primary navigation"
             >
@@ -119,7 +119,7 @@ export default function Header() {
 
                     {/* Dropdown */}
                     <ul
-                      className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-max list-none py-1.5 font-display text-[12px] font-medium tracking-[0.15em] bg-[#f2f2f3]/88 backdrop-blur-md border border-[#ba9e78]/35 rounded-lg shadow-[0_16px_40px_rgba(22,51,91,0.08)] transition-all duration-200 xl:text-[13px] ${
+                      className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-max list-none py-1.5 font-display text-[14px] font-medium tracking-[0.15em] bg-[#f2f2f3]/88 backdrop-blur-md border border-[#ba9e78]/35 rounded-lg shadow-[0_16px_40px_rgba(22,51,91,0.08)] transition-all duration-200 xl:text-[16px] ${
                         chinrestOpen
                           ? "opacity-100 visible pointer-events-auto"
                           : "opacity-0 invisible pointer-events-none"
@@ -172,15 +172,15 @@ export default function Header() {
                 alt=""
                 width={160}
                 height={160}
-                className="h-[2.8rem] w-auto shrink-0 object-contain md:h-[3.5rem]"
+                className="h-[3.2rem] w-auto shrink-0 object-contain md:h-[4rem]"
                 priority
               />
               <span
                 className="flex min-w-0 flex-col items-start gap-0.5 text-left font-medium leading-none text-[#16335b] translate-y-[0.23rem] md:translate-y-[0.28rem]"
                 style={{ fontFamily: "var(--font-cormorant, serif)" }}
               >
-                <span className="text-[14px] tracking-[0.12em] md:text-[18px]">EMBRACE</span>
-                <span className="text-[14px] tracking-[0.12em] md:text-[18px]">STRINGS</span>
+                <span className="text-[16px] tracking-[0.12em] md:text-[20px]">EMBRACE</span>
+                <span className="text-[16px] tracking-[0.12em] md:text-[20px]">STRINGS</span>
               </span>
             </Link>
           </div>
@@ -199,7 +199,7 @@ export default function Header() {
         >
           <div className="rounded-2xl border border-[#ba9e78]/25 bg-white p-4 shadow-[0_16px_40px_rgba(22,51,91,0.08)]">
             <ul
-              className="space-y-3 text-center text-[13px] font-medium tracking-[0.15em]"
+              className="space-y-3 text-center text-[15px] font-medium tracking-[0.15em]"
               style={{ fontFamily: "var(--font-cormorant, serif)" }}
             >
               {navLinks.map((link) =>
