@@ -94,13 +94,13 @@ export default function ChinrestCarousel() {
                         Learn More
                       </Link>
                     </div>
-                    <div className="min-w-0">
+                    <div className="group min-w-0 overflow-hidden rounded-xl border border-[#ba9e78]/25 shadow-[0_16px_40px_rgba(22,51,91,0.08)]">
                       <Image
                         src="/adjustable-violin-chinrest.JPG"
                         alt={`Embrace Strings ${slide.name} chinrest on a violin, side view`}
                         width={900}
                         height={675}
-                        className="w-full rounded-xl border border-[#ba9e78]/25 object-cover shadow-[0_16px_40px_rgba(22,51,91,0.08)]"
+                        className="w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.08]"
                       />
                     </div>
                   </div>
