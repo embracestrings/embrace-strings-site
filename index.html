@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Embrace Strings</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind = window.tailwind || {};
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandCream: "#f2f2f3",
+            brandBlue: "#16335b",
+            brandGold: "#ba9e78",
+          },
+          fontFamily: {
+            serif: ["Playfair Display", "ui-serif", "Georgia", "serif"],
+            sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Arial", "sans-serif"],
+          },
+          boxShadow: {
+            soft: "0 16px 40px rgba(22, 51, 91, 0.08)",
+          },
+          letterSpacing: {
+            refined: "0.02em",
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-brandCream font-sans text-brandBlue antialiased">
+  <header class="sticky top-0 z-50 bg-brandCream/85 backdrop-blur supports-[backdrop-filter]:bg-brandCream/70">
+    <nav class="mx-auto w-full max-w-6xl px-4 sm:px-6">
+      <div class="relative flex h-16 items-center md:h-20">
+        <ul class="hidden items-center gap-7 text-[13px] font-medium tracking-[0.12em] md:flex" aria-label="Primary navigation">
+          <li><a class="text-brandGold" href="./index.html" aria-current="page">Home</a></li>
+          <li><a class="transition hover:text-brandGold" href="./chinrests.html">Chinrests</a></li>
+          <li><a class="transition hover:text-brandGold" href="./setup.html">Setup</a></li>
+          <li><a class="transition hover:text-brandGold" href="./about.html">About</a></li>
+          <li><a class="transition hover:text-brandGold" href="./contact.html">Contact</a></li>
+        </ul>
+
+        <a
+          href="./index.html"
+          class="absolute left-1/2 inline-flex -translate-x-1/2 items-center gap-2 text-center"
+          aria-label="Go to homepage"
+        >
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-brandGold/60 bg-brandCream text-brandGold">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3c-1.5 2.2-.6 4.5 1 6.2 1.6 1.7 3.2 3.1 3 5.2-.2 2.7-2.7 4.6-5.5 4.6-2.9 0-5.5-1.9-5.5-5 0-2.7 2.2-4.6 4.7-6.3 2.3-1.6 4.6-3.1 2.3-4.7z"/>
+            </svg>
+          </span>
+          <span class="hidden font-serif text-lg font-medium tracking-refined sm:block">Embrace Strings</span>
+        </a>
+
+        <div class="ml-auto flex items-center gap-3 md:hidden">
+          <button
+            id="menuButton"
+            type="button"
+            class="inline-flex items-center justify-center rounded-full border border-brandGold/40 bg-brandCream px-3 py-2 text-sm font-medium tracking-[0.12em] text-brandBlue transition hover:border-brandGold/70"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            Menu
+          </button>
+        </div>
+      </div>
+
+      <div id="mobileMenu" class="hidden pb-5 md:hidden">
+        <div class="rounded-2xl border border-brandGold/25 bg-white/55 p-4 shadow-soft backdrop-blur">
+          <ul class="space-y-3 text-[13px] font-medium tracking-[0.12em]">
+            <li><a class="block py-1 text-brandGold" href="./index.html" aria-current="page">Home</a></li>
+            <li><a class="block py-1 transition hover:text-brandGold" href="./chinrests.html">Chinrests</a></li>
+            <li><a class="block py-1 transition hover:text-brandGold" href="./setup.html">Setup</a></li>
+            <li><a class="block py-1 transition hover:text-brandGold" href="./about.html">About</a></li>
+            <li><a class="block py-1 transition hover:text-brandGold" href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="h-px w-full bg-brandGold/35"></div>
+  </header>
+
+  <main>
+    <section class="relative">
+      <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="relative mt-4 overflow-hidden rounded-[22px] border border-brandGold/25 bg-white shadow-soft">
+          <div
+            class="absolute inset-0 bg-center bg-no-repeat"
+            style="background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2000&q=70'); background-size: cover;"
+            aria-hidden="true"
+          ></div>
+          <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/45" aria-hidden="true"></div>
+
+          <div class="relative flex min-h-[420px] items-center px-6 py-14 sm:px-12 sm:py-20 lg:min-h-[520px]">
+            <div class="max-w-2xl">
+              <p class="mb-4 text-[12px] font-medium tracking-[0.22em] text-white/80">EMBRACE STRINGS</p>
+              <h1 class="font-serif text-4xl font-medium leading-[1.1] tracking-refined text-white sm:text-5xl lg:text-6xl">
+                Built to Adjust. Designed to Embrace.
+              </h1>
+              <p class="mt-5 max-w-xl text-base font-light leading-relaxed text-white/85 sm:text-[17px]">
+                A refined, fully adjustable chinrest solution with a premium feel—crafted for comfort and control.
+              </p>
+
+              <div class="mt-8 flex flex-wrap items-center gap-3">
+                <a
+                  href="#features"
+                  class="inline-flex items-center justify-center rounded-full border border-white/70 bg-white/10 px-6 py-3 text-[13px] font-medium tracking-[0.18em] text-white backdrop-blur transition hover:bg-white/15"
+                >
+                  Find Your Fit
+                </a>
+                <a
+                  href="#"
+                  class="inline-flex items-center justify-center rounded-full border border-brandGold/70 bg-brandGold/90 px-6 py-3 text-[13px] font-medium tracking-[0.18em] text-brandBlue transition hover:bg-brandGold"
+                >
+                  Shop Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="font-serif text-3xl font-medium tracking-refined text-brandBlue sm:text-4xl">Why Embrace Strings?</h2>
+        <p class="mt-4 text-sm font-light leading-relaxed text-brandBlue/75 sm:text-base">
+          Premium materials and thoughtful engineering—built to feel natural, secure, and effortless in performance.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-5 md:grid-cols-3">
+        <article class="group rounded-2xl border border-brandGold/30 bg-white/60 p-6 shadow-sm transition hover:shadow-soft">
+          <div class="flex items-start gap-4">
+            <div class="flex h-11 w-11 items-center justify-center rounded-full border border-brandGold/60 bg-brandCream text-brandGold">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 12a8 8 0 0 1 16 0" />
+                <path d="M6 12a6 6 0 0 1 12 0" />
+                <path d="M8 12a4 4 0 0 1 8 0" />
+                <path d="M12 12v8" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-serif text-xl font-medium tracking-refined text-brandBlue">Full Height + Angle Adjustment</h3>
+              <p class="mt-2 text-sm font-light leading-relaxed text-brandBlue/75">
+                Dial in support with precise positioning—without compromising on a clean, elegant profile.
+              </p>
+            </div>
+          </div>
+          <div class="mt-6 h-px w-full bg-brandGold/25"></div>
+        </article>
+
+        <article class="group rounded-2xl border border-brandGold/30 bg-white/60 p-6 shadow-sm transition hover:shadow-soft">
+          <div class="flex items-start gap-4">
+            <div class="flex h-11 w-11 items-center justify-center rounded-full border border-brandGold/60 bg-brandCream text-brandGold">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 7h10v10H7z" />
+                <path d="M7 12h10" />
+                <path d="M12 7v10" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-serif text-xl font-medium tracking-refined text-brandBlue">Tool-Free Use</h3>
+              <p class="mt-2 text-sm font-light leading-relaxed text-brandBlue/75">
+                Simple, secure adjustments—designed to be intuitive so you can stay focused on playing.
+              </p>
+            </div>
+          </div>
+          <div class="mt-6 h-px w-full bg-brandGold/25"></div>
+        </article>
+
+        <article class="group rounded-2xl border border-brandGold/30 bg-white/60 p-6 shadow-sm transition hover:shadow-soft">
+          <div class="flex items-start gap-4">
+            <div class="flex h-11 w-11 items-center justify-center rounded-full border border-brandGold/60 bg-brandCream text-brandGold">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 20c4-10 12-10 16 0" />
+                <path d="M7 13c2-2 8-2 10 0" />
+                <path d="M10 6h4" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-serif text-xl font-medium tracking-refined text-brandBlue">Crafted with Care</h3>
+              <p class="mt-2 text-sm font-light leading-relaxed text-brandBlue/75">
+                A premium finish and gentle contact points—built to support natural posture and movement.
+              </p>
+            </div>
+          </div>
+          <div class="mt-6 h-px w-full bg-brandGold/25"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-brandGold/25 bg-brandCream">
+    <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+        <p class="text-xs font-medium tracking-[0.18em] text-brandBlue/70">© <span id="year"></span> Embrace Strings</p>
+        <ul class="flex items-center gap-4 text-xs tracking-[0.12em] text-brandBlue/70">
+          <li><a class="transition hover:text-brandGold" href="./index.html">Home</a></li>
+          <li><a class="transition hover:text-brandGold" href="./chinrests.html">Chinrests</a></li>
+          <li><a class="transition hover:text-brandGold" href="./setup.html">Setup</a></li>
+          <li><a class="transition hover:text-brandGold" href="./about.html">About</a></li>
+          <li><a class="transition hover:text-brandGold" href="./contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById("menuButton");
+    const menu = document.getElementById("mobileMenu");
+    const year = document.getElementById("year");
+    if (year) year.textContent = String(new Date().getFullYear());
+
+    if (btn && menu) {
+      btn.addEventListener("click", () => {
+        const isOpen = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!isOpen));
+        menu.classList.toggle("hidden");
+      });
+    }
+  </script>
+</body>
+</html>
