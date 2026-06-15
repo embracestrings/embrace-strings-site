@@ -26,7 +26,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [chinrestOpen, setChinrestOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 8);
