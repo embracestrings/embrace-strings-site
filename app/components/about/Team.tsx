@@ -75,7 +75,7 @@ export default function Team() {
                   </svg>
                 </div>
               </div>
-              <div className="border-t border-[#ba9e78]/35 bg-[#16335b] px-4 py-4 text-center transition-colors duration-300 group-hover:bg-[#1c3e6e]">
+              <div className="flex min-h-[6.5rem] flex-col items-center justify-center border-t border-[#ba9e78]/35 bg-[#16335b] px-4 py-4 text-center transition-colors duration-300 group-hover:bg-[#1c3e6e]">
                 <h3 className="text-xl font-medium leading-snug text-white transition-colors duration-300 group-hover:text-[#ba9e78]">
                   {member.name}
                 </h3>
