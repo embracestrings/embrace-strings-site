@@ -53,9 +53,9 @@ export default function ShopPartners() {
         </p>
       </motion.div>
 
-      <div className="relative overflow-hidden border-y border-[#ba9e78]/20 bg-white/85 py-8 sm:py-10">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent sm:w-20" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent sm:w-20" />
+      <div className="relative overflow-hidden border-y border-[#ba9e78]/20 bg-[#f2f2f3] py-8 sm:py-10">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#f2f2f3] to-transparent sm:w-20" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#f2f2f3] to-transparent sm:w-20" />
         <div className="overflow-hidden">
           <div className="shop-marquee-inner">
             <LogoList />
