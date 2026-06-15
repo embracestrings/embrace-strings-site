@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function SetupStruggles() {
   return (
-    <div id="setup-struggles" className="mt-12 border-t border-[#ba9e78]/25 pt-12 sm:mt-16 sm:pt-16">
+    <div id="setup-struggles" className="mt-12 border-t border-[#ba9e78]/25 px-4 pb-16 pt-12 sm:px-6 sm:pb-24 sm:pt-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
