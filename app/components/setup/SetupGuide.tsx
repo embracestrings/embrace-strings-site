@@ -130,7 +130,7 @@ export default function SetupGuide() {
           href="/Chinrest Setup Document.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center rounded-lg border border-[#16335b]/30 px-8 py-3 font-medium tracking-[0.12em] text-[#16335b] transition hover:border-[#ba9e78] hover:text-[#ba9e78]"
+          className="inline-flex items-center justify-center rounded-lg bg-[#16335b] px-8 py-3 font-medium tracking-[0.12em] text-[#f2f2f3] transition hover:bg-[#ba9e78] hover:text-[#16335b]"
         >
           Download Setup Guide (PDF)
         </a>
