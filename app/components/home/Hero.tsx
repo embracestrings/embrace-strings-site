@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="relative w-full">
-      <div className="relative mt-4 w-full min-h-[420px] overflow-hidden lg:min-h-[520px]">
+      <div className="relative w-full min-h-[420px] overflow-hidden lg:min-h-[520px]">
         <Image
           src="/embrace-violin-chinrest-side.JPG"
           alt="Embrace Strings adjustable chinrest on a violin, side view"
@@ -30,7 +30,7 @@ export default function Hero() {
           alt="Embrace Strings"
           width={240}
           height={90}
-          className="absolute bottom-4 right-4 z-10 h-auto w-auto max-w-[min(34vw,11rem)] object-contain object-right-bottom sm:bottom-6 sm:right-6 md:max-w-[12rem] lg:max-w-[14rem]"
+          className="absolute bottom-4 right-4 z-10 h-auto w-auto max-w-[min(26vw,8rem)] object-contain object-right-bottom sm:bottom-6 sm:right-6 md:max-w-[9rem] lg:max-w-[10rem]"
         />
       </div>
     </section>
