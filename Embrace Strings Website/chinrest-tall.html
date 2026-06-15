@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tall Chinrest | Embrace Strings</title>
+  <link rel="icon" href="./images/Embrace%20Your%20Fit.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind = window.tailwind || {};
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandCream: "#f2f2f3",
+            brandBlue: "#16335b",
+            brandGold: "#ba9e78",
+          },
+          fontFamily: {
+            serif: ["Cormorant Garamond", "ui-serif", "Georgia", "serif"],
+            sans: ["Montserrat", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Arial", "sans-serif"],
+          },
+          boxShadow: {
+            soft: "0 16px 40px rgba(22, 51, 91, 0.08)",
+          },
+          letterSpacing: {
+            refined: "0.02em",
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Active nav: plain CSS so current page reads clearly (CDN Tailwind aria variants can be subtle) */
+    header nav a[aria-current="page"] {
+      color: #ba9e78;
+      font-weight: 500;
+    }
+    header nav ul.site-nav-primary a[aria-current="page"] {
+      border-bottom-color: #ba9e78;
+    }
+    header nav #mobileMenu a[aria-current="page"] {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      text-decoration: underline;
+      text-decoration-color: #ba9e78;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 0.35rem;
+      background-color: rgba(186, 158, 120, 0.16);
+      border-radius: 0.375rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    /* Primary nav: gold hover + Chinrest hover dropdown (desktop) */
+    header nav ul.site-nav-primary > li > a,
+    header nav .nav-dropdown-trigger,
+    header nav .nav-dropdown-menu a,
+    header nav #mobileMenu a {
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    header nav ul.site-nav-primary > li > a:hover,
+    header nav .nav-dropdown-trigger:hover,
+    header nav .nav-dropdown-menu a:hover,
+    header nav #mobileMenu a:hover {
+      color: #ba9e78;
+    }
+    header nav .nav-dropdown {
+      position: relative;
+    }
+    header nav .nav-dropdown::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: max(100%, 6rem);
+      top: 100%;
+      height: 0.5rem;
+    }
+    header nav .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      padding: 0.375rem 0;
+      width: max-content;
+      list-style: none;
+      font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      background-color: rgba(242, 242, 243, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(186, 158, 120, 0.35);
+      border-radius: 0.5rem;
+      box-shadow: 0 16px 40px rgba(22, 51, 91, 0.08);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+      z-index: 60;
+    }
+    @media (min-width: 1280px) {
+      header nav .nav-dropdown-menu {
+        font-size: 13px;
+      }
+    }
+    header nav .nav-dropdown-menu a {
+      display: block;
+      padding: 0.375rem 0.875rem;
+      white-space: nowrap;
+      text-align: center;
+    }
+    header nav .nav-dropdown:hover .nav-dropdown-menu,
+    header nav .nav-dropdown:focus-within .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    header nav .nav-dropdown-menu a[aria-current="page"] {
+      border-bottom: none;
+    }
+    /* Brand typography: Cormorant Garamond headings; Montserrat body */
+    h1, h2, h3, h4 {
+      font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+    }
+    /* Header CTA pills: plain CSS fill + hover; one font-size everywhere to avoid a brief resize on full page loads */
+    header nav a.nav-cta {
+      font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 15px;
+      background-color: #16335b;
+      color: #f2f2f3;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    header nav a.nav-cta:hover {
+      background-color: #ba9e78;
+      color: #16335b;
+    }
+    header nav a.nav-cta:focus {
+      outline: none;
+    }
+    header nav a.nav-cta:focus-visible {
+      outline: 3px solid #ba9e78 !important;
+      outline-offset: 3px !important;
+    }
+    /* Primary buttons + footer social icons: navy → gold (matches header CTAs); rounded-lg */
+    a.btn-brand-solid,
+    button.btn-brand-solid {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      border: none;
+      background-color: #16335b;
+      color: #f2f2f3;
+      font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 15px;
+      line-height: 1.25;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    a.btn-brand-solid:hover,
+    button.btn-brand-solid:hover {
+      background-color: #ba9e78;
+      color: #16335b;
+    }
+    a.btn-brand-solid:focus,
+    button.btn-brand-solid:focus {
+      outline: none;
+    }
+    a.btn-brand-solid:focus-visible,
+    button.btn-brand-solid:focus-visible {
+      outline: 3px solid #ba9e78;
+      outline-offset: 3px;
+    }
+    a.btn-brand-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      flex-shrink: 0;
+      border-radius: 0.5rem;
+      border: none;
+      background-color: #16335b;
+      color: #f2f2f3;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    a.btn-brand-icon:hover {
+      background-color: #ba9e78;
+      color: #16335b;
+    }
+    a.btn-brand-icon:focus {
+      outline: none;
+    }
+    a.btn-brand-icon:focus-visible {
+      outline: 3px solid #ba9e78;
+      outline-offset: 3px;
+    }
+    /* Footer text links: gold hover */
+    footer a:not(.btn-brand-icon) {
+      transition: color 0.2s ease;
+    }
+    footer a:not(.btn-brand-icon):hover {
+      color: #ba9e78;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-brandCream font-sans leading-relaxed text-brandBlue antialiased">
+  <header class="sticky top-0 z-50 bg-white/45 backdrop-blur supports-[backdrop-filter]:bg-white/55">
+    <nav class="relative w-full">
+      <div class="relative flex min-h-16 w-full items-center justify-between px-4 sm:px-6 md:min-h-20 lg:px-0 lg:py-2">
+        <div class="site-nav-left relative z-10 flex min-h-0 min-w-0 flex-1 items-center gap-2 lg:absolute lg:left-0 lg:top-0 lg:bottom-0 lg:z-20 lg:flex-none lg:pl-4 xl:pl-6">
+          <button
+            id="menuButton"
+            type="button"
+            class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-brandGold/40 bg-brandCream text-brandBlue transition hover:border-brandGold/70 lg:hidden"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            aria-label="Open menu"
+          >
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="4" y1="7" x2="20" y2="7" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="17" x2="20" y2="17" />
+            </svg>
+          </button>
+          <ul class="site-nav-primary hidden min-w-0 flex-wrap items-center justify-start gap-x-10 gap-y-1 font-serif text-[12px] font-medium tracking-[0.15em] lg:flex xl:gap-x-16 xl:text-[13px]" aria-label="Primary navigation">
+            <li><a class="inline-block border-b-[3px] border-transparent pb-0.5" href="./index.html">Home</a></li>
+            <li class="nav-dropdown">
+              <a class="nav-dropdown-trigger inline-block border-b-[3px] border-transparent pb-0.5" href="./chinrest.html" aria-current="page">Chinrest</a>
+              <ul class="nav-dropdown-menu" aria-label="Chinrest pages">
+                <li><a href="./chinrest.html" aria-current="page">Chinrest</a></li>
+                <li><a href="./testing.html">Testing</a></li>
+                <li><a href="./setup.html">Setup</a></li>
+              </ul>
+            </li>
+            <li><a class="inline-block border-b-[3px] border-transparent pb-0.5" href="./about.html">About</a></li>
+            <li><a class="inline-block border-b-[3px] border-transparent pb-0.5" href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="pointer-events-none absolute inset-0 z-30 flex items-center justify-center lg:z-40">
+          <a
+            href="./index.html"
+            class="pointer-events-auto cursor-pointer inline-flex items-center gap-2 md:gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2 focus-visible:ring-offset-brandCream"
+            aria-label="Embrace Strings — home"
+          >
+            <img
+              src="./images/embrace-strings-brandmark.png"
+              alt=""
+              width="160"
+              height="160"
+              class="h-[2.8rem] w-auto shrink-0 object-contain object-center md:h-[3.5rem]"
+              decoding="async"
+            />
+            <span class="flex min-w-0 flex-col items-start gap-0.5 text-left font-serif font-medium leading-none text-brandBlue translate-y-[0.23rem] md:translate-y-[0.28rem]">
+              <span class="text-[14px] tracking-[0.12em] md:text-[18px]">EMBRACE</span>
+              <span class="text-[14px] tracking-[0.12em] md:text-[18px]">STRINGS</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="relative z-10 flex min-h-0 min-w-0 flex-1 items-center justify-end gap-2 lg:absolute lg:right-0 lg:top-0 lg:bottom-0 lg:flex-none lg:pr-4 xl:pr-6">
+          <span class="inline-block h-10 w-10 shrink-0 lg:hidden" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div id="mobileMenu" class="absolute inset-x-0 top-full z-40 mt-2 max-h-[min(70vh,calc(100dvh-5.5rem))] overflow-y-auto px-4 pb-2 sm:px-6 hidden lg:hidden">
+        <div class="rounded-2xl border border-brandGold/25 bg-white p-4 shadow-soft">
+          <ul class="space-y-3 text-center font-serif text-[13px] font-medium tracking-[0.15em]">
+            <li><a class="block w-full text-center rounded-sm py-1" href="./index.html">Home</a></li>
+            <li><a class="block w-full text-center rounded-sm py-1" href="./chinrest.html" aria-current="page">Chinrest</a></li>
+            <li><a class="block w-full text-center rounded-sm py-1" href="./testing.html">Testing</a></li>
+            <li><a class="block w-full text-center rounded-sm py-1" href="./setup.html">Setup</a></li>
+            <li><a class="block w-full text-center rounded-sm py-1" href="./about.html">About</a></li>
+            <li><a class="block w-full text-center rounded-sm py-1" href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="h-px w-full bg-brandGold/35"></div>
+  </header>
+
+  <main>
+    <article class="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
+      <div
+        class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-brandGold/30 bg-[#e5e5e7] shadow-soft"
+        role="img"
+        aria-label="Placeholder for Tall chinrest photo"
+      >
+        <span class="absolute inset-0 flex items-center justify-center px-6 text-center text-[11px] font-medium uppercase tracking-[0.2em] text-brandBlue/45">Tall chinrest photo</span>
+      </div>
+      <h1 class="mt-8 font-serif text-3xl font-medium tracking-refined text-brandBlue sm:text-4xl">Tall</h1>
+      <p class="mt-6 text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+        Product description placeholder. Copy for the Tall chinrest model will go here.
+      </p>
+    </article>
+  </main>
+
+  <footer class="border-t border-brandGold/25 bg-brandCream">
+    <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <div class="grid grid-cols-1 items-center gap-10 md:grid-cols-3 md:gap-6 lg:gap-10">
+        <div class="flex min-w-0 flex-col items-center gap-4 md:items-start md:justify-self-start">
+          <nav class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:justify-start" aria-label="Embrace Strings on social media">
+            <a
+              href="https://www.instagram.com/embracestrings/"
+              class="btn-brand-icon"
+              aria-label="Instagram"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a
+              href="https://www.facebook.com/people/Embrace-Strings/61565017010129/?sk=about"
+              class="btn-brand-icon"
+              aria-label="Facebook"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a
+              href="https://www.tiktok.com/@embracestrings"
+              class="btn-brand-icon"
+              aria-label="TikTok"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/embrace-strings/"
+              class="btn-brand-icon"
+              aria-label="LinkedIn"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </nav>
+          <p class="text-center text-xs font-medium tracking-[0.18em] text-brandBlue/70 md:text-left">© <span id="year"></span> Embrace Strings</p>
+        </div>
+        <div class="flex min-w-0 justify-center md:justify-self-center">
+          <img
+            src="./images/embrace-strings-brandmark.png"
+            alt="Embrace Strings brandmark"
+            width="160"
+            height="160"
+            class="h-12 w-auto max-w-full object-contain object-center sm:h-14 md:h-16"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="flex min-w-0 flex-col items-center md:items-end md:justify-self-end md:text-right">
+          <h2 class="mb-3 font-serif text-base font-medium tracking-refined text-brandBlue"><a href="./contact.html" class="text-brandBlue transition hover:text-brandGold">Contact Us</a></h2>
+          <a
+            href="mailto:info@embracestrings.com"
+            class="max-w-full break-words text-sm text-brandBlue/85 transition hover:text-brandGold"
+          >info@embracestrings.com</a>
+          <a href="tel:+12103712757" class="mt-2 text-sm text-brandBlue/85 transition hover:text-brandGold">(210) 371-2757</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById("menuButton");
+    const menu = document.getElementById("mobileMenu");
+    const year = document.getElementById("year");
+    if (year) year.textContent = String(new Date().getFullYear());
+
+    if (btn && menu) {
+      btn.addEventListener("click", () => {
+        const isOpen = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!isOpen));
+        menu.classList.toggle("hidden");
+      });
+    }
+
+  </script>
+</body>
+</html>

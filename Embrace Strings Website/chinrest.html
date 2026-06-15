@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Violin Chinrest | Adjustable Comfort and Fit | Embrace Strings</title>
+  <link rel="icon" href="./images/Embrace%20Your%20Fit.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind = window.tailwind || {};
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandCream: "#f2f2f3",
+            brandBlue: "#16335b",
+            brandGold: "#ba9e78",
+          },
+          fontFamily: {
+            serif: ["Cormorant Garamond", "ui-serif", "Georgia", "serif"],
+            sans: ["Montserrat", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Arial", "sans-serif"],
+          },
+          boxShadow: {
+            soft: "0 16px 40px rgba(22, 51, 91, 0.08)",
+          },
+          letterSpacing: {
+            refined: "0.02em",
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Active nav: plain CSS so current page reads clearly (CDN Tailwind aria variants can be subtle) */
+    header nav a[aria-current="page"] {
+      color: #ba9e78;
+      font-weight: 500;
+    }
+    header nav ul.site-nav-primary a[aria-current="page"] {
+      border-bottom-color: #ba9e78;
+    }
+    header nav #mobileMenu a[aria-current="page"] {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      text-decoration: underline;
+      text-decoration-color: #ba9e78;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 0.35rem;
+      background-color: rgba(186, 158, 120, 0.16);
+      border-radius: 0.375rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    /* Primary nav: gold hover + Chinrest hover dropdown (desktop) */
+    header nav ul.site-nav-primary > li > a,
+    header nav .nav-dropdown-trigger,
+    header nav .nav-dropdown-menu a,
+    header nav #mobileMenu a {
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    header nav ul.site-nav-primary > li > a:hover,
+    header nav .nav-dropdown-trigger:hover,
+    header nav .nav-dropdown-menu a:hover,
+    header nav #mobileMenu a:hover {
+      color: #ba9e78;
+    }
+    header nav .nav-dropdown {
+      position: relative;
+    }
+    header nav .nav-dropdown::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: max(100%, 6rem);
+      top: 100%;
+      height: 0.5rem;
+    }
+    header nav .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      padding: 0.375rem 0;
+      width: max-content;
+      list-style: none;
+      font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      background-color: rgba(242, 242, 243, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(186, 158, 120, 0.35);
+      border-radius: 0.5rem;
+      box-shadow: 0 16px 40px rgba(22, 51, 91, 0.08);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+      z-index: 60;
+    }
+    @media (min-width: 1280px) {
+      header nav .nav-dropdown-menu {
+        font-size: 13px;
+      }
+    }
+    header nav .nav-dropdown-menu a {
+      display: block;
+      padding: 0.375rem 0.875rem;
+      white-space: nowrap;
+      text-align: center;
+    }
+    header nav .nav-dropdown:hover .nav-dropdown-menu,
+    header nav .nav-dropdown:focus-within .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    header nav .nav-dropdown-menu a[aria-current="page"] {
+      border-bottom: none;
+    }
+    /* Brand typography: Cormorant Garamond headings; Montserrat body */
+    h1, h2, h3, h4 {
+      font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+    }
+    /* Header CTA pills: plain CSS fill + hover; one font-size everywhere to avoid a brief resize on full page loads */
+    header nav a.nav-cta {
+      font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 15px;
+      background-color: #16335b;
+      color: #f2f2f3;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    header nav a.nav-cta:hover {
+      background-color: #ba9e78;
+      color: #16335b;
+    }
+    header nav a.nav-cta:focus {
+      outline: none;
+    }
+    header nav a.nav-cta:focus-visible {
+      outline: 3px solid #ba9e78 !important;
+      outline-offset: 3px !important;
+    }
+    /* Primary buttons + footer social icons: navy → gold (matches header CTAs); rounded-lg */
+    a.btn-brand-solid,
+    button.btn-brand-solid {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      border: none;
+      background-color: #16335b;
+      color: #f2f2f3;
+      font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 15px;
+      line-height: 1.25;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    a.btn-brand-solid:hover,
+    button.btn-brand-solid:hover {
+      background-color: #ba9e78;
+      color: #16335b;
+    }
+    a.btn-brand-solid:focus,
+    button.btn-brand-solid:focus {
+      outline: none;
+    }
+    a.btn-brand-solid:focus-visible,
+    button.btn-brand-solid:focus-visible {
+      outline: 3px solid #ba9e78;
+      outline-offset: 3px;
+    }
+    a.btn-brand-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      flex-shrink: 0;
+      border-radius: 0.5rem;
+      border: none;
+      background-color: #16335b;
+      color: #f2f2f3;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    a.btn-brand-icon:hover {
+      background-color: #ba9e78;
+      color: #16335b;
+    }
+    a.btn-brand-icon:focus {
+      outline: none;
+    }
+    a.btn-brand-icon:focus-visible {
+      outline: 3px solid #ba9e78;
+      outline-offset: 3px;
+    }
+    /* Footer text links: gold hover */
+    footer a:not(.btn-brand-icon) {
+      transition: color 0.2s ease;
+    }
+    footer a:not(.btn-brand-icon):hover {
+      color: #ba9e78;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-brandCream font-sans leading-relaxed text-brandBlue antialiased">
+  <header class="sticky top-0 z-50 bg-white/45 backdrop-blur supports-[backdrop-filter]:bg-white/55">
+    <nav class="relative w-full">
+      <div class="relative flex min-h-16 w-full items-center justify-between px-4 sm:px-6 md:min-h-20 lg:px-0 lg:py-2">
+        <div class="site-nav-left relative z-10 flex min-h-0 min-w-0 flex-1 items-center gap-2 lg:absolute lg:left-0 lg:top-0 lg:bottom-0 lg:z-20 lg:flex-none lg:pl-4 xl:pl-6">
+          <button
+            id="menuButton"
+            type="button"
+            class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-brandGold/40 bg-brandCream text-brandBlue transition hover:border-brandGold/70 lg:hidden"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            aria-label="Open menu"
+          >
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="4" y1="7" x2="20" y2="7" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="17" x2="20" y2="17" />
+            </svg>
+          </button>
+          <ul class="site-nav-primary hidden min-w-0 flex-wrap items-center justify-start gap-x-10 gap-y-1 font-serif text-[12px] font-medium tracking-[0.15em] lg:flex xl:gap-x-16 xl:text-[13px]" aria-label="Primary navigation">
+            <li><a class="inline-block border-b-[3px] border-transparent pb-0.5" href="./index.html">Home</a></li>
+            <li class="nav-dropdown">
+              <a class="nav-dropdown-trigger inline-block border-b-[3px] border-transparent pb-0.5" href="./chinrest.html" aria-current="page">Chinrest</a>
+              <ul class="nav-dropdown-menu" aria-label="Chinrest pages">
+                <li><a href="./chinrest.html" aria-current="page">Chinrest</a></li>
+                <li><a href="./testing.html">Testing</a></li>
+                <li><a href="./setup.html">Setup</a></li>
+              </ul>
+            </li>
+            <li><a class="inline-block border-b-[3px] border-transparent pb-0.5" href="./about.html">About</a></li>
+            <li><a class="inline-block border-b-[3px] border-transparent pb-0.5" href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="pointer-events-none absolute inset-0 z-30 flex items-center justify-center lg:z-40">
+          <a
+            href="./index.html"
+            class="pointer-events-auto cursor-pointer inline-flex items-center gap-2 md:gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2 focus-visible:ring-offset-brandCream"
+            aria-label="Embrace Strings — home"
+          >
+            <img
+              src="./images/embrace-strings-brandmark.png"
+              alt=""
+              width="160"
+              height="160"
+              class="h-[2.8rem] w-auto shrink-0 object-contain object-center md:h-[3.5rem]"
+              decoding="async"
+            />
+            <span class="flex min-w-0 flex-col items-start gap-0.5 text-left font-serif font-medium leading-none text-brandBlue translate-y-[0.23rem] md:translate-y-[0.28rem]">
+              <span class="text-[14px] tracking-[0.12em] md:text-[18px]">EMBRACE</span>
+              <span class="text-[14px] tracking-[0.12em] md:text-[18px]">STRINGS</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="relative z-10 flex min-h-0 min-w-0 flex-1 items-center justify-end gap-2 lg:absolute lg:right-0 lg:top-0 lg:bottom-0 lg:flex-none lg:pr-4 xl:pr-6">
+          <span class="inline-block h-10 w-10 shrink-0 lg:hidden" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div id="mobileMenu" class="absolute inset-x-0 top-full z-40 mt-2 max-h-[min(70vh,calc(100dvh-5.5rem))] overflow-y-auto px-4 pb-2 sm:px-6 hidden lg:hidden">
+        <div class="rounded-2xl border border-brandGold/25 bg-white p-4 shadow-soft">
+          <ul class="space-y-3 text-center font-serif text-[13px] font-medium tracking-[0.15em]">
+            <li><a class="block w-full text-center rounded-sm py-1" href="./index.html">Home</a></li>
+            <li><a class="block w-full text-center rounded-sm py-1" href="./chinrest.html" aria-current="page">Chinrest</a></li>
+            <li><a class="block w-full text-center rounded-sm py-1" href="./testing.html">Testing</a></li>
+            <li><a class="block w-full text-center rounded-sm py-1" href="./setup.html">Setup</a></li>
+            <li><a class="block w-full text-center rounded-sm py-1" href="./about.html">About</a></li>
+            <li><a class="block w-full text-center rounded-sm py-1" href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="h-px w-full bg-brandGold/35"></div>
+  </header>
+
+  <main>
+    <section id="hero" class="relative w-full">
+      <div class="relative mt-4 w-full min-h-[420px] overflow-hidden lg:min-h-[520px]">
+        <div
+          class="absolute inset-0 bg-cover bg-[center_11%] bg-no-repeat"
+          style="background-image: url('./images/embrace-violin-chinrest-side.JPG');"
+          aria-hidden="true"
+        ></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/45" aria-hidden="true"></div>
+
+        <div class="relative mx-auto flex min-h-[420px] max-w-6xl items-center px-4 py-14 sm:px-6 sm:py-20 lg:min-h-[520px]">
+          <div class="max-w-2xl min-w-0">
+            <h1 class="font-serif text-4xl font-medium leading-[1.1] tracking-refined text-white sm:text-5xl lg:text-6xl">
+              Built to Adjust.<br />
+              Designed to Embrace.
+            </h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="difference" class="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
+      <h2 class="text-center font-serif text-3xl font-medium tracking-refined text-brandBlue sm:text-4xl">The Embrace Strings Difference</h2>
+      <p class="mx-auto mt-6 max-w-3xl text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+        True comfort isn't fixed: it's responsive. Your posture shifts constantly, influenced by daily factors like temperature, clothing, and subtle changes in your body—and most chinrests can't keep up. Fixed models force compromise, and even adjustable ones require tools, making it impossible to fine-tune during rehearsal or performance… until now.
+      </p>
+      <p class="mx-auto mt-5 max-w-3xl text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+        Embrace Strings chinrests are designed to unlock that comfort, every day. Whether your neck feels stiff mid-practice or you are wearing a suit jacket on concert day, effortless, tool-free adjustments let you maintain natural posture and truly Embrace the way you play.
+      </p>
+    </section>
+
+    <section id="product-highlight" class="border-y border-brandGold/30 bg-white/50">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="font-serif text-3xl font-medium tracking-refined text-brandBlue sm:text-4xl">Our Chinrests</h2>
+        </div>
+
+        <style>
+          #product-highlight .chinrest-model-card-image {
+            display: block;
+            object-fit: cover;
+            object-position: 50% 20%;
+            min-width: 100%;
+            min-height: 100%;
+            transform-origin: 50% 22%;
+            transition: transform 0.45s ease;
+          }
+          #product-highlight a:hover .chinrest-model-card-image,
+          #product-highlight a:focus-visible .chinrest-model-card-image {
+            transform: scale(1.08);
+          }
+          @media (min-width: 480px) {
+            #product-highlight .chinrest-model-card-image {
+              object-position: 50% 28%;
+              transform-origin: 50% 28%;
+            }
+          }
+          @media (min-width: 640px) {
+            #product-highlight .chinrest-model-card-image {
+              object-position: 50% 32%;
+              transform-origin: 50% 32%;
+            }
+          }
+          @media (min-width: 1024px) {
+            #product-highlight .chinrest-model-card-image {
+              object-position: 50% 40%;
+              transform-origin: 50% 40%;
+            }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            #product-highlight .chinrest-model-card-image {
+              transition: none;
+            }
+            #product-highlight a:hover .chinrest-model-card-image,
+            #product-highlight a:focus-visible .chinrest-model-card-image {
+              transform: none;
+            }
+          }
+        </style>
+
+        <div class="mx-auto mt-10 grid w-full grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 lg:gap-x-12">
+          <a
+            href="./chinrest-original.html"
+            class="group block overflow-hidden rounded-2xl border border-brandGold/35 bg-white shadow-soft transition hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2 focus-visible:ring-offset-brandCream"
+            aria-label="View Original chinrest"
+          >
+            <div class="relative aspect-[4/3] w-full overflow-hidden">
+              <div
+                class="chinrest-model-card-image absolute inset-0 flex items-center justify-center bg-[#e5e5e7]"
+                role="img"
+                aria-label="Placeholder for Original chinrest photo"
+              >
+                <span class="px-6 text-center text-[11px] font-medium uppercase tracking-[0.2em] text-brandBlue/45">Original photo</span>
+              </div>
+            </div>
+            <div class="border-t border-brandGold/35 px-5 py-5 sm:px-6 sm:py-6">
+              <h3 class="font-serif text-xl font-medium tracking-refined text-brandBlue sm:text-2xl">Original</h3>
+            </div>
+          </a>
+
+          <a
+            href="./chinrest-bean.html"
+            class="group block overflow-hidden rounded-2xl border border-brandGold/35 bg-white shadow-soft transition hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2 focus-visible:ring-offset-brandCream"
+            aria-label="View Bean chinrest"
+          >
+            <div class="relative aspect-[4/3] w-full overflow-hidden">
+              <div
+                class="chinrest-model-card-image absolute inset-0 flex items-center justify-center bg-[#e5e5e7]"
+                role="img"
+                aria-label="Placeholder for Bean chinrest photo"
+              >
+                <span class="px-6 text-center text-[11px] font-medium uppercase tracking-[0.2em] text-brandBlue/45">Bean photo</span>
+              </div>
+            </div>
+            <div class="border-t border-brandGold/35 px-5 py-5 sm:px-6 sm:py-6">
+              <h3 class="font-serif text-xl font-medium tracking-refined text-brandBlue sm:text-2xl">Bean</h3>
+            </div>
+          </a>
+
+          <a
+            href="./chinrest-morawetz.html"
+            class="group block overflow-hidden rounded-2xl border border-brandGold/35 bg-white shadow-soft transition hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2 focus-visible:ring-offset-brandCream"
+            aria-label="View Morawetz chinrest"
+          >
+            <div class="relative aspect-[4/3] w-full overflow-hidden">
+              <div
+                class="chinrest-model-card-image absolute inset-0 flex items-center justify-center bg-[#e5e5e7]"
+                role="img"
+                aria-label="Placeholder for Morawetz chinrest photo"
+              >
+                <span class="px-6 text-center text-[11px] font-medium uppercase tracking-[0.2em] text-brandBlue/45">Morawetz photo</span>
+              </div>
+            </div>
+            <div class="border-t border-brandGold/35 px-5 py-5 sm:px-6 sm:py-6">
+              <h3 class="font-serif text-xl font-medium tracking-refined text-brandBlue sm:text-2xl">Morawetz</h3>
+            </div>
+          </a>
+
+          <a
+            href="./chinrest-tall.html"
+            class="group block overflow-hidden rounded-2xl border border-brandGold/35 bg-white shadow-soft transition hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2 focus-visible:ring-offset-brandCream"
+            aria-label="View Tall chinrest"
+          >
+            <div class="relative aspect-[4/3] w-full overflow-hidden">
+              <div
+                class="chinrest-model-card-image absolute inset-0 flex items-center justify-center bg-[#e5e5e7]"
+                role="img"
+                aria-label="Placeholder for Tall chinrest photo"
+              >
+                <span class="px-6 text-center text-[11px] font-medium uppercase tracking-[0.2em] text-brandBlue/45">Tall photo</span>
+              </div>
+            </div>
+            <div class="border-t border-brandGold/35 px-5 py-5 sm:px-6 sm:py-6">
+              <h3 class="font-serif text-xl font-medium tracking-refined text-brandBlue sm:text-2xl">Tall</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="for-players" class="border-t border-brandGold/25 bg-brandCream/50 py-12 sm:py-16">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <h2 class="text-balance text-center font-serif text-3xl font-medium tracking-refined text-brandBlue sm:text-4xl">
+          An Embrace That Grows With You
+        </h2>
+        <style>
+          #playersCarouselViewport {
+            overflow: hidden;
+            width: 100%;
+          }
+          #playersCarouselTrack {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 600ms ease-in-out;
+            will-change: transform;
+          }
+          #playersCarouselTrack.is-resetting {
+            transition: none !important;
+          }
+          #playersCarouselTrack.is-resetting .players-carousel-slide {
+            transition: none !important;
+          }
+          .players-carousel-slide {
+            flex: 0 0 26rem;
+            width: 26rem;
+            height: 32rem;
+            min-width: 26rem;
+            max-width: 26rem;
+            min-height: 32rem;
+            max-height: 32rem;
+            filter: blur(0);
+            opacity: 0;
+            transform: scale(0.9);
+            pointer-events: none;
+          }
+          .players-carousel-slide > div {
+            width: 26rem;
+            height: 32rem;
+            min-height: 32rem;
+            max-height: 32rem;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+          }
+          .players-carousel-slide > div > div:first-child {
+            flex: 0 0 12.5rem;
+            height: 12.5rem;
+            min-height: 12.5rem;
+            max-height: 12.5rem;
+            width: 100%;
+            aspect-ratio: auto;
+          }
+          .players-carousel-slide > div > div:last-child {
+            flex: 1 1 0;
+            min-height: 0;
+            overflow: hidden;
+          }
+          .players-carousel-slide.is-adjacent {
+            filter: blur(4px);
+            opacity: 0.65;
+            transform: scale(0.94);
+            pointer-events: auto;
+          }
+          .players-carousel-slide.is-active {
+            filter: blur(0);
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+          }
+          .players-dot {
+            height: 0.625rem;
+            width: 0.625rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(186, 158, 120, 0.45);
+            background-color: transparent;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+          }
+          .players-dot.is-active {
+            background-color: #ba9e78;
+            border-color: #ba9e78;
+          }
+        </style>
+
+        <div class="relative mx-auto mt-10 max-w-6xl">
+          <div
+            id="playersCarouselViewport"
+            tabindex="0"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Who Embrace Strings is for"
+          >
+            <div id="playersCarouselTrack">
+            <article
+              class="players-carousel-slide"
+              data-players-slide="0"
+              role="group"
+              aria-roledescription="slide"
+              aria-label="1 of 5"
+            >
+              <div class="flex min-w-0 flex-col overflow-hidden rounded-2xl border border-brandGold/30 bg-white/70 shadow-soft">
+                <div
+                  class="relative aspect-[4/3] w-full shrink-0 border-b border-brandGold/20 bg-gradient-to-br from-brandBlue/10 via-brandCream to-brandGold/25"
+                  role="img"
+                  aria-label="Placeholder for a professional or teacher photo"
+                >
+                  <span class="absolute inset-0 flex items-center justify-center px-6 text-center text-[11px] font-medium uppercase tracking-[0.2em] text-brandBlue/45">
+                    Professional / teacher photo
+                  </span>
+                </div>
+                <div class="flex flex-1 flex-col p-6 sm:p-7">
+                  <h3 class="font-serif text-lg font-medium tracking-refined text-brandBlue">For Professionals</h3>
+                  <p class="mt-3 text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+                    Built for long rehearsals, performances, and the subtle posture changes that happen throughout the day. Embrace Strings allows professionals to quickly dial in comfort without interrupting focus, offering a setup that is practical, responsive, and refined. Whether you perform, teach, or rehearse daily, this chinrest provides the versatility serious musicians expect from their equipment.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="players-carousel-slide"
+              data-players-slide="1"
+              role="group"
+              aria-roledescription="slide"
+              aria-label="2 of 5"
+            >
+              <div class="flex min-w-0 flex-col overflow-hidden rounded-2xl border border-brandGold/30 bg-white/70 shadow-soft">
+                <div
+                  class="relative aspect-[4/3] w-full shrink-0 border-b border-brandGold/20 bg-[#e5e5e7]"
+                  role="img"
+                  aria-label="Placeholder for a teacher photo"
+                >
+                  <span class="absolute inset-0 flex items-center justify-center px-6 text-center text-[11px] font-medium uppercase tracking-[0.2em] text-brandBlue/45">
+                    Teacher photo
+                  </span>
+                </div>
+                <div class="flex flex-1 flex-col p-6 sm:p-7">
+                  <h3 class="font-serif text-lg font-medium tracking-refined text-brandBlue">For Teachers</h3>
+                  <p class="mt-3 text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+                    Placeholder description for teachers and studio leaders. Copy will describe how Embrace Strings supports students with adjustable fit across growing players and lesson routines.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="players-carousel-slide"
+              data-players-slide="2"
+              role="group"
+              aria-roledescription="slide"
+              aria-label="3 of 5"
+            >
+              <div class="flex min-w-0 flex-col overflow-hidden rounded-2xl border border-brandGold/30 bg-white/70 shadow-soft">
+                <div
+                  class="relative aspect-[4/3] w-full shrink-0 border-b border-brandGold/20 bg-gradient-to-br from-brandGold/20 via-brandCream to-brandBlue/10"
+                  role="img"
+                  aria-label="Placeholder for a student photo"
+                >
+                  <span class="absolute inset-0 flex items-center justify-center px-6 text-center text-[11px] font-medium uppercase tracking-[0.2em] text-brandBlue/45">
+                    Student photo
+                  </span>
+                </div>
+                <div class="flex flex-1 flex-col p-6 sm:p-7">
+                  <h3 class="font-serif text-lg font-medium tracking-refined text-brandBlue">For Students</h3>
+                  <p class="mt-3 text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+                    As your body and technique develop, your setup should evolve with you. Embrace Strings adapts over time, allowing students to refine fit gradually rather than being locked into a fixed solution. The same responsive comfort trusted by professionals supports healthy alignment at every stage of growth.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="players-carousel-slide"
+              data-players-slide="3"
+              role="group"
+              aria-roledescription="slide"
+              aria-label="4 of 5"
+            >
+              <div class="flex min-w-0 flex-col overflow-hidden rounded-2xl border border-brandGold/30 bg-white/70 shadow-soft">
+                <div
+                  class="relative aspect-[4/3] w-full shrink-0 border-b border-brandGold/20 bg-[#e5e5e7]"
+                  role="img"
+                  aria-label="Placeholder for a schools and universities photo"
+                >
+                  <span class="absolute inset-0 flex items-center justify-center px-6 text-center text-[11px] font-medium uppercase tracking-[0.2em] text-brandBlue/45">
+                    Schools &amp; universities photo
+                  </span>
+                </div>
+                <div class="flex flex-1 flex-col p-6 sm:p-7">
+                  <h3 class="font-serif text-lg font-medium tracking-refined text-brandBlue">For Schools &amp; Universities</h3>
+                  <p class="mt-3 text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+                    Placeholder description for schools and university programs. Copy will outline ensemble adoption, program support, and consistent setup across classrooms and performance groups.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="players-carousel-slide"
+              data-players-slide="4"
+              role="group"
+              aria-roledescription="slide"
+              aria-label="5 of 5"
+            >
+              <div class="flex min-w-0 flex-col overflow-hidden rounded-2xl border border-brandGold/30 bg-white/70 shadow-soft">
+                <div
+                  class="relative aspect-[4/3] w-full shrink-0 border-b border-brandGold/20 bg-[#e5e5e7]"
+                  role="img"
+                  aria-label="Placeholder for a hobbyist photo"
+                >
+                  <span class="absolute inset-0 flex items-center justify-center px-6 text-center text-[11px] font-medium uppercase tracking-[0.2em] text-brandBlue/45">
+                    Hobbyist photo
+                  </span>
+                </div>
+                <div class="flex flex-1 flex-col p-6 sm:p-7">
+                  <h3 class="font-serif text-lg font-medium tracking-refined text-brandBlue">For Hobbyists</h3>
+                  <p class="mt-3 text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+                    Placeholder description for adult hobbyists and returning players. Copy will emphasize comfort, ease of adjustment, and enjoyment without the demands of a professional schedule.
+                  </p>
+                </div>
+              </div>
+            </article>
+            </div>
+          </div>
+
+          <div id="playersDots" class="mt-6 flex flex-wrap items-center justify-center gap-2" aria-label="Audience slides">
+            <button type="button" data-players-dot="0" class="players-dot is-active focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2" aria-label="Show For Professionals" aria-current="true"></button>
+            <button type="button" data-players-dot="1" class="players-dot focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2" aria-label="Show For Teachers" aria-current="false"></button>
+            <button type="button" data-players-dot="2" class="players-dot focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2" aria-label="Show For Students" aria-current="false"></button>
+            <button type="button" data-players-dot="3" class="players-dot focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2" aria-label="Show For Schools and Universities" aria-current="false"></button>
+            <button type="button" data-players-dot="4" class="players-dot focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2" aria-label="Show For Hobbyists" aria-current="false"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="border-y border-brandGold/30">
+      <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6">
+        <h2 class="text-center font-serif text-3xl font-medium tracking-refined text-brandBlue sm:text-4xl">Frequently Asked Questions</h2>
+        <div class="mx-auto mt-8 max-w-3xl divide-y divide-brandBlue/20 overflow-hidden rounded-2xl border border-brandGold/30 bg-white/70 shadow-sm">
+          <details class="group p-4 sm:p-5">
+            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-3 text-left text-sm font-medium text-brandBlue marker:hidden [&::-webkit-details-marker]:hidden sm:text-base">
+              <span class="min-w-0">Will this chinrest fit my body type?</span>
+              <svg class="h-5 w-5 shrink-0 text-brandGold transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <p class="mt-3 text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+              Yes! Embrace Strings chinrests are fully adjustable in height and tilt, designed to accommodate players of all sizes, shapes, and playing styles. Whether you're petite or tall, beginner or professional, you can easily find a fit that feels natural and supports your posture.
+            </p>
+          </details>
+          <details class="group p-4 sm:p-5">
+            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-3 text-left text-sm font-medium text-brandBlue marker:hidden [&::-webkit-details-marker]:hidden sm:text-base">
+              <span class="min-w-0">Do I need tools to adjust it?</span>
+              <svg class="h-5 w-5 shrink-0 text-brandGold transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <p class="mt-3 text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+              No tools are needed. Every adjustment is made with simple side dials, so you can change height or tilt in seconds—even during rehearsal, lessons, or performance. Comfort and posture adjustments are effortless and immediate.
+            </p>
+          </details>
+          <details class="group p-4 sm:p-5">
+            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-3 text-left text-sm font-medium text-brandBlue marker:hidden [&::-webkit-details-marker]:hidden sm:text-base">
+              <span class="min-w-0">How often should I adjust my Embrace Strings Chinrest?</span>
+              <svg class="h-5 w-5 shrink-0 text-brandGold transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <p class="mt-3 text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+              As often as your body needs! Posture, clothing, and playing style can shift from day to day, or even during practice. Quick, tool-free adjustments make it easy to respond instantly and maintain natural posture every time you play.
+            </p>
+          </details>
+          <details class="group p-4 sm:p-5">
+            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-3 text-left text-sm font-medium text-brandBlue marker:hidden [&::-webkit-details-marker]:hidden sm:text-base">
+              <span class="min-w-0">Can I adjust it during performance?</span>
+              <svg class="h-5 w-5 shrink-0 text-brandGold transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <p class="mt-3 text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+              Absolutely. The intuitive, side-dial system is designed for effortless adjustments, so you can tweak height or tilt between pieces, without interrupting your flow or needing a tool.
+            </p>
+          </details>
+          <details class="group p-4 sm:p-5">
+            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-3 text-left text-sm font-medium text-brandBlue marker:hidden [&::-webkit-details-marker]:hidden sm:text-base">
+              <span class="min-w-0">Is it compatible with all violins and violas?</span>
+              <svg class="h-5 w-5 shrink-0 text-brandGold transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <p class="mt-3 text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+              Yes! Embrace Strings chinrests are designed to fit standard violin and viola models. If you have a unique or antique instrument,
+              <a href="./contact.html" class="font-medium text-brandBlue underline decoration-brandGold/60 underline-offset-2 transition hover:text-brandGold">contact us</a>
+              —we'll help ensure a perfect fit.
+            </p>
+          </details>
+          <details class="group p-4 sm:p-5">
+            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-3 text-left text-sm font-medium text-brandBlue marker:hidden [&::-webkit-details-marker]:hidden sm:text-base">
+              <span class="min-w-0">Why choose Embrace Strings over other adjustable chinrests?</span>
+              <svg class="h-5 w-5 shrink-0 text-brandGold transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <p class="mt-3 text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+              Unlike other adjustable chinrests that require tools and time-consuming tweaks, Embrace Strings gives you effortless, immediate control over height and tilt. That means you can maintain comfort, posture, and freedom of expression every time you play—without compromise.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="trial-program" class="border-t border-brandGold/25 bg-white/60">
+      <div class="mx-auto max-w-3xl px-4 py-12 text-center sm:px-6 sm:py-14">
+        <h2 class="text-balance font-serif text-3xl font-medium tracking-refined text-brandBlue sm:text-4xl">
+          Not Ready To Purchase? Test Our Chinrest!
+        </h2>
+        <p class="mt-5 text-pretty text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+          We know that finding the right chinrest is a deeply personal process. To help you play with greater intentionality and comfort, we offer a 14-day trial program.
+        </p>
+        <div class="mt-8 flex justify-center">
+          <a
+            href="./testing.html"
+            class="btn-brand-solid px-8 py-3"
+          >Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="chinrest-feedback"
+      class="border-t border-brandGold/25 bg-white"
+      aria-labelledby="chinrest-feedback-heading"
+    >
+      <div class="mx-auto max-w-3xl px-4 py-12 text-center sm:px-6 sm:py-16">
+        <div class="rounded-2xl border border-brandGold/30 bg-brandCream/50 p-6 shadow-sm sm:p-8">
+          <h2 id="chinrest-feedback-heading" class="font-serif text-2xl font-medium tracking-refined text-brandBlue sm:text-3xl">
+            Leave a Review
+          </h2>
+          <p class="mx-auto mt-4 max-w-xl text-pretty text-sm font-light leading-relaxed text-brandBlue/85 sm:text-base">
+            If you have tried or are using an Embrace Strings chinrest, we would love your feedback—what is working well, what is not, and anything that
+            would help us support players better. A short survey helps us hear from you in one place.
+          </p>
+          <div class="mt-6 flex justify-center">
+            <!-- Replace href with your published Google Form URL when it is ready (keep target and rel for a new tab). -->
+            <a
+              id="chinrest-feedback-survey"
+              href="REPLACE_WITH_GOOGLE_FORM_URL"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-brand-solid px-8 py-3 text-center"
+            >
+              Take Feedback Survey
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="border-t border-brandGold/25 bg-brandCream/50 py-12 sm:py-16">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <h2 class="text-center font-serif text-3xl font-medium tracking-refined text-brandBlue sm:text-4xl">Client Reviews</h2>
+        <div class="mt-10 grid gap-6 sm:gap-8 md:grid-cols-3 md:items-stretch">
+          <article class="flex min-h-0 flex-col rounded-2xl border border-brandGold/40 bg-white p-6 shadow-sm sm:p-7">
+            <h3 class="font-serif text-lg font-medium leading-snug text-brandGold sm:text-xl">“A voice found in comfort…”</h3>
+            <p class="mt-4 flex-1 text-left text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+              This is a thoughtful, well-crafted product that has enabled me to speak my musical voice with new comfort and ease. It has drastically improved the performing lives of myself and my students!
+            </p>
+            <p class="mt-6 text-left text-sm font-medium text-brandBlue/75">— Ben Cantrell</p>
+          </article>
+          <article class="flex min-h-0 flex-col rounded-2xl border border-brandGold/40 bg-white p-6 shadow-sm sm:p-7">
+            <h3 class="font-serif text-lg font-medium leading-snug text-brandGold sm:text-xl">“A setup that finally works with my body…”</h3>
+            <p class="mt-4 flex-1 text-left text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+              My comfort changes day to day, and this chinrest adjusts just as easily. I feel less tension and more freedom every time I play.
+            </p>
+            <p class="mt-6 text-left text-sm font-medium text-brandBlue/75">— Advanced Student</p>
+          </article>
+          <article class="flex min-h-0 flex-col rounded-2xl border border-brandGold/40 bg-white p-6 shadow-sm sm:p-7">
+            <h3 class="font-serif text-lg font-medium leading-snug text-brandGold sm:text-xl">“The most comfortable chinrest I’ve used…”</h3>
+            <p class="mt-4 flex-1 text-left text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+              Being able to adjust my chinrest in seconds has completely changed my practice. Everything feels more natural and effortless now.
+            </p>
+            <p class="mt-6 text-left text-sm font-medium text-brandBlue/75">— Viola Teacher</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-brandGold/25 bg-brandCream">
+    <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <div class="grid grid-cols-1 items-center gap-10 md:grid-cols-3 md:gap-6 lg:gap-10">
+        <div class="flex min-w-0 flex-col items-center gap-4 md:items-start md:justify-self-start">
+          <nav class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:justify-start" aria-label="Embrace Strings on social media">
+            <a
+              href="https://www.instagram.com/embracestrings/"
+              class="btn-brand-icon"
+              aria-label="Instagram"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a
+              href="https://www.facebook.com/people/Embrace-Strings/61565017010129/?sk=about"
+              class="btn-brand-icon"
+              aria-label="Facebook"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a
+              href="https://www.tiktok.com/@embracestrings"
+              class="btn-brand-icon"
+              aria-label="TikTok"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/embrace-strings/"
+              class="btn-brand-icon"
+              aria-label="LinkedIn"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </nav>
+          <p class="text-center text-xs font-medium tracking-[0.18em] text-brandBlue/70 md:text-left">© <span id="year"></span> Embrace Strings</p>
+        </div>
+        <div class="flex min-w-0 justify-center md:justify-self-center">
+          <img
+            src="./images/embrace-strings-brandmark.png"
+            alt="Embrace Strings brandmark"
+            width="160"
+            height="160"
+            class="h-12 w-auto max-w-full object-contain object-center sm:h-14 md:h-16"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="flex min-w-0 flex-col items-center md:items-end md:justify-self-end md:text-right">
+          <h2 class="mb-3 font-serif text-base font-medium tracking-refined text-brandBlue"><a href="./contact.html" class="text-brandBlue transition hover:text-brandGold">Contact Us</a></h2>
+          <a
+            href="mailto:info@embracestrings.com"
+            class="max-w-full break-words text-sm text-brandBlue/85 transition hover:text-brandGold"
+          >info@embracestrings.com</a>
+          <a href="tel:+12103712757" class="mt-2 text-sm text-brandBlue/85 transition hover:text-brandGold">(210) 371-2757</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById("menuButton");
+    const menu = document.getElementById("mobileMenu");
+    const year = document.getElementById("year");
+    if (year) year.textContent = String(new Date().getFullYear());
+
+    if (btn && menu) {
+      btn.addEventListener("click", () => {
+        const isOpen = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!isOpen));
+        menu.classList.toggle("hidden");
+      });
+    }
+
+    const playersViewport = document.getElementById("playersCarouselViewport");
+    const playersTrack = document.getElementById("playersCarouselTrack");
+    const playersDots = document.querySelectorAll("[data-players-dot]");
+    if (playersViewport && playersTrack && playersDots.length) {
+      const playersRealTotal = playersDots.length;
+      const playersTransitionMs = 600;
+      const playersHoldMs = 4000;
+      const playersStartPos = playersRealTotal;
+      const playersLoopEndPos = playersRealTotal * 2;
+      let playersPos = playersStartPos;
+      let playersAutoTimer = null;
+      let playersTransitionTimer = null;
+      let playersIsAnimating = false;
+      let playersIsPaused = false;
+
+      const playersOriginalSlides = [...playersTrack.querySelectorAll(".players-carousel-slide")];
+      const playersPrepClones = playersOriginalSlides.map((slide) => {
+        const clone = slide.cloneNode(true);
+        clone.setAttribute("aria-hidden", "true");
+        return clone;
+      });
+      for (let i = playersPrepClones.length - 1; i >= 0; i -= 1) {
+        playersTrack.insertBefore(playersPrepClones[i], playersTrack.firstChild);
+      }
+      playersOriginalSlides.forEach((slide) => {
+        const clone = slide.cloneNode(true);
+        clone.setAttribute("aria-hidden", "true");
+        playersTrack.appendChild(clone);
+      });
+      const playersAllSlides = [...playersTrack.querySelectorAll(".players-carousel-slide")];
+      let playersTransitionHandler = null;
+
+      function playersSlideStep() {
+        const slide = playersAllSlides[playersStartPos];
+        if (!slide) return 0;
+        const gap = parseFloat(getComputedStyle(playersTrack).columnGap || getComputedStyle(playersTrack).gap) || 0;
+        return slide.offsetWidth + gap;
+      }
+
+      function playersTranslateForPos(pos) {
+        const step = playersSlideStep();
+        const slide = playersAllSlides[playersStartPos];
+        if (!step || !slide) return 0;
+        const viewportWidth = playersViewport.clientWidth;
+        const slideWidth = slide.offsetWidth;
+        return Math.round((viewportWidth - slideWidth) / 2 - pos * step);
+      }
+
+      function playersUpdateSlideStates() {
+        playersAllSlides.forEach((slide, idx) => {
+          const distance = Math.abs(idx - playersPos);
+          slide.classList.remove("is-active", "is-adjacent");
+          if (distance === 0) {
+            slide.classList.add("is-active");
+          } else if (distance === 1) {
+            slide.classList.add("is-adjacent");
+          }
+        });
+      }
+
+      function playersRealIndex() {
+        return ((playersPos - playersStartPos) % playersRealTotal + playersRealTotal) % playersRealTotal;
+      }
+
+      function playersUpdateDots() {
+        const realIndex = playersRealIndex();
+        playersDots.forEach((dot, idx) => {
+          const active = idx === realIndex;
+          dot.setAttribute("aria-current", active ? "true" : "false");
+          dot.classList.toggle("is-active", active);
+        });
+      }
+
+      function playersApplyTransform(animate) {
+        if (animate) {
+          playersTrack.classList.remove("is-resetting");
+        } else {
+          playersTrack.classList.add("is-resetting");
+        }
+        playersTrack.style.transform = `translate3d(${playersTranslateForPos(playersPos)}px, 0, 0)`;
+      }
+
+      function playersSetPosition(animate) {
+        playersApplyTransform(animate);
+        playersUpdateSlideStates();
+        playersUpdateDots();
+      }
+
+      function playersClearTimers() {
+        clearTimeout(playersAutoTimer);
+        clearTimeout(playersTransitionTimer);
+        if (playersTransitionHandler) {
+          playersTrack.removeEventListener("transitionend", playersTransitionHandler);
+          playersTransitionHandler = null;
+        }
+      }
+
+      function playersWaitForTransition(callback) {
+        playersClearTimers();
+        playersTransitionHandler = (e) => {
+          if (e.target !== playersTrack || e.propertyName !== "transform") return;
+          playersTrack.removeEventListener("transitionend", playersTransitionHandler);
+          playersTransitionHandler = null;
+          clearTimeout(playersTransitionTimer);
+          callback();
+        };
+        playersTrack.addEventListener("transitionend", playersTransitionHandler);
+        playersTransitionTimer = setTimeout(() => {
+          if (playersTransitionHandler) {
+            playersTrack.removeEventListener("transitionend", playersTransitionHandler);
+            playersTransitionHandler = null;
+          }
+          callback();
+        }, playersTransitionMs + 80);
+      }
+
+      function playersResetIfNeeded() {
+        if (playersPos !== playersLoopEndPos) return false;
+        playersTrack.classList.add("is-resetting");
+        playersPos = playersStartPos;
+        playersTrack.style.transform = `translate3d(${playersTranslateForPos(playersPos)}px, 0, 0)`;
+        void playersTrack.offsetHeight;
+        playersUpdateSlideStates();
+        playersUpdateDots();
+        requestAnimationFrame(() => {
+          playersTrack.classList.remove("is-resetting");
+        });
+        return true;
+      }
+
+      function playersFinishTransition() {
+        playersResetIfNeeded();
+        playersIsAnimating = false;
+        if (!playersIsPaused) {
+          playersScheduleHold();
+        }
+      }
+
+      function playersAdvance() {
+        if (playersIsAnimating) return;
+        playersIsAnimating = true;
+        playersPos += 1;
+        playersApplyTransform(true);
+        playersUpdateSlideStates();
+        playersUpdateDots();
+        playersWaitForTransition(playersFinishTransition);
+      }
+
+      function playersGoToReal(targetReal) {
+        const currentReal = playersRealIndex();
+        const steps = (targetReal - currentReal + playersRealTotal) % playersRealTotal;
+        if (steps === 0 || playersIsAnimating) return;
+        playersClearTimers();
+        playersIsAnimating = true;
+        playersPos += steps;
+        playersApplyTransform(true);
+        playersUpdateSlideStates();
+        playersUpdateDots();
+        playersWaitForTransition(playersFinishTransition);
+      }
+
+      function playersScheduleHold() {
+        playersClearTimers();
+        if (playersIsPaused || playersIsAnimating) {
+          return;
+        }
+        playersAutoTimer = setTimeout(() => {
+          playersAdvance();
+        }, playersHoldMs);
+      }
+
+      playersAllSlides.forEach((slide) => {
+        slide.addEventListener("mouseenter", () => {
+          playersIsPaused = true;
+          clearTimeout(playersAutoTimer);
+        });
+        slide.addEventListener("mouseleave", () => {
+          playersIsPaused = false;
+          if (!playersIsAnimating) {
+            playersScheduleHold();
+          }
+        });
+      });
+
+      playersDots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          playersGoToReal(Number(dot.getAttribute("data-players-dot")));
+        });
+      });
+
+      playersTrack.classList.add("is-resetting");
+      playersPos = playersStartPos;
+      playersTrack.style.transform = `translate3d(${playersTranslateForPos(playersPos)}px, 0, 0)`;
+      void playersTrack.offsetHeight;
+      playersUpdateSlideStates();
+      playersUpdateDots();
+      requestAnimationFrame(() => {
+        playersTrack.classList.remove("is-resetting");
+        playersScheduleHold();
+      });
+
+      new ResizeObserver(() => {
+        if (playersIsAnimating) return;
+        playersSetPosition(false);
+      }).observe(playersViewport);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Embrace Strings | Adjustable Violin Chinrest for Comfort and Fit</title>
+  <link rel="icon" href="./images/Embrace%20Your%20Fit.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind = window.tailwind || {};
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandCream: "#f2f2f3",
+            brandBlue: "#16335b",
+            brandGold: "#ba9e78",
+          },
+          fontFamily: {
+            serif: ["Cormorant Garamond", "ui-serif", "Georgia", "serif"],
+            sans: ["Montserrat", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Arial", "sans-serif"],
+          },
+          boxShadow: {
+            soft: "0 16px 40px rgba(22, 51, 91, 0.08)",
+          },
+          letterSpacing: {
+            refined: "0.02em",
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Active nav: plain CSS so current page reads clearly (CDN Tailwind aria variants can be subtle) */
+    header nav a[aria-current="page"] {
+      color: #ba9e78;
+      font-weight: 500;
+    }
+    header nav ul.site-nav-primary a[aria-current="page"] {
+      border-bottom-color: #ba9e78;
+    }
+    header nav #mobileMenu a[aria-current="page"] {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      text-decoration: underline;
+      text-decoration-color: #ba9e78;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 0.35rem;
+      background-color: rgba(186, 158, 120, 0.16);
+      border-radius: 0.375rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    /* Primary nav: gold hover + Chinrest hover dropdown (desktop) */
+    header nav ul.site-nav-primary > li > a,
+    header nav .nav-dropdown-trigger,
+    header nav .nav-dropdown-menu a,
+    header nav #mobileMenu a {
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    header nav ul.site-nav-primary > li > a:hover,
+    header nav .nav-dropdown-trigger:hover,
+    header nav .nav-dropdown-menu a:hover,
+    header nav #mobileMenu a:hover {
+      color: #ba9e78;
+    }
+    header nav .nav-dropdown {
+      position: relative;
+    }
+    header nav .nav-dropdown::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: max(100%, 6rem);
+      top: 100%;
+      height: 0.5rem;
+    }
+    header nav .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      padding: 0.375rem 0;
+      width: max-content;
+      list-style: none;
+      font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      background-color: rgba(242, 242, 243, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(186, 158, 120, 0.35);
+      border-radius: 0.5rem;
+      box-shadow: 0 16px 40px rgba(22, 51, 91, 0.08);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+      z-index: 60;
+    }
+    @media (min-width: 1280px) {
+      header nav .nav-dropdown-menu {
+        font-size: 13px;
+      }
+    }
+    header nav .nav-dropdown-menu a {
+      display: block;
+      padding: 0.375rem 0.875rem;
+      white-space: nowrap;
+      text-align: center;
+    }
+    header nav .nav-dropdown:hover .nav-dropdown-menu,
+    header nav .nav-dropdown:focus-within .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    header nav .nav-dropdown-menu a[aria-current="page"] {
+      border-bottom: none;
+    }
+    /* Brand typography: Cormorant Garamond headings; Montserrat body via font-sans + leading-relaxed */
+    h1, h2, h3, h4 {
+      font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+    }
+    /* Header CTA pills: plain CSS fill + hover; one font-size everywhere to avoid a brief resize on full page loads */
+    header nav a.nav-cta {
+      font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 15px;
+      background-color: #16335b;
+      color: #f2f2f3;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    header nav a.nav-cta:hover {
+      background-color: #ba9e78;
+      color: #16335b;
+    }
+    header nav a.nav-cta:focus {
+      outline: none;
+    }
+    header nav a.nav-cta:focus-visible {
+      outline: 3px solid #ba9e78 !important;
+      outline-offset: 3px !important;
+    }
+    /* Primary buttons + footer social icons: navy → gold (matches header CTAs); rounded-lg */
+    a.btn-brand-solid,
+    button.btn-brand-solid {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      border: none;
+      background-color: #16335b;
+      color: #f2f2f3;
+      font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 15px;
+      line-height: 1.25;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    a.btn-brand-solid:hover,
+    button.btn-brand-solid:hover {
+      background-color: #ba9e78;
+      color: #16335b;
+    }
+    a.btn-brand-solid:focus,
+    button.btn-brand-solid:focus {
+      outline: none;
+    }
+    a.btn-brand-solid:focus-visible,
+    button.btn-brand-solid:focus-visible {
+      outline: 3px solid #ba9e78;
+      outline-offset: 3px;
+    }
+    a.btn-brand-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      flex-shrink: 0;
+      border-radius: 0.5rem;
+      border: none;
+      background-color: #16335b;
+      color: #f2f2f3;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    a.btn-brand-icon:hover {
+      background-color: #ba9e78;
+      color: #16335b;
+    }
+    a.btn-brand-icon:focus {
+      outline: none;
+    }
+    a.btn-brand-icon:focus-visible {
+      outline: 3px solid #ba9e78;
+      outline-offset: 3px;
+    }
+    /* Footer text links: gold hover */
+    footer a:not(.btn-brand-icon) {
+      transition: color 0.2s ease;
+    }
+    footer a:not(.btn-brand-icon):hover {
+      color: #ba9e78;
+    }
+    /* Stay Connected: keep disabled controls looking unchanged */
+    #stay-connected-submit:disabled {
+      opacity: 1;
+      cursor: default;
+      background-color: #16335b;
+      color: #f2f2f3;
+    }
+    #stay-connected-email:disabled {
+      cursor: default;
+      color: rgba(22, 51, 91, 0.45);
+      background-color: rgba(242, 242, 243, 0.9);
+      border-color: rgba(22, 51, 91, 0.12);
+    }
+    #stay-connected-submit {
+      min-height: 3rem;
+    }
+    #stay-connected-followup a {
+      transition: color 0.2s ease;
+    }
+    #stay-connected-followup a:hover {
+      color: #ba9e78;
+    }
+    #stay-connected-message,
+    #stay-connected-status,
+    [data-stay-connected-message] {
+      display: none !important;
+    }
+    /* Home: shop partner logo marquee */
+    .shop-marquee-inner {
+      display: flex;
+      width: max-content;
+      animation: shop-partners-marquee 42s linear infinite;
+    }
+    .shop-marquee-inner:hover {
+      animation-play-state: paused;
+    }
+    @keyframes shop-partners-marquee {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .shop-marquee-inner {
+        animation: none;
+        width: 100%;
+        max-width: 56rem;
+        margin-left: auto;
+        margin-right: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem 1.5rem;
+      }
+      .shop-marquee-inner > ul[aria-hidden="true"] {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-brandCream font-sans leading-relaxed text-brandBlue antialiased">
+  <header class="sticky top-0 z-50 bg-white/45 backdrop-blur supports-[backdrop-filter]:bg-white/55">
+    <nav class="relative w-full">
+      <div class="relative flex min-h-16 w-full items-center justify-between px-4 sm:px-6 md:min-h-20 lg:px-0 lg:py-2">
+        <div class="site-nav-left relative z-10 flex min-h-0 min-w-0 flex-1 items-center gap-2 lg:absolute lg:left-0 lg:top-0 lg:bottom-0 lg:z-20 lg:flex-none lg:pl-4 xl:pl-6">
+          <button
+            id="menuButton"
+            type="button"
+            class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-brandGold/40 bg-brandCream text-brandBlue transition hover:border-brandGold/70 lg:hidden"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            aria-label="Open menu"
+          >
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="4" y1="7" x2="20" y2="7" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="17" x2="20" y2="17" />
+            </svg>
+          </button>
+          <ul class="site-nav-primary hidden min-w-0 flex-wrap items-center justify-start gap-x-10 gap-y-1 font-serif text-[12px] font-medium tracking-[0.15em] lg:flex xl:gap-x-16 xl:text-[13px]" aria-label="Primary navigation">
+            <li><a class="inline-block border-b-[3px] border-transparent pb-0.5" href="./index.html" aria-current="page">Home</a></li>
+            <li class="nav-dropdown">
+              <a class="nav-dropdown-trigger inline-block border-b-[3px] border-transparent pb-0.5" href="./chinrest.html">Chinrest</a>
+              <ul class="nav-dropdown-menu" aria-label="Chinrest pages">
+                <li><a href="./chinrest.html">Chinrest</a></li>
+                <li><a href="./testing.html">Testing</a></li>
+                <li><a href="./setup.html">Setup</a></li>
+              </ul>
+            </li>
+            <li><a class="inline-block border-b-[3px] border-transparent pb-0.5" href="./about.html">About</a></li>
+            <li><a class="inline-block border-b-[3px] border-transparent pb-0.5" href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="pointer-events-none absolute inset-0 z-30 flex items-center justify-center lg:z-40">
+          <a
+            href="./index.html"
+            class="pointer-events-auto cursor-pointer inline-flex items-center gap-2 md:gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2 focus-visible:ring-offset-brandCream"
+            aria-label="Embrace Strings — home"
+          >
+            <img
+              src="./images/embrace-strings-brandmark.png"
+              alt=""
+              width="160"
+              height="160"
+              class="h-[2.8rem] w-auto shrink-0 object-contain object-center md:h-[3.5rem]"
+              decoding="async"
+              fetchpriority="high"
+            />
+            <span class="flex min-w-0 flex-col items-start gap-0.5 text-left font-serif font-medium leading-none text-brandBlue translate-y-[0.23rem] md:translate-y-[0.28rem]">
+              <span class="text-[14px] tracking-[0.12em] md:text-[18px]">EMBRACE</span>
+              <span class="text-[14px] tracking-[0.12em] md:text-[18px]">STRINGS</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="relative z-10 flex min-h-0 min-w-0 flex-1 items-center justify-end gap-2 lg:absolute lg:right-0 lg:top-0 lg:bottom-0 lg:flex-none lg:pr-4 xl:pr-6">
+          <span class="inline-block h-10 w-10 shrink-0 lg:hidden" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div id="mobileMenu" class="absolute inset-x-0 top-full z-40 mt-2 max-h-[min(70vh,calc(100dvh-5.5rem))] overflow-y-auto px-4 pb-2 sm:px-6 hidden lg:hidden">
+        <div class="rounded-2xl border border-brandGold/25 bg-white p-4 shadow-soft">
+          <ul class="space-y-3 text-center font-serif text-[13px] font-medium tracking-[0.15em]">
+            <li><a class="block w-full text-center rounded-sm py-1" href="./index.html" aria-current="page">Home</a></li>
+            <li><a class="block w-full text-center rounded-sm py-1" href="./chinrest.html">Chinrest</a></li>
+            <li><a class="block w-full text-center rounded-sm py-1" href="./testing.html">Testing</a></li>
+            <li><a class="block w-full text-center rounded-sm py-1" href="./setup.html">Setup</a></li>
+            <li><a class="block w-full text-center rounded-sm py-1" href="./about.html">About</a></li>
+            <li><a class="block w-full text-center rounded-sm py-1" href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="h-px w-full bg-brandGold/35"></div>
+  </header>
+
+  <main>
+    <section class="relative w-full">
+      <div class="relative mt-4 w-full min-h-[420px] overflow-hidden lg:min-h-[520px]">
+        <div
+          class="absolute inset-0 bg-cover bg-[center_11%] bg-no-repeat"
+          style="background-image: url('./images/embrace-violin-chinrest-side.JPG');"
+          aria-hidden="true"
+        ></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/45" aria-hidden="true"></div>
+
+        <img
+          src="./images/embrace-strings-logo-white.png"
+          alt="Embrace Strings"
+          width="240"
+          height="90"
+          class="absolute bottom-4 right-4 z-10 h-auto w-auto max-w-[min(34vw,11rem)] object-contain object-right-bottom sm:bottom-6 sm:right-6 md:max-w-[12rem] lg:max-w-[14rem]"
+          decoding="async"
+        />
+      </div>
+    </section>
+
+    <section id="features" class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="font-serif text-3xl font-medium tracking-refined text-brandBlue sm:text-4xl">Why Embrace Strings?</h2>
+        <p class="mt-4 text-sm font-light leading-relaxed text-brandBlue/75 sm:text-base">
+          The fully adjustable, tool-free chinrest for violin and viola.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-5 md:grid-cols-3">
+        <article class="group flex min-w-0 flex-col rounded-2xl border border-brandGold/30 bg-white/60 p-6 shadow-sm transition hover:shadow-soft">
+          <div class="flex items-center gap-4">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-brandGold/60 bg-brandCream">
+              <img
+                src="./images/chinrest_icon_navy.png"
+                alt=""
+                width="36"
+                height="36"
+                class="h-9 w-9 object-contain object-center"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <h3 class="min-w-0 flex-1 font-serif text-xl font-medium leading-snug tracking-refined text-brandBlue">Full Adjustability</h3>
+          </div>
+          <p class="mt-4 w-full break-words text-sm font-light leading-relaxed text-brandBlue/75">
+            Embrace Strings chinrests are fully adjustable in both height and tilt, so your setup adapts to you—not the other way around. From day to day changes in posture, a suit jacket, or simply how you’re feeling that day, the chinrest adjusts effortlessly to keep your posture natural.
+          </p>
+          <div class="mt-6 h-px w-full bg-brandGold/25"></div>
+        </article>
+
+        <article class="group flex min-w-0 flex-col rounded-2xl border border-brandGold/30 bg-white/60 p-6 shadow-sm transition hover:shadow-soft">
+          <div class="flex items-center gap-4">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-brandGold/60 bg-brandCream text-brandBlue">
+              <svg viewBox="0 0 24 24" class="h-9 w-9 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="7.5" y="2" width="9" height="5.5" rx="1.2" />
+                <line x1="12" y1="7.5" x2="12" y2="16" />
+                <line x1="9" y1="16" x2="15" y2="16" />
+                <line x1="10" y1="16" x2="10" y2="20" />
+                <line x1="14" y1="16" x2="14" y2="20" />
+                <line x1="8.5" y1="20" x2="15.5" y2="20" />
+              </svg>
+            </div>
+            <h3 class="min-w-0 flex-1 font-serif text-xl font-medium leading-snug tracking-refined text-brandBlue">Tool Free Use</h3>
+          </div>
+          <p class="mt-4 w-full break-words text-sm font-light leading-relaxed text-brandBlue/75">
+            Adjustments can be made quickly and easily, without the need for tools. Whether during rehearsal, a lesson, a performance, or simply as you fine-tune your setup over time, you can explore what feels best, respond to changes in your playing, and stay comfortable without frustration or guesswork.
+          </p>
+          <div class="mt-6 h-px w-full bg-brandGold/25"></div>
+        </article>
+
+        <article class="group flex min-w-0 flex-col rounded-2xl border border-brandGold/30 bg-white/60 p-6 shadow-sm transition hover:shadow-soft">
+          <div class="flex items-center gap-4">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-brandGold/60 bg-brandCream">
+              <img
+                src="./images/embrace-strings-brandmark.png"
+                alt=""
+                width="36"
+                height="36"
+                class="h-9 w-9 object-contain object-center"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <h3 class="min-w-0 flex-1 font-serif text-xl font-medium leading-snug tracking-refined text-brandBlue">Crafted with Care</h3>
+          </div>
+          <p class="mt-4 w-full break-words text-sm font-light leading-relaxed text-brandBlue/75">
+            Designed by musicians, for musicians. With a premium material, intentional design, and practical use, our chinrest is built to help you Embrace your fit.
+          </p>
+          <div class="mt-6 h-px w-full bg-brandGold/25"></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="our-chinrests" class="border-t border-brandGold/25 bg-brandCream/40">
+      <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="font-serif text-3xl font-medium tracking-refined text-brandBlue sm:text-4xl">Our Chinrests</h2>
+        </div>
+
+        <style>
+          #chinrestCarousel {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+          }
+          #chinrestCarousel::-webkit-scrollbar {
+            display: none;
+          }
+        </style>
+
+        <div class="relative mx-auto mt-10 max-w-2xl md:max-w-5xl">
+          <div class="flex items-center gap-2 sm:gap-4">
+            <button
+              type="button"
+              id="chinrestPrev"
+              class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-brandGold/50 bg-white/80 text-brandBlue shadow-sm transition hover:border-brandGold hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2 focus-visible:ring-offset-brandCream"
+              aria-label="Previous chinrest"
+            >
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M15 6l-6 6 6 6" />
+              </svg>
+            </button>
+
+            <div
+              id="chinrestCarousel"
+              class="chinrest-carousel flex min-w-0 flex-1 snap-x snap-mandatory overflow-x-auto scroll-smooth touch-pan-x"
+              tabindex="0"
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="Our chinrest models"
+            >
+                <article
+                  id="chinrest-slide-0"
+                  class="shrink-0 basis-full snap-center snap-always px-1 sm:px-0"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label="1 of 5"
+                >
+                  <div class="grid gap-8 rounded-2xl border border-brandGold/30 bg-white/70 p-6 shadow-soft sm:p-8 md:grid-cols-2 md:items-center md:gap-10">
+                    <div class="min-w-0">
+                      <h3 class="font-serif text-2xl font-medium tracking-refined text-brandBlue sm:text-3xl">Original</h3>
+                      <p class="mt-4 text-sm font-light leading-relaxed text-brandBlue/75 sm:text-base">
+                        Product description and specifications will appear here.
+                      </p>
+                      <a
+                        href="./chinrest.html"
+                        class="btn-brand-solid mt-8 w-full px-6 py-3 text-center sm:w-auto sm:self-start"
+                      >Learn More</a>
+                    </div>
+                    <div class="min-w-0">
+                      <img
+                        src="./images/adjustable-violin-chinrest.JPG"
+                        alt="Embrace Strings Original chinrest on a violin, side view"
+                        class="w-full rounded-xl border border-brandGold/25 object-cover shadow-soft"
+                        width="900"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </div>
+                </article>
+
+                <article
+                  id="chinrest-slide-1"
+                  class="shrink-0 basis-full snap-center snap-always px-1 sm:px-0"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label="2 of 5"
+                >
+                  <div class="grid gap-8 rounded-2xl border border-brandGold/30 bg-white/70 p-6 shadow-soft sm:p-8 md:grid-cols-2 md:items-center md:gap-10">
+                    <div class="min-w-0">
+                      <h3 class="font-serif text-2xl font-medium tracking-refined text-brandBlue sm:text-3xl">Morawetz</h3>
+                      <p class="mt-4 text-sm font-light leading-relaxed text-brandBlue/75 sm:text-base">
+                        Product description and specifications will appear here.
+                      </p>
+                      <a
+                        href="./chinrest.html"
+                        class="btn-brand-solid mt-8 w-full px-6 py-3 text-center sm:w-auto sm:self-start"
+                      >Learn More</a>
+                    </div>
+                    <div class="min-w-0">
+                      <img
+                        src="./images/adjustable-violin-chinrest.JPG"
+                        alt="Embrace Strings Morawetz chinrest on a violin, side view"
+                        class="w-full rounded-xl border border-brandGold/25 object-cover shadow-soft"
+                        width="900"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </div>
+                </article>
+
+                <article
+                  id="chinrest-slide-2"
+                  class="shrink-0 basis-full snap-center snap-always px-1 sm:px-0"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label="3 of 5"
+                >
+                  <div class="grid gap-8 rounded-2xl border border-brandGold/30 bg-white/70 p-6 shadow-soft sm:p-8 md:grid-cols-2 md:items-center md:gap-10">
+                    <div class="min-w-0">
+                      <h3 class="font-serif text-2xl font-medium tracking-refined text-brandBlue sm:text-3xl">Bean</h3>
+                      <p class="mt-4 text-sm font-light leading-relaxed text-brandBlue/75 sm:text-base">
+                        Product description and specifications will appear here.
+                      </p>
+                      <a
+                        href="./chinrest.html"
+                        class="btn-brand-solid mt-8 w-full px-6 py-3 text-center sm:w-auto sm:self-start"
+                      >Learn More</a>
+                    </div>
+                    <div class="min-w-0">
+                      <img
+                        src="./images/adjustable-violin-chinrest.JPG"
+                        alt="Embrace Strings Bean chinrest on a violin, side view"
+                        class="w-full rounded-xl border border-brandGold/25 object-cover shadow-soft"
+                        width="900"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </div>
+                </article>
+
+                <article
+                  id="chinrest-slide-3"
+                  class="shrink-0 basis-full snap-center snap-always px-1 sm:px-0"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label="4 of 5"
+                >
+                  <div class="grid gap-8 rounded-2xl border border-brandGold/30 bg-white/70 p-6 shadow-soft sm:p-8 md:grid-cols-2 md:items-center md:gap-10">
+                    <div class="min-w-0">
+                      <h3 class="font-serif text-2xl font-medium tracking-refined text-brandBlue sm:text-3xl">Extra Tall</h3>
+                      <p class="mt-4 text-sm font-light leading-relaxed text-brandBlue/75 sm:text-base">
+                        Product description and specifications will appear here.
+                      </p>
+                      <a
+                        href="./chinrest.html"
+                        class="btn-brand-solid mt-8 w-full px-6 py-3 text-center sm:w-auto sm:self-start"
+                      >Learn More</a>
+                    </div>
+                    <div class="min-w-0">
+                      <img
+                        src="./images/adjustable-violin-chinrest.JPG"
+                        alt="Embrace Strings Extra Tall chinrest on a violin, side view"
+                        class="w-full rounded-xl border border-brandGold/25 object-cover shadow-soft"
+                        width="900"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </div>
+                </article>
+
+                <article
+                  id="chinrest-slide-4"
+                  class="shrink-0 basis-full snap-center snap-always px-1 sm:px-0"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label="5 of 5"
+                >
+                  <div class="grid gap-8 rounded-2xl border border-brandGold/30 bg-white/70 p-6 shadow-soft sm:p-8 md:grid-cols-2 md:items-center md:gap-10">
+                    <div class="min-w-0">
+                      <h3 class="font-serif text-2xl font-medium tracking-refined text-brandBlue sm:text-3xl">Custom</h3>
+                      <p class="mt-4 text-sm font-light leading-relaxed text-brandBlue/75 sm:text-base">
+                        Product description and specifications will appear here.
+                      </p>
+                      <a
+                        href="./chinrest.html"
+                        class="btn-brand-solid mt-8 w-full px-6 py-3 text-center sm:w-auto sm:self-start"
+                      >Learn More</a>
+                    </div>
+                    <div class="min-w-0">
+                      <img
+                        src="./images/adjustable-violin-chinrest.JPG"
+                        alt="Embrace Strings Custom chinrest on a violin, side view"
+                        class="w-full rounded-xl border border-brandGold/25 object-cover shadow-soft"
+                        width="900"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  </div>
+                </article>
+            </div>
+
+            <button
+              type="button"
+              id="chinrestNext"
+              class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-brandGold/50 bg-white/80 text-brandBlue shadow-sm transition hover:border-brandGold hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2 focus-visible:ring-offset-brandCream"
+              aria-label="Next chinrest"
+            >
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 6l6 6-6 6" />
+              </svg>
+            </button>
+          </div>
+
+          <div id="chinrestDots" class="mt-6 flex flex-wrap items-center justify-center gap-2" role="tablist" aria-label="Chinrest slides">
+            <button type="button" data-chinrest-dot="0" class="h-2.5 w-2.5 rounded-full bg-brandBlue transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2" aria-label="Show slide 1" aria-current="true"></button>
+            <button type="button" data-chinrest-dot="1" class="h-2.5 w-2.5 rounded-full bg-brandGold/45 transition hover:bg-brandGold/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2" aria-label="Show slide 2" aria-current="false"></button>
+            <button type="button" data-chinrest-dot="2" class="h-2.5 w-2.5 rounded-full bg-brandGold/45 transition hover:bg-brandGold/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2" aria-label="Show slide 3" aria-current="false"></button>
+            <button type="button" data-chinrest-dot="3" class="h-2.5 w-2.5 rounded-full bg-brandGold/45 transition hover:bg-brandGold/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2" aria-label="Show slide 4" aria-current="false"></button>
+            <button type="button" data-chinrest-dot="4" class="h-2.5 w-2.5 rounded-full bg-brandGold/45 transition hover:bg-brandGold/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-brandGold focus-visible:ring-offset-2" aria-label="Show slide 5" aria-current="false"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop-partners" class="border-t border-brandGold/25 bg-brandCream/50">
+      <div class="mx-auto max-w-6xl px-4 pb-2 pt-12 text-center sm:px-6 sm:pb-4 sm:pt-16">
+        <h2 class="font-serif text-3xl font-medium tracking-refined text-brandBlue sm:text-4xl">Shop Partners</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-pretty text-sm font-light leading-relaxed text-brandBlue/80 sm:text-base">
+          Try an Embrace Strings chinrest in person at one of our partner shops.
+        </p>
+      </div>
+      <div class="relative overflow-hidden border-y border-brandGold/20 bg-white/85 py-8 sm:py-10">
+        <div
+          class="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent sm:w-20"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent sm:w-20"
+          aria-hidden="true"
+        ></div>
+        <div class="overflow-hidden">
+          <div class="shop-marquee-inner">
+            <ul class="flex shrink-0 items-center gap-8 pr-8 sm:gap-12 sm:pr-12" aria-label="Shop partner logos">
+              <li class="list-none">
+                <div class="flex h-16 w-[11rem] items-center justify-center rounded-lg border border-brandGold/30 bg-white px-3 shadow-sm sm:h-20 sm:w-52">
+                  <img
+                    src="./images/terra_nova_violins_logo.jpg"
+                    alt="Terra Nova Violins"
+                    width="280"
+                    height="100"
+                    class="max-h-12 w-auto max-w-[10.25rem] object-contain object-center sm:max-h-14 sm:max-w-[11.5rem]"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </li>
+              <li class="list-none">
+                <div class="flex h-16 w-[11rem] items-center justify-center rounded-lg border border-brandGold/30 bg-white px-3 shadow-sm sm:h-20 sm:w-52">
+                  <img
+                    src="./images/westbank_string_shop_logo.jpg"
+                    alt="Westbank String Shop"
+                    width="280"
+                    height="100"
+                    class="max-h-12 w-auto max-w-[10.25rem] object-contain object-center sm:max-h-14 sm:max-w-[11.5rem]"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </li>
+              <li class="list-none">
+                <div class="flex h-16 w-[11rem] items-center justify-center rounded-lg border border-brandGold/30 bg-white px-3 shadow-sm sm:h-20 sm:w-52">
+                  <img
+                    src="./images/texas_violin_shop_logo.png"
+                    alt="Texas Violin Shop"
+                    width="280"
+                    height="100"
+                    class="max-h-12 w-auto max-w-[10.25rem] object-contain object-center sm:max-h-14 sm:max-w-[11.5rem]"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </li>
+              <li class="list-none">
+                <div class="flex h-16 w-[11rem] items-center justify-center rounded-lg border border-brandGold/30 bg-white px-3 shadow-sm sm:h-20 sm:w-52">
+                  <img
+                    src="./images/lisle_violin_shop_logo.avif"
+                    alt="Lisle Violin Shop"
+                    width="280"
+                    height="100"
+                    class="max-h-12 w-auto max-w-[10.25rem] object-contain object-center sm:max-h-14 sm:max-w-[11.5rem]"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </li>
+              <li class="list-none">
+                <div class="flex h-16 w-[11rem] items-center justify-center rounded-lg border border-brandGold/30 bg-white px-3 shadow-sm sm:h-20 sm:w-52">
+                  <img
+                    src="./images/sams_strings_logo.png"
+                    alt="Sam's Strings"
+                    width="280"
+                    height="100"
+                    class="max-h-12 w-auto max-w-[10.25rem] object-contain object-center sm:max-h-14 sm:max-w-[11.5rem]"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </li>
+              <li class="list-none">
+                <div
+                  class="flex h-16 w-[11rem] items-center justify-center rounded-lg border border-dashed border-brandGold/45 bg-brandCream/50 px-3 shadow-sm sm:h-20 sm:w-52"
+                  aria-label="Partner logo — coming soon"
+                >
+                  <span class="text-center font-sans text-[10px] font-semibold uppercase tracking-[0.12em] text-brandBlue/35">Partner logo</span>
+                </div>
+              </li>
+            </ul>
+            <ul class="flex shrink-0 items-center gap-8 pr-8 sm:gap-12 sm:pr-12" aria-hidden="true">
+              <li class="list-none">
+                <div class="flex h-16 w-[11rem] items-center justify-center rounded-lg border border-brandGold/30 bg-white px-3 shadow-sm sm:h-20 sm:w-52">
+                  <img
+                    src="./images/terra_nova_violins_logo.jpg"
+                    alt=""
+                    width="280"
+                    height="100"
+                    class="max-h-12 w-auto max-w-[10.25rem] object-contain object-center sm:max-h-14 sm:max-w-[11.5rem]"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </li>
+              <li class="list-none">
+                <div class="flex h-16 w-[11rem] items-center justify-center rounded-lg border border-brandGold/30 bg-white px-3 shadow-sm sm:h-20 sm:w-52">
+                  <img
+                    src="./images/westbank_string_shop_logo.jpg"
+                    alt=""
+                    width="280"
+                    height="100"
+                    class="max-h-12 w-auto max-w-[10.25rem] object-contain object-center sm:max-h-14 sm:max-w-[11.5rem]"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </li>
+              <li class="list-none">
+                <div class="flex h-16 w-[11rem] items-center justify-center rounded-lg border border-brandGold/30 bg-white px-3 shadow-sm sm:h-20 sm:w-52">
+                  <img
+                    src="./images/texas_violin_shop_logo.png"
+                    alt=""
+                    width="280"
+                    height="100"
+                    class="max-h-12 w-auto max-w-[10.25rem] object-contain object-center sm:max-h-14 sm:max-w-[11.5rem]"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </li>
+              <li class="list-none">
+                <div class="flex h-16 w-[11rem] items-center justify-center rounded-lg border border-brandGold/30 bg-white px-3 shadow-sm sm:h-20 sm:w-52">
+                  <img
+                    src="./images/lisle_violin_shop_logo.avif"
+                    alt=""
+                    width="280"
+                    height="100"
+                    class="max-h-12 w-auto max-w-[10.25rem] object-contain object-center sm:max-h-14 sm:max-w-[11.5rem]"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </li>
+              <li class="list-none">
+                <div class="flex h-16 w-[11rem] items-center justify-center rounded-lg border border-brandGold/30 bg-white px-3 shadow-sm sm:h-20 sm:w-52">
+                  <img
+                    src="./images/sams_strings_logo.png"
+                    alt=""
+                    width="280"
+                    height="100"
+                    class="max-h-12 w-auto max-w-[10.25rem] object-contain object-center sm:max-h-14 sm:max-w-[11.5rem]"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </li>
+              <li class="list-none">
+                <div
+                  class="flex h-16 w-[11rem] items-center justify-center rounded-lg border border-dashed border-brandGold/45 bg-brandCream/50 px-3 shadow-sm sm:h-20 sm:w-52"
+                  aria-hidden="true"
+                >
+                  <span class="text-center font-sans text-[10px] font-semibold uppercase tracking-[0.12em] text-brandBlue/35">Partner logo</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stay-connected" class="border-t border-brandGold/25 bg-brandCream py-16 sm:py-20">
+      <div class="mx-auto max-w-2xl px-4 text-center sm:px-6">
+        <h2 class="text-balance font-serif text-3xl font-medium tracking-refined text-brandBlue sm:text-4xl">Stay Connected</h2>
+        <p class="mt-6 text-sm font-light leading-relaxed text-brandBlue sm:text-base">
+          Be the first to hear about new products, thoughtful improvements, and resources to support comfort, setup, and ease in your playing.
+        </p>
+        <p class="mt-4 text-sm font-light leading-relaxed text-brandBlue sm:text-base">
+          We only send emails when we have something meaningful to share—no spam, ever.
+        </p>
+
+        <form
+          id="stay-connected-form"
+          class="mx-auto mt-10 flex w-full max-w-md flex-col items-stretch gap-4"
+          action="https://script.google.com/macros/s/AKfycbyB8RtLNtgxdHRmOgyHSpjGOgVceIKH_iNr5KAZlaCE4tu2VtN_ZCi-qPGUAupOmEPz/exec"
+          method="POST"
+        >
+          <label class="sr-only" for="stay-connected-email">Email Address</label>
+          <input
+            id="stay-connected-email"
+            type="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="Email Address"
+            class="w-full rounded-md border border-brandBlue/20 bg-white px-4 py-3.5 text-sm text-brandBlue shadow-sm placeholder:text-brandBlue/40 focus:border-brandBlue/50 focus:outline-none focus:ring-2 focus:ring-brandGold/50"
+          />
+          <button
+            type="submit"
+            id="stay-connected-submit"
+            class="btn-brand-solid mx-auto w-full max-w-[200px] whitespace-nowrap px-6 py-3 sm:w-[200px]"
+          >
+            Join Now!
+          </button>
+          <p id="stay-connected-followup" class="mt-3 hidden text-center text-sm font-light text-brandBlue/75">
+            In the meantime,
+            <a href="./about.html" class="font-medium text-brandBlue underline decoration-brandGold/50 underline-offset-2">learn more about us</a>.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-brandGold/25 bg-brandCream">
+    <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <div class="grid grid-cols-1 items-center gap-10 md:grid-cols-3 md:gap-6 lg:gap-10">
+        <div class="flex min-w-0 flex-col items-center gap-4 md:items-start md:justify-self-start">
+          <nav class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:justify-start" aria-label="Embrace Strings on social media">
+            <a
+              href="https://www.instagram.com/embracestrings/"
+              class="btn-brand-icon"
+              aria-label="Instagram"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a
+              href="https://www.facebook.com/people/Embrace-Strings/61565017010129/?sk=about"
+              class="btn-brand-icon"
+              aria-label="Facebook"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a
+              href="https://www.tiktok.com/@embracestrings"
+              class="btn-brand-icon"
+              aria-label="TikTok"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/embrace-strings/"
+              class="btn-brand-icon"
+              aria-label="LinkedIn"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </nav>
+          <p class="text-center text-xs font-medium tracking-[0.18em] text-brandBlue/70 md:text-left">© <span id="year"></span> Embrace Strings</p>
+        </div>
+        <div class="flex min-w-0 justify-center md:justify-self-center">
+          <img
+            src="./images/embrace-strings-brandmark.png"
+            alt="Embrace Strings brandmark"
+            width="160"
+            height="160"
+            class="h-12 w-auto max-w-full object-contain object-center sm:h-14 md:h-16"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="flex min-w-0 flex-col items-center md:items-end md:justify-self-end md:text-right">
+          <h2 class="mb-3 font-serif text-base font-medium tracking-refined text-brandBlue"><a href="./contact.html" class="text-brandBlue transition hover:text-brandGold">Contact Us</a></h2>
+          <a
+            href="mailto:info@embracestrings.com"
+            class="max-w-full break-words text-sm text-brandBlue/85 transition hover:text-brandGold"
+          >info@embracestrings.com</a>
+          <a href="tel:+12103712757" class="mt-2 text-sm text-brandBlue/85 transition hover:text-brandGold">(210) 371-2757</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById("menuButton");
+    const menu = document.getElementById("mobileMenu");
+    const year = document.getElementById("year");
+    if (year) year.textContent = String(new Date().getFullYear());
+
+    if (btn && menu) {
+      btn.addEventListener("click", () => {
+        const isOpen = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!isOpen));
+        menu.classList.toggle("hidden");
+      });
+    }
+
+    const chinrestCarousel = document.getElementById("chinrestCarousel");
+    const chinrestPrev = document.getElementById("chinrestPrev");
+    const chinrestNext = document.getElementById("chinrestNext");
+    const chinrestDots = document.querySelectorAll("[data-chinrest-dot]");
+    if (chinrestCarousel && chinrestPrev && chinrestNext && chinrestDots.length) {
+      const chinrestTotal = chinrestDots.length;
+      let chinrestIndex = 0;
+
+      function chinrestSlideWidth() {
+        return chinrestCarousel.clientWidth || 0;
+      }
+
+      function chinrestUpdateDots() {
+        chinrestDots.forEach((dot, idx) => {
+          const active = idx === chinrestIndex;
+          dot.setAttribute("aria-current", active ? "true" : "false");
+          dot.classList.toggle("bg-brandBlue", active);
+          dot.classList.toggle("bg-brandGold/45", !active);
+        });
+      }
+
+      function chinrestGoTo(i) {
+        chinrestIndex = ((i % chinrestTotal) + chinrestTotal) % chinrestTotal;
+        const w = chinrestSlideWidth();
+        if (w > 0) {
+          chinrestCarousel.scrollTo({ left: chinrestIndex * w, behavior: "smooth" });
+        }
+        chinrestUpdateDots();
+      }
+
+      chinrestPrev.addEventListener("click", () => chinrestGoTo(chinrestIndex - 1));
+      chinrestNext.addEventListener("click", () => chinrestGoTo(chinrestIndex + 1));
+      chinrestDots.forEach((dot) => {
+        dot.addEventListener("click", () => chinrestGoTo(Number(dot.getAttribute("data-chinrest-dot"))));
+      });
+
+      let chinrestScrollTimer;
+      chinrestCarousel.addEventListener("scroll", () => {
+        clearTimeout(chinrestScrollTimer);
+        chinrestScrollTimer = setTimeout(() => {
+          const w = chinrestSlideWidth();
+          if (w <= 0) return;
+          const snapped = Math.round(chinrestCarousel.scrollLeft / w);
+          if (snapped >= 0 && snapped < chinrestTotal && snapped !== chinrestIndex) {
+            chinrestIndex = snapped;
+            chinrestUpdateDots();
+          }
+        }, 100);
+      });
+
+      chinrestCarousel.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          chinrestGoTo(chinrestIndex - 1);
+        } else if (e.key === "ArrowRight") {
+          e.preventDefault();
+          chinrestGoTo(chinrestIndex + 1);
+        }
+      });
+
+      new ResizeObserver(() => {
+        const w = chinrestSlideWidth();
+        if (w > 0) {
+          chinrestCarousel.scrollTo({ left: chinrestIndex * w, behavior: "auto" });
+        }
+      }).observe(chinrestCarousel);
+    }
+
+    const stayForm = document.getElementById("stay-connected-form");
+    const staySubmit = document.getElementById("stay-connected-submit");
+    const stayEmail = document.getElementById("stay-connected-email");
+    const stayFollowup = document.getElementById("stay-connected-followup");
+    if (stayForm && staySubmit && stayEmail) {
+      const stayEndpoint = stayForm.getAttribute("action") || "";
+      const staySubmittedKey = "embrace-stay-connected-submitted";
+      const stayEmailKey = "embrace-stay-connected-email";
+
+      function suppressStayConnectedMessages() {
+        const staySection = document.getElementById("stay-connected");
+        const scope = staySection || stayForm;
+        scope.querySelectorAll(
+          "#stay-connected-message, #stay-connected-status, [data-stay-connected-message], [role='alert']"
+        ).forEach((el) => {
+          el.hidden = true;
+          el.setAttribute("aria-hidden", "true");
+          el.style.display = "none";
+        });
+      }
+
+      function lockStayConnectedForm() {
+        const email = stayEmail.value.trim();
+        if (email) {
+          sessionStorage.setItem(stayEmailKey, email);
+        }
+        staySubmit.disabled = true;
+        stayEmail.disabled = true;
+        staySubmit.textContent = "Thanks for joining!";
+        suppressStayConnectedMessages();
+        if (stayFollowup) {
+          stayFollowup.classList.remove("hidden");
+        }
+      }
+
+      suppressStayConnectedMessages();
+
+      if (sessionStorage.getItem(staySubmittedKey)) {
+        const savedEmail = sessionStorage.getItem(stayEmailKey);
+        if (savedEmail) {
+          stayEmail.value = savedEmail;
+        }
+        lockStayConnectedForm();
+      }
+
+      stayForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (staySubmit.disabled) return;
+        if (!stayEmail.checkValidity()) {
+          stayEmail.reportValidity();
+          return;
+        }
+        const email = stayEmail.value.trim();
+        lockStayConnectedForm();
+        sessionStorage.setItem(staySubmittedKey, "1");
+        try {
+          await fetch(stayEndpoint, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({ email }).toString(),
+          });
+        } catch {
+          /* keep form locked; submission already acknowledged */
+        }
+        suppressStayConnectedMessages();
+      });
+    }
+  </script>
+</body>
+</html>
