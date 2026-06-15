@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function ChinrestHero() {
   return (
     <section className="relative w-full">
-      <div className="relative mt-4 w-full min-h-[420px] overflow-hidden lg:min-h-[520px]">
+      <div className="relative w-full min-h-[420px] overflow-hidden lg:min-h-[520px]">
         <Image
           src="/embrace-violin-chinrest-side.JPG"
           alt="Embrace Strings adjustable chinrest on a violin, side view"
