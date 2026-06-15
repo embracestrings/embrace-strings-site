@@ -22,12 +22,6 @@ const team = [
     image: "/akemi-headshot.jpg",
     href: "https://www.linkedin.com/in/akeminunez/",
   },
-  {
-    name: "Brooke Eppley",
-    role: "Marketing Intern",
-    image: "/brooke-headshot.jpg",
-    href: "https://www.linkedin.com/in/brooke-eppley/",
-  },
 ];
 
 export default function Team() {
@@ -43,7 +37,7 @@ export default function Team() {
         Our Team
       </motion.h2>
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid gap-6 sm:grid-cols-3 sm:gap-8 sm:max-w-3xl sm:mx-auto">
         {team.map((member, i) => (
           <motion.article
             key={member.name}
@@ -75,11 +69,11 @@ export default function Team() {
                   </svg>
                 </div>
               </div>
-              <div className="flex min-h-[6.5rem] flex-col items-center justify-center border-t border-[#ba9e78]/35 bg-[#16335b] px-4 py-4 text-center transition-colors duration-300 group-hover:bg-[#1c3e6e]">
+              <div className="flex min-h-[5.5rem] flex-col items-center justify-center border-t border-[#ba9e78]/35 bg-[#16335b] px-4 py-4 text-center transition-colors duration-300 group-hover:bg-[#1c3e6e]">
                 <h3 className="text-xl font-medium leading-snug text-white transition-colors duration-300 group-hover:text-[#ba9e78]">
                   {member.name}
                 </h3>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#ba9e78]">{member.role}</p>
+                <p className="mt-1 whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.18em] text-[#ba9e78]">{member.role}</p>
               </div>
             </a>
           </motion.article>
