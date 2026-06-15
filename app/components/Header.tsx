@@ -81,7 +81,7 @@ export default function Header() {
 
             {/* Desktop nav links */}
             <ul
-              className="hidden min-w-0 flex-wrap items-center justify-start gap-x-10 gap-y-1 font-display text-[12px] font-medium tracking-[0.15em] lg:flex xl:gap-x-16 xl:text-[13px]"
+              className="hidden min-w-0 flex-nowrap items-center justify-start gap-x-4 gap-y-1 font-display text-[12px] font-medium tracking-[0.15em] lg:flex xl:gap-x-6 xl:text-[13px]"
               style={{ fontFamily: "var(--font-cormorant, serif)" }}
               aria-label="Primary navigation"
             >
