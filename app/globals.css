@@ -25,6 +25,14 @@ h1, h2, h3, h4 {
   font-family: var(--font-cormorant, "Cormorant Garamond", ui-serif, Georgia, serif);
 }
 
+a, button {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover, a:focus-visible, button:hover, button:focus-visible {
+  color: #ba9e78;
+}
+
 ::selection {
   background-color: #ba9e78;
   color: #f2f2f3;
