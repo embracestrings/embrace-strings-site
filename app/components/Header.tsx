@@ -64,7 +64,7 @@ export default function Header() {
         <div className="relative flex min-h-16 w-full items-center justify-between px-4 sm:px-6 md:min-h-20 lg:px-0 lg:py-2">
 
           {/* Left: desktop nav */}
-          <div className="relative z-10 flex min-h-0 min-w-0 flex-1 items-center gap-2 lg:absolute lg:left-0 lg:top-0 lg:bottom-0 lg:z-20 lg:flex-none lg:pl-4 xl:pl-6">
+          <div className="relative z-10 flex min-h-0 min-w-0 flex-1 items-center gap-2 lg:absolute lg:left-0 lg:top-0 lg:bottom-0 lg:z-20 lg:flex-none lg:max-w-[36%] lg:pl-4 xl:pl-6">
             {/* Mobile hamburger */}
             <button
               className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#ba9e78]/40 bg-[#f2f2f3] text-[#16335b] transition hover:border-[#ba9e78]/70 lg:hidden"
@@ -81,7 +81,7 @@ export default function Header() {
 
             {/* Desktop nav links */}
             <ul
-              className="hidden min-w-0 flex-nowrap items-center justify-start gap-x-4 gap-y-1 font-display text-[12px] font-medium tracking-[0.15em] lg:flex xl:gap-x-6 xl:text-[13px]"
+              className="hidden min-w-0 flex-nowrap items-center justify-start gap-x-3 gap-y-1 font-display text-[11px] font-medium tracking-[0.12em] lg:flex xl:gap-x-5 xl:text-[12px]"
               style={{ fontFamily: "var(--font-cormorant, serif)" }}
               aria-label="Primary navigation"
             >
