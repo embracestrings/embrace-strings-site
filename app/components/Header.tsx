@@ -87,17 +87,34 @@ export default function Header() {
             >
               {navLinks.map((link) =>
                 link.dropdown ? (
-                  <li key={link.href} className="relative" ref={dropdownRef}>
-                    <button
-                      onClick={() => setChinrestOpen((o) => !o)}
+                  <li key={link.href} className="relative flex items-center gap-1" ref={dropdownRef}>
+                    <Link
+                      href={link.href}
                       className={`inline-block border-b-[3px] pb-0.5 transition-colors duration-200 ${
                         isActive(link.href)
                           ? "border-[#ba9e78] text-[#ba9e78]"
                           : "border-transparent text-[#16335b] hover:text-[#ba9e78]"
                       }`}
-                      aria-expanded={chinrestOpen}
                     >
                       {link.label}
+                    </Link>
+                    <button
+                      onClick={() => setChinrestOpen((o) => !o)}
+                      aria-expanded={chinrestOpen}
+                      aria-label="Toggle chinrest models menu"
+                      className="text-[#16335b] transition-colors duration-200 hover:text-[#ba9e78]"
+                    >
+                      <svg
+                        className={`h-3 w-3 transition-transform duration-200 ${chinrestOpen ? "rotate-180" : ""}`}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
                     </button>
 
                     {/* Dropdown */}
