@@ -2,27 +2,29 @@ import type { Metadata } from "next";
 import ProductPage from "../../components/chinrest/ProductPage";
 
 export const metadata: Metadata = {
-  title: "Original Chinrest",
+  title: "Original Chinrest — Embrace Strings",
 };
 
 export default function OriginalPage() {
   return (
     <ProductPage
       name="Original"
-      tagline="The chinrest that started it all—fully adjustable, tool-free, and built for everyday comfort."
-      intro="The Original is the foundation of the Embrace Strings line: a balanced, versatile chinrest designed to adapt to a wide range of players and playing styles. Specifications and detailed measurements will appear here."
+      identity="Classic"
+      description="The foundation. The starting point. The one that works. The Original is built on a classic Guarneri side-mount shape — familiar enough to feel immediately right, refined enough to perform at the highest level. Whether you're a student finding your setup for the first time or a professional who changes concert attire every night, the Original adapts with you. The Embrace Dial System gives you full height adjustment from 0.9 to 1.5 inches, tool-free, in seconds. If you've never found a chinrest that felt quite right, this is where you start."
+      whoItsFor="Dedicated players at any level who want a classic shape with modern adjustability."
+      specs="Height range: 0.9″ – 1.5″  |  Material: 3D-printed nylon  |  Available for: Violin and Viola"
       features={[
         {
           title: "Full Height Adjustment",
-          body: "Dial the height up or down with a simple side wheel, so your jaw and neck stay relaxed no matter how your posture shifts during the day.",
+          body: "The Embrace Dial System lets you dial height from 0.9 to 1.5 inches — no tools, no luthier, no waiting. Adjust in seconds before a lesson or between pieces.",
         },
         {
-          title: "Tilt That Follows You",
-          body: "Independent tilt control lets you angle the cup to match your jawline, reducing pressure points during long rehearsals and performances.",
+          title: "Guarneri Side-Mount Shape",
+          body: "A classic profile that string players have trusted for generations, refined with modern manufacturing precision. Familiar from day one.",
         },
         {
-          title: "Balanced for Everyday Play",
-          body: "A versatile shape and weight distribution make the Original a natural starting point for players moving from a fixed chinrest.",
+          title: "Built for Any Level",
+          body: "From student to concert soloist, the Original meets you where you are. As your technique grows, your setup grows with you.",
         },
       ]}
     />

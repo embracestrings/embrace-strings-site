@@ -2,27 +2,29 @@ import type { Metadata } from "next";
 import ProductPage from "../../components/chinrest/ProductPage";
 
 export const metadata: Metadata = {
-  title: "Morawetz Chinrest",
+  title: "Morawetz Chinrest — Embrace Strings",
 };
 
 export default function MorawetzPage() {
   return (
     <ProductPage
       name="Morawetz"
-      tagline="An extended, side-mounted design for players who need more reach across the lower bout."
-      intro="The Morawetz is built for players who need a chinrest that extends further across the instrument. Specifications and detailed measurements will appear here."
+      identity="Exact"
+      description="For players who know exactly where they want to be. The Morawetz shape is built around precision. Its traditional contour cradles the chin with a secure, defined connection — less searching, more certainty. Players who reach for a Morawetz want to know their position is locked in, every rehearsal, every performance. The Embrace Dial System takes that precision further, adding full height adjustability to a shape that's never had it before. If you've always played Morawetz, this is the upgrade. If you've always wanted more security in your placement, this is the answer."
+      whoItsFor="Players who prioritize exact, repeatable chin placement and love the Morawetz profile."
+      specs="Height range: 0.9″ – 1.5″  |  Material: 3D-printed nylon  |  Available for: Violin and Viola"
       features={[
         {
-          title: "Extended Reach",
-          body: "A longer profile gives players with broader jaws or longer necks more surface to rest on, without sacrificing tool-free adjustment.",
+          title: "Defined Chin Cradle",
+          body: "The Morawetz profile guides your chin into a specific, secure position — so every time you pick up the instrument, you're already settled.",
         },
         {
-          title: "Side-Mounted Stability",
-          body: "Designed to sit securely off to the side of the tailpiece, the Morawetz keeps the instrument stable through fast position changes.",
+          title: "Adjustability Meets Tradition",
+          body: "The Embrace Dial System brings height control to a shape that's never had it. All the precision of Morawetz, none of the compromise.",
         },
         {
-          title: "Built for Bigger Players",
-          body: "A favorite among taller violinists and violists who have struggled to find a fixed chinrest that fits comfortably.",
+          title: "Consistent Across Every Performance",
+          body: "Lock in your position once. Return to it every time — through long rehearsals, dress rehearsals, and concert nights.",
         },
       ]}
     />

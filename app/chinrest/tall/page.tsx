@@ -2,27 +2,29 @@ import type { Metadata } from "next";
 import ProductPage from "../../components/chinrest/ProductPage";
 
 export const metadata: Metadata = {
-  title: "Tall Chinrest",
+  title: "Tall Chinrest — Embrace Strings",
 };
 
 export default function TallPage() {
   return (
     <ProductPage
       name="Tall"
-      tagline="Extra height for players who need more lift to reach a natural, relaxed posture."
-      intro="The Tall model offers an elevated base for players who need significant additional height to bridge the gap between shoulder and jaw. Specifications and detailed measurements will appear here."
+      identity="Necessary"
+      description={`For players the standard never fit. Raising your shoulder rest seems like the obvious fix for a long neck — but it lifts the instrument off your collarbone, destabilizing everything. The Tall chinrest solves the actual problem: it fills the gap between your jaw and your instrument, keeping everything correctly placed and your neck aligned. Built on the same classic Guarneri shape as the Original, with the Embrace Dial System extending from 1.5 to 2 inches. If you're roughly 6'2" or taller and have never felt truly settled on your instrument, this was made for you.`}
+      whoItsFor="Players with extra-long necks who need real height without sacrificing stability."
+      specs="Height range: 1.5″ – 2″  |  Material: 3D-printed nylon  |  Available for: Violin and Viola"
       features={[
         {
-          title: "Maximum Height Range",
-          body: "An elevated base extends the adjustment range well beyond standard models, giving taller players room to find a natural angle.",
+          title: "Extended Height Range",
+          body: "The Embrace Dial System reaches from 1.5 to 2 inches — filling the gap that no standard chinrest can, without touching your shoulder rest.",
         },
         {
-          title: "Designed for Long Necks",
-          body: "Built with players like Embrace Strings founder Turner Rey in mind—tall musicians who have struggled with chinrests that simply don't reach.",
+          title: "Keeps the Instrument in Place",
+          body: "More height at the chin means the instrument stays on the collarbone where it belongs, preserving tone, bow arm freedom, and stability.",
         },
         {
-          title: "Same Tool-Free Adjustment",
-          body: "All the effortless side-dial height and tilt control of the rest of the line, just with more room to work with.",
+          title: "Guarneri Foundation",
+          body: "The same proven side-mount shape as the Original. You get the height you need without learning an entirely new feel.",
         },
       ]}
     />

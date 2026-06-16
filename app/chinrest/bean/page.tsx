@@ -2,27 +2,29 @@ import type { Metadata } from "next";
 import ProductPage from "../../components/chinrest/ProductPage";
 
 export const metadata: Metadata = {
-  title: "Bean Chinrest",
+  title: "Bean Chinrest — Embrace Strings",
 };
 
 export default function BeanPage() {
   return (
     <ProductPage
       name="Bean"
-      tagline="A compact, rounded profile designed for players who prefer a smaller contact footprint."
-      intro="The Bean takes the same tool-free adjustability as the Original and wraps it in a smaller, rounded form. Specifications and detailed measurements will appear here."
+      identity="Open"
+      description="The Bean's wider surface area doesn't lock you in — it opens you up. More chin positions, more freedom to shift and breathe through your playing without losing contact with the instrument. Where the Original and Morawetz guide you toward a specific placement, the Bean gives you a range. Combined with the Embrace Dial System, it's the most expressive setup in the Embrace Strings line. For players whose playing is fluid, physical, and alive."
+      whoItsFor="Players who want freedom of movement and a wider range of natural chin positions."
+      specs="Height range: 0.9″ – 1.5″  |  Material: 3D-printed nylon  |  Available for: Violin and Viola"
       features={[
         {
-          title: "Compact Contact Surface",
-          body: "A smaller, rounded cup reduces contact area while still supporting full height and tilt adjustment for a precise, personal fit.",
+          title: "Wider Contact Surface",
+          body: "More surface area means more freedom to shift, breathe, and move through your playing — without losing connection to the instrument.",
         },
         {
-          title: "Lightweight Feel",
-          body: "Designed to feel nearly invisible under the jaw, the Bean suits players who want adjustability without extra bulk.",
+          title: "A Range, Not a Position",
+          body: "The Bean doesn't guide you to one spot. It gives you a zone of natural placement, so your chin lands where it wants to be.",
         },
         {
-          title: "Great for Smaller Frames",
-          body: "Its reduced footprint makes the Bean a popular choice for players with shorter necks or more petite builds.",
+          title: "The Most Expressive Setup",
+          body: "Fluid playing needs a fluid setup. The Bean paired with the Embrace Dial System is built for players who bring their whole body to the music.",
         },
       ]}
     />
