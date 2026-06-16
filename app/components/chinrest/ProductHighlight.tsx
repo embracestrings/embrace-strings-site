@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const models = [
   {
@@ -35,7 +36,16 @@ const models = [
   },
 ];
 
+const modelSlugs: Record<string, string> = {
+  Original: "original",
+  Bean: "bean",
+  Morawetz: "morawetz",
+  Tall: "tall",
+};
+
 export default function ProductHighlight() {
+  const [activeModel, setActiveModel] = useState("Original");
+
   return (
     <>
       <section id="product-highlight" className="border-y border-[#ba9e78]/30 bg-[#f2f2f3]">
@@ -98,15 +108,15 @@ export default function ProductHighlight() {
                 <div className="mt-3 flex gap-3">
                   <Link
                     href={model.href}
-                    className="flex-1 rounded-lg border border-[#16335b]/40 px-4 py-2 text-center text-xs font-medium tracking-[0.1em] text-[#16335b] transition hover:border-[#16335b] hover:bg-[#16335b] hover:text-[#f2f2f3]"
+                    className="flex-1 rounded-lg bg-[#16335b] px-4 py-2 text-center text-xs font-medium tracking-[0.1em] text-[#f2f2f3] transition hover:bg-[#1c3e6e]"
                   >
                     Standard
                   </Link>
                   <Link
                     href={`${model.href}#your-embrace`}
-                    className="flex-1 rounded-lg bg-[#ba9e78] px-4 py-2 text-center text-xs font-medium tracking-[0.1em] text-[#16335b] transition hover:bg-[#d4bc99]"
+                    className="flex-1 rounded-lg bg-[#ba9e78] px-4 py-2 text-center text-xs font-medium tracking-[0.1em] text-[#16335b] transition hover:bg-[#d4bc99] hover:text-[#16335b]"
                   >
-                    Custom — from $125
+                    Custom
                   </Link>
                 </div>
               </motion.div>
@@ -130,9 +140,32 @@ export default function ProductHighlight() {
           <p className="mx-auto mt-4 max-w-xl text-sm font-light leading-relaxed text-[#f2f2f3]/70 sm:text-base">
             Every chinrest can be personalized with your name, a music notes design, or a fully custom engraving. Starting at $125.
           </p>
+
+          {/* Model selector */}
           <div className="mt-8">
+            <p className="text-xs font-light tracking-[0.12em] text-[#f2f2f3]/50">
+              Choose your model:
+            </p>
+            <div className="mt-3 flex flex-wrap justify-center gap-2">
+              {Object.keys(modelSlugs).map((model) => (
+                <button
+                  key={model}
+                  onClick={() => setActiveModel(model)}
+                  className={`rounded-full px-5 py-1.5 text-xs font-medium tracking-[0.1em] transition-colors ${
+                    activeModel === model
+                      ? "bg-[#ba9e78] text-[#16335b]"
+                      : "border border-[#f2f2f3]/40 text-[#f2f2f3] hover:border-[#f2f2f3]/70"
+                  }`}
+                >
+                  {model}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-6">
             <Link
-              href="/chinrest/original#your-embrace"
+              href={`/chinrest/${modelSlugs[activeModel]}#your-embrace`}
               className="inline-flex items-center justify-center rounded-lg bg-[#ba9e78] px-8 py-3 font-medium tracking-[0.12em] text-[#16335b] transition hover:bg-[#d4bc99]"
             >
               Explore Customization
