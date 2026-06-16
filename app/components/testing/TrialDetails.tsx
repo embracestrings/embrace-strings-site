@@ -48,7 +48,7 @@ const steps = [
 
 export default function TrialDetails() {
   return (
-    <article className="bg-white text-[#16335b]">
+    <article className="bg-[#f2f2f3] text-[#16335b]">
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
         <motion.header
           initial={{ opacity: 0, y: 20 }}

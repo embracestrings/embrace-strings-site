@@ -13,7 +13,7 @@ const fadeUp = {
 export default function TrialAndFeedback() {
   return (
     <>
-      <motion.section {...fadeUp} id="trial-program" className="border-t border-[#ba9e78]/25 bg-white/60">
+      <motion.section {...fadeUp} id="trial-program" className="border-t border-[#ba9e78]/25 bg-[#f2f2f3]">
         <div className="mx-auto max-w-3xl px-4 py-12 text-center sm:px-6 sm:py-14">
           <h2 className="text-3xl font-medium tracking-[0.02em] text-[#16335b] sm:text-4xl">
             Not Ready To Purchase? Test Our Chinrest!
@@ -35,7 +35,7 @@ export default function TrialAndFeedback() {
       <motion.section
         {...fadeUp}
         id="chinrest-feedback"
-        className="border-t border-[#ba9e78]/25 bg-white"
+        className="border-t border-[#ba9e78]/25 bg-[#f2f2f3]"
         aria-labelledby="chinrest-feedback-heading"
       >
         <div className="mx-auto max-w-3xl px-4 py-12 text-center sm:px-6 sm:py-16">

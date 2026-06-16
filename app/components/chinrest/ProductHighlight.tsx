@@ -13,7 +13,7 @@ const models = [
 
 export default function ProductHighlight() {
   return (
-    <section id="product-highlight" className="border-y border-[#ba9e78]/30 bg-white/50">
+    <section id="product-highlight" className="border-y border-[#ba9e78]/30 bg-[#f2f2f3]">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

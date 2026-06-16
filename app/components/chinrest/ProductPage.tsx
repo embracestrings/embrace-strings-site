@@ -124,7 +124,7 @@ export default function ProductPage({ name, tagline, intro, features }: ProductP
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="border-t border-[#ba9e78]/25 bg-white/60"
+        className="border-t border-[#ba9e78]/25 bg-[#f2f2f3]"
       >
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 px-4 py-12 text-center sm:flex-row sm:justify-center sm:gap-6 sm:px-6 sm:py-14">
           <Link
