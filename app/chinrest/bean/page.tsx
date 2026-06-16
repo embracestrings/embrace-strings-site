@@ -10,9 +10,12 @@ export default function BeanPage() {
     <ProductPage
       name="Bean"
       identity="Open"
-      description="The Bean's wider surface area doesn't lock you in — it opens you up. More chin positions, more freedom to shift and breathe through your playing without losing contact with the instrument. Where the Original and Morawetz guide you toward a specific placement, the Bean gives you a range. Combined with the Embrace Dial System, it's the most expressive setup in the Embrace Strings line. For players whose playing is fluid, physical, and alive."
+      opener="The Bean's wider surface area doesn't lock you in — it opens you up. More chin positions, more freedom to shift and breathe through your playing without losing contact with the instrument."
+      descriptionRest="Where the Original and Morawetz guide you toward a specific placement, the Bean gives you a range. Combined with the Embrace Dial System, it's the most expressive setup in the Embrace Strings line. For players whose playing is fluid, physical, and alive."
       whoItsFor="Players who want freedom of movement and a wider range of natural chin positions."
-      specs="Height range: 0.9″ – 1.5″  |  Material: 3D-printed nylon  |  Available for: Violin and Viola"
+      specHeight='0.9″ – 1.5″'
+      specMaterial="3D-printed nylon"
+      specInstruments="Violin and Viola"
       features={[
         {
           title: "Wider Contact Surface",

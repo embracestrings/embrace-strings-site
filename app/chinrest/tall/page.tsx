@@ -10,9 +10,12 @@ export default function TallPage() {
     <ProductPage
       name="Tall"
       identity="Necessary"
-      description={`For players the standard never fit. Raising your shoulder rest seems like the obvious fix for a long neck — but it lifts the instrument off your collarbone, destabilizing everything. The Tall chinrest solves the actual problem: it fills the gap between your jaw and your instrument, keeping everything correctly placed and your neck aligned. Built on the same classic Guarneri shape as the Original, with the Embrace Dial System extending from 1.5 to 2 inches. If you're roughly 6'2" or taller and have never felt truly settled on your instrument, this was made for you.`}
+      opener={`For players the standard never fit. Raising your shoulder rest seems like the obvious fix for a long neck — but it lifts the instrument off your collarbone, destabilizing everything.`}
+      descriptionRest={`The Tall chinrest solves the actual problem: it fills the gap between your jaw and your instrument, keeping everything correctly placed and your neck aligned. Built on the same classic Guarneri shape as the Original, with the Embrace Dial System extending from 1.5 to 2 inches. If you're roughly 6'2" or taller and have never felt truly settled on your instrument, this was made for you.`}
       whoItsFor="Players with extra-long necks who need real height without sacrificing stability."
-      specs="Height range: 1.5″ – 2″  |  Material: 3D-printed nylon  |  Available for: Violin and Viola"
+      specHeight='1.5″ – 2″'
+      specMaterial="3D-printed nylon"
+      specInstruments="Violin and Viola"
       features={[
         {
           title: "Extended Height Range",

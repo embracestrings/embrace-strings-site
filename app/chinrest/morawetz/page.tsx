@@ -10,9 +10,12 @@ export default function MorawetzPage() {
     <ProductPage
       name="Morawetz"
       identity="Exact"
-      description="For players who know exactly where they want to be. The Morawetz shape is built around precision. Its traditional contour cradles the chin with a secure, defined connection — less searching, more certainty. Players who reach for a Morawetz want to know their position is locked in, every rehearsal, every performance. The Embrace Dial System takes that precision further, adding full height adjustability to a shape that's never had it before. If you've always played Morawetz, this is the upgrade. If you've always wanted more security in your placement, this is the answer."
+      opener="For players who know exactly where they want to be. The Morawetz shape is built around precision."
+      descriptionRest="Its traditional contour cradles the chin with a secure, defined connection — less searching, more certainty. Players who reach for a Morawetz want to know their position is locked in, every rehearsal, every performance. The Embrace Dial System takes that precision further, adding full height adjustability to a shape that's never had it before. If you've always played Morawetz, this is the upgrade. If you've always wanted more security in your placement, this is the answer."
       whoItsFor="Players who prioritize exact, repeatable chin placement and love the Morawetz profile."
-      specs="Height range: 0.9″ – 1.5″  |  Material: 3D-printed nylon  |  Available for: Violin and Viola"
+      specHeight='0.9″ – 1.5″'
+      specMaterial="3D-printed nylon"
+      specInstruments="Violin and Viola"
       features={[
         {
           title: "Defined Chin Cradle",

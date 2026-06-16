@@ -13,18 +13,24 @@ export type ProductFeature = {
 export type ProductPageProps = {
   name: string;
   identity: string;
-  description: string;
+  opener: string;
+  descriptionRest: string;
   whoItsFor: string;
-  specs: string;
+  specHeight: string;
+  specMaterial: string;
+  specInstruments: string;
   features: ProductFeature[];
 };
 
 export default function ProductPage({
   name,
   identity,
-  description,
+  opener,
+  descriptionRest,
   whoItsFor,
-  specs,
+  specHeight,
+  specMaterial,
+  specInstruments,
   features,
 }: ProductPageProps) {
   const featuresRef = useRef<HTMLDivElement>(null);
@@ -73,25 +79,80 @@ export default function ProductPage({
       </section>
 
       {/* ── Description ──────────────────────────────────────── */}
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        className="bg-[#f2f2f3] py-16 sm:py-20"
-      >
+      <section className="bg-[#f2f2f3] py-16 sm:py-24">
         <div className="mx-auto max-w-2xl px-4 text-center sm:px-6">
-          <p className="text-base font-light leading-relaxed text-[#16335b]/85 sm:text-lg">
-            {description}
-          </p>
-          <p className="mt-6 text-base italic text-[#16335b]/70 sm:text-lg">
-            {whoItsFor}
-          </p>
-          <p className="mt-4 text-xs tracking-[0.08em] text-[#16335b]/50 sm:text-sm">
-            {specs}
-          </p>
+
+          {/* Part 1 — Opener */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="font-[var(--font-cormorant)] text-2xl font-medium leading-snug tracking-[0.01em] text-[#16335b] sm:text-3xl"
+          >
+            {opener}
+          </motion.p>
+
+          {/* Part 2 — Remaining description */}
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            className="mt-8 text-sm font-light leading-relaxed text-[#16335b]/65 sm:text-base"
+          >
+            {descriptionRest}
+          </motion.p>
+
+          {/* Part 3 — Who it's for callout */}
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            className="mt-10 rounded-r-xl border-l-4 border-[#ba9e78] bg-[#f2f2f3]/80 px-5 py-4 text-left shadow-sm"
+          >
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#ba9e78]">
+              Who it&rsquo;s for
+            </p>
+            <p className="mt-1.5 text-sm font-light leading-relaxed text-[#16335b] sm:text-base">
+              {whoItsFor}
+            </p>
+          </motion.div>
+
+          {/* Part 4 — Spec grid */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ staggerChildren: 0.12 }}
+            className="mt-10 grid grid-cols-3 divide-x divide-[#ba9e78]/25"
+          >
+            {[
+              { label: "Height Range", value: specHeight },
+              { label: "Material", value: specMaterial },
+              { label: "Instruments", value: specInstruments },
+            ].map((spec) => (
+              <motion.div
+                key={spec.label}
+                variants={{
+                  hidden: { opacity: 0, y: 12 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+                }}
+                className="px-3 py-1 text-center first:pl-0 last:pr-0"
+              >
+                <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#16335b]/40 sm:text-[10px]">
+                  {spec.label}
+                </p>
+                <p className="mt-1.5 text-sm font-medium text-[#16335b] sm:text-base">
+                  {spec.value}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+
         </div>
-      </motion.section>
+      </section>
 
       {/* ── Features ─────────────────────────────────────────── */}
       <section
