@@ -33,7 +33,7 @@ export default function YourEmbrace() {
   const [name, setName] = useState("");
 
   return (
-    <section className="border-t border-[#ba9e78]/25 bg-[#f2f2f3] py-16 sm:py-24">
+    <section id="your-embrace" className="border-t border-[#ba9e78]/25 bg-[#f2f2f3] py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
 
         {/* Headline */}
