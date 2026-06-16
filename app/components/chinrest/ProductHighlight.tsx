@@ -155,8 +155,8 @@ export default function ProductHighlight() {
                   onClick={() => setActiveModel(model)}
                   className={`rounded-full px-5 py-1.5 text-xs font-medium tracking-[0.1em] transition-colors ${
                     activeModel === model
-                      ? "bg-[#ba9e78] text-[#16335b]"
-                      : "border border-[#f2f2f3]/40 text-[#f2f2f3] hover:border-[#f2f2f3]/70"
+                      ? "bg-[#ba9e78] text-[#16335b] hover:text-[#16335b]"
+                      : "border border-[#f2f2f3]/40 text-[#f2f2f3] hover:border-[#f2f2f3]/70 hover:text-[#f2f2f3]"
                   }`}
                 >
                   {model}
