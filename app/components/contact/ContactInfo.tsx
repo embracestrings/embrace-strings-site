@@ -88,7 +88,7 @@ export default function ContactInfo() {
             Interested in carrying Embrace Strings products? Email us for retailer and distributor details.
           </p>
           <p className="mt-3 text-sm text-[#16335b]/80">
-            <a href="mailto:wholesale@embracestrings.com" className="font-medium text-[#16335b] underline decoration-[#ba9e78]/50 underline-offset-2 transition hover:text-[#ba9e78]">
+            <a href="mailto:wholesale@embracestrings.com" className="break-all font-medium text-[#16335b] underline decoration-[#ba9e78]/50 underline-offset-2 transition hover:text-[#ba9e78]">
               wholesale@embracestrings.com
             </a>
           </p>
