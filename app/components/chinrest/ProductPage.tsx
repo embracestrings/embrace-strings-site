@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
+import YourEmbrace from "./YourEmbrace";
 
 export type ProductFeature = {
   title: string;
@@ -211,6 +212,9 @@ export default function ProductPage({
           </motion.div>
         </div>
       </section>
+
+      {/* ── Your Embrace ─────────────────────────────────────── */}
+      <YourEmbrace />
 
       {/* ── CTA ──────────────────────────────────────────────── */}
       <motion.section
