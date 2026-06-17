@@ -16,7 +16,7 @@ export default function TrialAndFeedback() {
       <motion.section {...fadeUp} id="trial-program" className="border-t border-[#ba9e78]/25 bg-[#f2f2f3]">
         <div className="mx-auto max-w-3xl px-4 py-12 text-center sm:px-6 sm:py-14">
           <h2 className="text-3xl font-medium tracking-[0.02em] text-[#16335b] sm:text-4xl">
-            Not Ready To Purchase? Test Our Chinrest!
+            Not sure yet? Try it first.
           </h2>
           <p className="mt-5 text-sm font-light leading-relaxed text-[#16335b]/80 sm:text-base">
             We know that finding the right chinrest is a deeply personal process. To help you play with greater intentionality and comfort, we offer a 14-day trial program.
