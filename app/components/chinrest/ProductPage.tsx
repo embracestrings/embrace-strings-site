@@ -152,6 +152,32 @@ export default function ProductPage({
             ))}
           </motion.div>
 
+          {/* Part 5 — Trial + Purchase buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+            className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-5"
+          >
+            <Link
+              href="/testing"
+              className="inline-flex w-full items-center justify-center rounded-lg bg-[#16335b] px-8 py-3 font-medium tracking-[0.12em] text-[#f2f2f3] transition hover:bg-[#ba9e78] hover:text-[#16335b] sm:w-auto"
+              style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
+            >
+              Start a 14-Day Trial
+            </Link>
+            <a
+              href="https://buy.stripe.com/00w28t4Br2AsdL48pyafS02"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center rounded-lg bg-[#ba9e78] px-8 py-3 font-medium tracking-[0.12em] text-[#16335b] transition hover:bg-[#16335b] hover:text-[#ba9e78] sm:w-auto"
+              style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
+            >
+              Purchase
+            </a>
+          </motion.div>
+
         </div>
       </section>
 
@@ -226,10 +252,10 @@ export default function ProductPage({
       >
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 px-4 py-12 text-center sm:flex-row sm:justify-center sm:gap-6 sm:px-6 sm:py-14">
           <Link
-            href="/testing"
+            href="/contact"
             className="inline-flex w-full items-center justify-center rounded-lg bg-[#16335b] px-8 py-3 font-medium tracking-[0.12em] text-[#f2f2f3] transition hover:bg-[#ba9e78] hover:text-[#16335b] sm:w-auto"
           >
-            Start a 14-Day Trial
+            Inquire About Customization
           </Link>
           <Link
             href="/chinrest"

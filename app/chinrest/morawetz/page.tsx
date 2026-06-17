@@ -9,9 +9,9 @@ export default function MorawetzPage() {
   return (
     <ProductPage
       name="Morawetz"
-      identity="Exact"
-      opener="For players who know exactly where they want to be. The Morawetz shape is built around precision."
-      descriptionRest="Its traditional contour cradles the chin with a secure, defined connection — less searching, more certainty. Players who reach for a Morawetz want to know their position is locked in, every rehearsal, every performance. The Embrace Dial System takes that precision further, adding full height adjustability to a shape that's never had it before. If you've always played Morawetz, this is the upgrade. If you've always wanted more security in your placement, this is the answer."
+      identity="Built to Settle. Designed to Embrace."
+      opener="For players who require precision and comfort."
+      descriptionRest="The Morawetz shape is built around precision. Its contour promotes exact placement underneath the chin with a secure, defined connection. Players who reach for a Morawetz want to know their position is stable in every rehearsal and every performance. The Embrace Dial System takes that precision further, adding full height and tilt adjustability to a shape that's never had it before. If you've always played Morawetz, this is the upgrade. If you are looking for more stability in your setup, this is the answer."
       whoItsFor="Players who prioritize exact, repeatable chin placement and love the Morawetz profile."
       specHeight='0.9″ – 1.5″'
       specMaterial="3D-printed nylon"

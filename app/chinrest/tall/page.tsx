@@ -9,9 +9,9 @@ export default function TallPage() {
   return (
     <ProductPage
       name="Tall"
-      identity="Necessary"
-      opener={`For players the standard never fit. Raising your shoulder rest seems like the obvious fix for a long neck — but it lifts the instrument off your collarbone, destabilizing everything.`}
-      descriptionRest={`The Tall chinrest solves the actual problem: it fills the gap between your jaw and your instrument, keeping everything correctly placed and your neck aligned. Built on the same classic Guarneri shape as the Original, with the Embrace Dial System extending from 1.5 to 2 inches. If you're roughly 6'2" or taller and have never felt truly settled on your instrument, this was made for you.`}
+      identity="Built to Reach. Designed to Embrace."
+      opener="For players who need more than &ldquo;standard&rdquo;."
+      descriptionRest={`Raising your shoulder rest or dropping your head is a natural reaction to a short chinrest — but can be a deadly mistake for your setup, body, and performance. The Tall chinrest solves the problem correctly: it fills the gap between your jaw and your instrument, keeping your shoulder relaxed, your spine aligned, and your body tension free. Built on the same classic Guarneri shape as the Original, with the Embrace Dial System extending from 1.5 to 2 inches. If you're roughly 6'2" or taller and have never felt truly settled on your instrument, this was made for you.`}
       whoItsFor="Players with extra-long necks who need real height without sacrificing stability."
       specHeight='1.5″ – 2″'
       specMaterial="3D-printed nylon"
