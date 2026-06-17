@@ -39,7 +39,7 @@ export default function TestingFaq() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center text-3xl font-medium tracking-[0.02em] text-[#16335b] sm:text-4xl"
         >
-          FAQs
+          Frequently Asked Questions
         </motion.h2>
         <p className="mx-auto mt-3 max-w-xl text-center text-sm font-light text-[#16335b]/75 sm:text-base">
           Quick answers about timing, billing, and returns for the chinrest test kit.

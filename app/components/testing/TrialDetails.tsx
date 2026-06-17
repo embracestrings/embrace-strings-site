@@ -62,6 +62,9 @@ export default function TrialDetails() {
   return (
     <article className="bg-[#f2f2f3] text-[#16335b]">
 
+      {/* ── Cream spacer ──────────────────────────────────────── */}
+      <div className="h-20 bg-[#f2f2f3]" />
+
       {/* ── Kit intro — navy band ──────────────────────────────── */}
       <section className="bg-[#16335b] py-20 sm:py-28">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
@@ -192,35 +195,6 @@ export default function TrialDetails() {
         </motion.div>
       </section>
 
-      {/* ── Product image + contact ────────────────────────────── */}
-      <motion.figure
-        initial={{ opacity: 0, scale: 0.96 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        className="border-t border-[#ba9e78]/25 px-4 pb-16 pt-14 sm:px-6 sm:pb-20"
-      >
-        <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-[#ba9e78]/25 shadow-[0_16px_40px_rgba(22,51,91,0.08)]">
-          <Image
-            src="/adjustable-violin-chinrest.JPG"
-            alt="Close-up of the Embrace Strings adjustable chinrest mounted on a violin"
-            width={1200}
-            height={800}
-            className="h-auto w-full object-cover object-center"
-          />
-        </div>
-        <figcaption className="mt-4 text-center text-xs font-light leading-relaxed text-[#16335b]/65 sm:text-sm">
-          For full program rules, shipping details, and billing timing, review the trial terms document above or
-          reach us at{" "}
-          <a
-            href="mailto:info@embracestrings.com"
-            className="font-medium text-[#16335b] underline decoration-[#ba9e78]/50 underline-offset-2 transition hover:text-[#ba9e78]"
-          >
-            info@embracestrings.com
-          </a>
-          .
-        </figcaption>
-      </motion.figure>
 
     </article>
   );
