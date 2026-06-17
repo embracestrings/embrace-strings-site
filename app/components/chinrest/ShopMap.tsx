@@ -46,16 +46,22 @@ export default function ShopMap() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const infoWindowRef = useRef<any>(null);
 
-  const [shops, setShops] = useState<Shop[]>([]);
+  const HARDCODED_SHOPS: Shop[] = [
+    { name: "Terra Nova Violins", address: "6983 Blanco Road, San Antonio, TX 78216", phone: "(210) 349-4700" },
+    { name: "Terra Nova Violins", address: "7795 Burnet Road, Austin, TX 78757", phone: "(512) 640-4072" },
+    { name: "Westbank Violin Shop", address: "6301 Menchaca Rd, Austin, TX 78745" },
+  ];
+
+  const [shops, setShops] = useState<Shop[]>(HARDCODED_SHOPS);
   const [mapsReady, setMapsReady] = useState(false);
   const [mapsError, setMapsError] = useState(false);
 
-  // ── 1. Fetch shops from API route (server parses CSV + falls back to hardcoded) ──
+  // ── 1. Try to fetch live sheet data; fall back to hardcoded on any failure ──
   useEffect(() => {
     fetch("/api/shops")
       .then((r) => r.json())
-      .then((data: Shop[]) => setShops(data))
-      .catch((err) => console.error("ShopMap: failed to load shops", err));
+      .then((data: Shop[]) => { if (data.length > 0) setShops(data); })
+      .catch(() => { /* keep hardcoded shops */ });
   }, []);
 
   // ── 2. Load Maps JS API ──────────────────────────────────────────────────────
