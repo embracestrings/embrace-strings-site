@@ -45,7 +45,7 @@ The Embrace Strings chinrest was designed with this reality in mind. Not adjusta
     title: "Why We Started Embrace Strings",
     date: "April 2026",
     excerpt:
-      "I'm 6'5". Holding a violin was always a negotiation. After a neck injury in college, I decided there had to be a better way.",
+      `I'm 6'5". Holding a violin was always a negotiation. After a neck injury in college, I decided there had to be a better way.`,
     body: `I'm 6'5". Holding a violin was always a negotiation.
 
 Most violin hardware is designed for an average body that I've never had. Chinrests that sit too low, shoulder rests that don't quite reach — there's this constant background calculation that goes into playing when the instrument doesn't fit. I got used to it. Then in college, I stopped being able to ignore it.

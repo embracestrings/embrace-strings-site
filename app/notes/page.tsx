@@ -25,7 +25,7 @@ const posts = [
     category: "Founders",
     title: "Why We Started Embrace Strings",
     excerpt:
-      "I'm 6'5". Holding a violin was always a negotiation. After a neck injury in college, I decided there had to be a better way — and spent the next few years building it.",
+      `I’m 6’5”. Holding a violin was always a negotiation. After a neck injury in college, I decided there had to be a better way — and spent the next few years building it.`,
     date: "April 2026",
   },
 ];

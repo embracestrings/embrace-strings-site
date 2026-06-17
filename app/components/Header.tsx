@@ -5,20 +5,22 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 
+type NavItem = { label: string; href: string; dropdown?: { label: string; href: string }[] };
+
 const chinrestDropdown = [
   { label: "Chinrests", href: "/chinrest" },
   { label: "Setup", href: "/setup" },
   { label: "Testing", href: "/testing" },
 ];
 
-const leftLinks = [
+const leftLinks: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Chinrests", href: "/chinrest", dropdown: chinrestDropdown },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
-const rightLinks = [
+const rightLinks: NavItem[] = [
   { label: "Notes", href: "/notes" },
 ];
 
