@@ -3,19 +3,17 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Papa from "papaparse";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 type Shop = {
   name: string;
   address: string;
+  phone?: string;
   lat?: number;
   lng?: number;
 };
 
-// Minimal ambient types so we don't need the full @types/google.maps at
-// compile time — the real object is loaded at runtime.
 declare global {
   interface Window {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -23,19 +21,16 @@ declare global {
   }
 }
 
-// ─── Constants ────────────────────────────────────────────────────────────────
+// ─── Map style ────────────────────────────────────────────────────────────────
 
-const CSV_URL = "/api/shops";
-
-// Subtle greyscale map style that keeps the brand feeling clean
 const MAP_STYLES = [
-  { featureType: "all", elementType: "geometry.fill", stylers: [{ saturation: -30 }] },
   { featureType: "water", elementType: "geometry", stylers: [{ color: "#d4dde8" }] },
   { featureType: "road", elementType: "geometry", stylers: [{ color: "#e8e4de" }] },
   { featureType: "road.highway", elementType: "geometry", stylers: [{ color: "#d4c9b8" }] },
   { featureType: "poi.park", elementType: "geometry", stylers: [{ color: "#dde8d8" }] },
   { featureType: "administrative", elementType: "labels.text.fill", stylers: [{ color: "#16335b" }] },
   { featureType: "poi", elementType: "labels", stylers: [{ visibility: "off" }] },
+  { featureType: "all", elementType: "geometry.fill", stylers: [{ saturation: -20 }] },
 ];
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -53,32 +48,29 @@ export default function ShopMap() {
 
   const [shops, setShops] = useState<Shop[]>([]);
   const [mapsReady, setMapsReady] = useState(false);
+  const [mapsError, setMapsError] = useState(false);
 
-  // ── 1. Fetch + parse CSV ────────────────────────────────────────────────────
+  // ── 1. Fetch shops from API route (server parses CSV + falls back to hardcoded) ──
   useEffect(() => {
-    fetch(CSV_URL)
-      .then((r) => r.text())
-      .then((csv) => {
-        const { data } = Papa.parse<{ name: string; address: string }>(csv, {
-          header: true,
-          skipEmptyLines: true,
-        });
-        setShops(
-          data
-            .filter((r) => r.name?.trim() && r.address?.trim())
-            .map((r) => ({ name: r.name.trim(), address: r.address.trim() }))
-        );
-      })
-      .catch((err) => console.error("ShopMap: CSV fetch failed", err));
+    fetch("/api/shops")
+      .then((r) => r.json())
+      .then((data: Shop[]) => setShops(data))
+      .catch((err) => console.error("ShopMap: failed to load shops", err));
   }, []);
 
-  // ── 2. Load Maps JS API ─────────────────────────────────────────────────────
+  // ── 2. Load Maps JS API ──────────────────────────────────────────────────────
   useEffect(() => {
     if (!apiKey) return;
     if (window.google?.maps) { setMapsReady(true); return; }
 
     const id = "gmap-script";
-    if (document.getElementById(id)) return; // already injecting
+    if (document.getElementById(id)) {
+      // Script already injecting — poll until google.maps is available
+      const poll = setInterval(() => {
+        if (window.google?.maps) { setMapsReady(true); clearInterval(poll); }
+      }, 100);
+      return () => clearInterval(poll);
+    }
 
     const script = document.createElement("script");
     script.id = id;
@@ -86,16 +78,16 @@ export default function ShopMap() {
     script.async = true;
     script.defer = true;
     script.onload = () => setMapsReady(true);
+    script.onerror = () => setMapsError(true);
     document.head.appendChild(script);
   }, [apiKey]);
 
-  // ── 3. Init map + geocode + pin markers ────────────────────────────────────
+  // ── 3. Init map + geocode + pin markers ─────────────────────────────────────
   useEffect(() => {
     if (!mapsReady || !mapDivRef.current || shops.length === 0) return;
-    if (mapRef.current) return; // already initialized
+    if (mapRef.current) return;
 
     const g = window.google.maps;
-
     const map = new g.Map(mapDivRef.current, {
       center: { lat: 29.9, lng: -98.5 },
       zoom: 8,
@@ -133,48 +125,44 @@ export default function ShopMap() {
 
         markersRef.current[i] = marker;
 
-        // Store coords back for the strip click handler
         setShops((prev) =>
           prev.map((s, idx) =>
             idx === i ? { ...s, lat: pos.lat(), lng: pos.lng() } : s
           )
         );
 
-        marker.addListener("click", () => {
-          infoWindowRef.current.setContent(
-            `<div style="font-family:'Montserrat',sans-serif;color:#16335b;padding:2px 4px;max-width:200px">
-               <p style="font-weight:600;margin:0 0 4px">${shop.name}</p>
-               <p style="margin:0;font-size:13px;color:#16335b99">${shop.address}</p>
-             </div>`
-          );
-          infoWindowRef.current.open(map, marker);
-        });
-
-        // Fit after every geocode so it updates incrementally
+        marker.addListener("click", () => openInfoWindow(map, marker, shop));
         map.fitBounds(bounds);
       });
     });
   }, [mapsReady, shops.length]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // ── Pan map to a shop and open its info window ─────────────────────────────
+  // ── Helpers ──────────────────────────────────────────────────────────────────
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  function openInfoWindow(map: any, marker: any, shop: Shop) {
+    infoWindowRef.current?.setContent(
+      `<div style="font-family:'Montserrat',sans-serif;color:#16335b;padding:2px 4px;max-width:200px">
+         <p style="font-weight:600;margin:0 0 4px">${shop.name}</p>
+         <p style="margin:0;font-size:13px;opacity:.7">${shop.address}</p>
+         ${shop.phone ? `<p style="margin:4px 0 0;font-size:13px;opacity:.7">${shop.phone}</p>` : ""}
+       </div>`
+    );
+    infoWindowRef.current?.open(map, marker);
+  }
+
   function focusShop(index: number) {
     const marker = markersRef.current[index];
     const map = mapRef.current;
     if (!marker || !map) return;
     map.panTo(marker.getPosition());
     map.setZoom(14);
-    infoWindowRef.current?.setContent(
-      `<div style="font-family:'Montserrat',sans-serif;color:#16335b;padding:2px 4px;max-width:200px">
-         <p style="font-weight:600;margin:0 0 4px">${shops[index].name}</p>
-         <p style="margin:0;font-size:13px;color:#16335b99">${shops[index].address}</p>
-       </div>`
-    );
-    infoWindowRef.current?.open(map, marker);
+    openInfoWindow(map, marker, shops[index]);
   }
 
-  // ── Scrolling strip helpers ────────────────────────────────────────────────
-  // Duplicate list so the marquee loops seamlessly
   const stripItems = [...shops, ...shops];
+
+  // ─── Render ──────────────────────────────────────────────────────────────────
 
   return (
     <section className="border-t border-[#ba9e78]/25 bg-[#f2f2f3] py-16 sm:py-24">
@@ -204,12 +192,14 @@ export default function ShopMap() {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
           className="mt-10 w-full overflow-hidden rounded-2xl border border-[#ba9e78]/30 shadow-[0_16px_40px_rgba(22,51,91,0.08)]"
         >
-          {apiKey ? (
-            <div ref={mapDivRef} className="h-[450px] w-full" />
-          ) : (
+          {!apiKey || mapsError ? (
             <div className="flex h-[450px] w-full items-center justify-center bg-[#e5e5e7] text-sm text-[#16335b]/40">
-              Map unavailable — add NEXT_PUBLIC_GOOGLE_MAPS_API_KEY to your environment.
+              {mapsError
+                ? "Map failed to load — check your API key and enabled APIs."
+                : "Map unavailable — add NEXT_PUBLIC_GOOGLE_MAPS_API_KEY to your environment."}
             </div>
+          ) : (
+            <div ref={mapDivRef} className="h-[450px] w-full" />
           )}
         </motion.div>
 
@@ -223,15 +213,15 @@ export default function ShopMap() {
                   onClick={() => focusShop(i % shops.length)}
                   className="mx-3 flex w-52 shrink-0 flex-col rounded-xl border border-[#ba9e78]/30 bg-white px-5 py-4 text-left shadow-sm transition-shadow duration-200 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ba9e78]"
                 >
-                  <p
-                    className="font-[var(--font-cormorant)] text-lg font-medium leading-tight text-[#16335b]"
-                    style={{ color: "#16335b" }} // override global hover rule
-                  >
+                  <p className="font-[var(--font-cormorant)] text-lg font-medium leading-tight text-[#16335b] hover:text-[#16335b]">
                     {shop.name}
                   </p>
                   <p className="mt-1.5 text-xs font-light leading-relaxed text-[#16335b]/55">
                     {shop.address}
                   </p>
+                  {shop.phone && (
+                    <p className="mt-1 text-xs text-[#16335b]/45">{shop.phone}</p>
+                  )}
                 </button>
               ))}
             </div>
