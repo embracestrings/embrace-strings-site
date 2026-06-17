@@ -242,29 +242,6 @@ export default function ProductPage({
       {/* ── Your Embrace ─────────────────────────────────────── */}
       <YourEmbrace />
 
-      {/* ── CTA ──────────────────────────────────────────────── */}
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="border-t border-[#ba9e78]/25 bg-[#f2f2f3]"
-      >
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 px-4 py-12 text-center sm:flex-row sm:justify-center sm:gap-6 sm:px-6 sm:py-14">
-          <Link
-            href="/contact"
-            className="inline-flex w-full items-center justify-center rounded-lg bg-[#16335b] px-8 py-3 font-medium tracking-[0.12em] text-[#f2f2f3] transition hover:bg-[#ba9e78] hover:text-[#16335b] sm:w-auto"
-          >
-            Inquire About Customization
-          </Link>
-          <Link
-            href="/chinrest"
-            className="inline-flex w-full items-center justify-center rounded-lg bg-[#16335b] px-8 py-3 font-medium tracking-[0.12em] text-[#f2f2f3] transition hover:bg-[#ba9e78] hover:text-[#16335b] sm:w-auto"
-          >
-            Compare All Chinrests
-          </Link>
-        </div>
-      </motion.section>
     </>
   );
 }
