@@ -43,7 +43,7 @@ export default function FromTheStandBanner() {
           className="mb-3 text-xs font-medium uppercase tracking-[0.28em] text-[#ba9e78]"
           style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
         >
-          From the Stand
+          Latest Thoughts
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
@@ -53,7 +53,7 @@ export default function FromTheStandBanner() {
           className="text-4xl font-medium tracking-[0.02em] text-[#f2f2f3] sm:text-5xl"
           style={{ fontFamily: "var(--font-cormorant, serif)" }}
         >
-          Latest Thoughts
+          From the Stand
         </motion.h2>
       </div>
 
