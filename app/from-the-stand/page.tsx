@@ -48,7 +48,7 @@ export default function FromTheStandPage() {
           className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#ba9e78]"
           style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
         >
-          From the Stand
+          Embrace Strings
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 18 }}
@@ -66,7 +66,7 @@ export default function FromTheStandPage() {
           className="mx-auto mt-5 max-w-lg text-base font-light leading-relaxed text-[#16335b]/60"
           style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
         >
-          Thoughts from the stand — on playing, building, and everything in between.
+          Thoughts on playing, setup, and building Embrace Strings — from the people doing it.
         </motion.p>
         <motion.div
           initial={{ scaleX: 0 }}
