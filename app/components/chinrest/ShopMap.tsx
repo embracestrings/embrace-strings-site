@@ -25,8 +25,7 @@ declare global {
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const CSV_URL =
-  "https://docs.google.com/spreadsheets/d/1fKwLklEk4SSILyzrng32lVq6DOqOo0JIaBd7XqDzGno/export?format=csv";
+const CSV_URL = "/api/shops";
 
 // Subtle greyscale map style that keeps the brand feeling clean
 const MAP_STYLES = [
@@ -57,18 +56,20 @@ export default function ShopMap() {
 
   // ── 1. Fetch + parse CSV ────────────────────────────────────────────────────
   useEffect(() => {
-    Papa.parse<{ name: string; address: string }>(CSV_URL, {
-      download: true,
-      header: true,
-      skipEmptyLines: true,
-      complete: ({ data }) => {
+    fetch(CSV_URL)
+      .then((r) => r.text())
+      .then((csv) => {
+        const { data } = Papa.parse<{ name: string; address: string }>(csv, {
+          header: true,
+          skipEmptyLines: true,
+        });
         setShops(
           data
             .filter((r) => r.name?.trim() && r.address?.trim())
             .map((r) => ({ name: r.name.trim(), address: r.address.trim() }))
         );
-      },
-    });
+      })
+      .catch((err) => console.error("ShopMap: CSV fetch failed", err));
   }, []);
 
   // ── 2. Load Maps JS API ─────────────────────────────────────────────────────
@@ -91,8 +92,7 @@ export default function ShopMap() {
   // ── 3. Init map + geocode + pin markers ────────────────────────────────────
   useEffect(() => {
     if (!mapsReady || !mapDivRef.current || shops.length === 0) return;
-    // Only init once
-    if (mapRef.current) return;
+    if (mapRef.current) return; // already initialized
 
     const g = window.google.maps;
 
