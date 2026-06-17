@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ChinrestHero from "../components/chinrest/ChinrestHero";
 import Difference from "../components/chinrest/Difference";
 import ProductHighlight from "../components/chinrest/ProductHighlight";
+import ShopMap from "../components/chinrest/ShopMap";
 import ForPlayers from "../components/chinrest/ForPlayers";
 import Faq from "../components/chinrest/Faq";
 import TrialAndFeedback from "../components/chinrest/TrialAndFeedback";
@@ -17,6 +18,7 @@ export default function ChinrestPage() {
       <ChinrestHero />
       <Difference />
       <ProductHighlight />
+      <ShopMap />
       <ForPlayers />
       <Faq />
       <TrialAndFeedback />
