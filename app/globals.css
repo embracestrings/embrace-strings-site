@@ -47,15 +47,26 @@ a:hover, a:focus-visible, button:hover, button:focus-visible {
   animation-play-state: paused;
 }
 @keyframes shop-partners-marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
+
+.shop-map-strip {
+  display: flex;
+  width: max-content;
+  animation: shop-map-marquee 30s linear infinite;
+}
+.shop-map-strip:hover {
+  animation-play-state: paused;
+}
+@keyframes shop-map-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .shop-marquee-inner {
+  .shop-marquee-inner,
+  .shop-map-strip {
     animation: none;
   }
 }
