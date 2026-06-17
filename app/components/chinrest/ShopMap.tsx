@@ -1,8 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+
+// Map shop names to logo files and which shop index to focus on click
+const SHOP_LOGOS: Record<string, { src: string; alt: string; focusIndex: number }> = {
+  "Terra Nova Violins": { src: "/terra_nova_violins_logo.jpg", alt: "Terra Nova Violins", focusIndex: 0 },
+  "Westbank Violin Shop": { src: "/westbank_string_shop_logo.jpg", alt: "Westbank Violin Shop", focusIndex: 2 },
+};
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -166,7 +173,9 @@ export default function ShopMap() {
     openInfoWindow(map, marker, shops[index]);
   }
 
-  const stripItems = [...shops, ...shops];
+  // Deduplicate by shop name so Terra Nova only appears once in the strip
+  const uniqueShopNames = Array.from(new Set(shops.map((s) => s.name)));
+  const stripLogos = [...uniqueShopNames, ...uniqueShopNames]; // doubled for seamless loop
 
   // ─── Render ──────────────────────────────────────────────────────────────────
 
@@ -209,27 +218,31 @@ export default function ShopMap() {
           )}
         </motion.div>
 
-        {/* Scrolling shop strip */}
+        {/* Scrolling logo strip */}
         {shops.length > 0 && (
           <div className="relative mt-8 overflow-hidden">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#f2f2f3] to-transparent sm:w-20" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#f2f2f3] to-transparent sm:w-20" />
             <div className="shop-map-strip">
-              {stripItems.map((shop, i) => (
-                <button
-                  key={`${shop.address}-${i}`}
-                  onClick={() => focusShop(i % shops.length)}
-                  className="mx-3 flex w-52 shrink-0 flex-col rounded-xl border border-[#ba9e78]/30 bg-white px-5 py-4 text-left shadow-sm transition-shadow duration-200 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ba9e78]"
-                >
-                  <p className="font-[var(--font-cormorant)] text-lg font-medium leading-tight text-[#16335b] hover:text-[#16335b]">
-                    {shop.name}
-                  </p>
-                  <p className="mt-1.5 text-xs font-light leading-relaxed text-[#16335b]/55">
-                    {shop.address}
-                  </p>
-                  {shop.phone && (
-                    <p className="mt-1 text-xs text-[#16335b]/45">{shop.phone}</p>
-                  )}
-                </button>
-              ))}
+              {stripLogos.map((name, i) => {
+                const logo = SHOP_LOGOS[name];
+                if (!logo) return null;
+                return (
+                  <button
+                    key={`${name}-${i}`}
+                    onClick={() => focusShop(logo.focusIndex)}
+                    className="mx-4 flex h-20 w-[11rem] shrink-0 items-center justify-center rounded-lg border border-[#ba9e78]/30 bg-white px-3 shadow-sm transition-shadow duration-200 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ba9e78] sm:h-24 sm:w-52"
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={280}
+                      height={100}
+                      className="max-h-12 w-auto max-w-[9rem] object-contain object-center sm:max-h-14 sm:max-w-[11rem]"
+                    />
+                  </button>
+                );
+              })}
             </div>
           </div>
         )}
