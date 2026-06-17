@@ -48,10 +48,13 @@ export default function HowWeDoIt() {
               key={card.href}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -6 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.7, ease: "easeOut", delay: i * 0.1 }}
             >
+              <motion.div
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+              >
               <Link
                 href={card.href}
                 className="group block overflow-hidden rounded-2xl border border-[#ba9e78]/25 bg-white shadow-[0_16px_40px_rgba(22,51,91,0.08)] transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(22,51,91,0.18)]"
@@ -73,6 +76,7 @@ export default function HowWeDoIt() {
                   </p>
                 </div>
               </Link>
+              </motion.div>
             </motion.div>
           ))}
         </div>
