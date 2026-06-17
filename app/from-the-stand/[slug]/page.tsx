@@ -72,10 +72,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = posts[slug];
   if (!post) return {};
-  return { title: `${post.title} | Notes | Embrace Strings` };
+  return { title: `${post.title} | From the Stand | Embrace Strings` };
 }
 
-export default async function NotePage({ params }: Props) {
+export default async function FromTheStandPostPage({ params }: Props) {
   const { slug } = await params;
   const post = posts[slug];
   if (!post) notFound();
@@ -86,14 +86,14 @@ export default async function NotePage({ params }: Props) {
 
         {/* Back */}
         <Link
-          href="/notes"
+          href="/from-the-stand"
           className="mb-10 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-[#16335b]/45 hover:text-[#ba9e78] transition-colors"
           style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
         >
           <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="m15 18-6-6 6-6" />
           </svg>
-          Notes
+          From the Stand
         </Link>
 
         {/* Header */}

@@ -17,11 +17,12 @@ const leftLinks: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Chinrests", href: "/chinrest", dropdown: chinrestDropdown },
   { label: "About", href: "/about" },
-  { label: "Notes", href: "/notes" },
   { label: "Contact", href: "/contact" },
 ];
 
-const rightLinks: NavItem[] = [];
+const rightLinks: NavItem[] = [
+  { label: "From the Stand", href: "/from-the-stand" },
+];
 
 export default function Header() {
   const pathname = usePathname();

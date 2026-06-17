@@ -25,7 +25,7 @@ const posts = [
     category: "Founders",
     title: "Why We Started Embrace Strings",
     excerpt:
-      `I’m 6’5”. Holding a violin was always a negotiation. After a neck injury in college, I decided there had to be a better way — and spent the next few years building it.`,
+      `I'm 6'5". Holding a violin was always a negotiation. After a neck injury in college, I decided there had to be a better way — and spent the next few years building it.`,
     date: "April 2026",
   },
 ];
@@ -35,7 +35,7 @@ const cardVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-export default function NotesPage() {
+export default function FromTheStandPage() {
   return (
     <main className="min-h-screen bg-[#f2f2f3]">
 
@@ -48,7 +48,7 @@ export default function NotesPage() {
           className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#ba9e78]"
           style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
         >
-          From the desk of Embrace Strings
+          From the Stand
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 18 }}
@@ -57,7 +57,7 @@ export default function NotesPage() {
           className="text-6xl font-medium tracking-[0.02em] text-[#16335b] sm:text-7xl"
           style={{ fontFamily: "var(--font-cormorant, serif)" }}
         >
-          Notes
+          From the Stand
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 12 }}
@@ -66,7 +66,7 @@ export default function NotesPage() {
           className="mx-auto mt-5 max-w-lg text-base font-light leading-relaxed text-[#16335b]/60"
           style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
         >
-          Thoughts on playing, setup, and building Embrace Strings — from the people doing it.
+          Thoughts from the stand — on playing, building, and everything in between.
         </motion.p>
         <motion.div
           initial={{ scaleX: 0 }}
@@ -89,7 +89,7 @@ export default function NotesPage() {
               transition={{ duration: 0.55, ease: "easeOut", delay: i * 0.1 }}
             >
               <Link
-                href={`/notes/${post.slug}`}
+                href={`/from-the-stand/${post.slug}`}
                 className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#ba9e78]/20 bg-white shadow-[0_4px_20px_rgba(22,51,91,0.05)] transition-shadow duration-300 hover:shadow-[0_12px_32px_rgba(22,51,91,0.11)]"
               >
                 {/* Placeholder image strip */}
