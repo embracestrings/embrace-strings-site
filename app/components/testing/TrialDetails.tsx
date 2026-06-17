@@ -62,9 +62,6 @@ export default function TrialDetails() {
   return (
     <article className="bg-[#f2f2f3] text-[#16335b]">
 
-      {/* ── Cream spacer ──────────────────────────────────────── */}
-      <div className="h-20 bg-[#f2f2f3]" />
-
       {/* ── Kit intro — navy band ──────────────────────────────── */}
       <section className="bg-[#16335b] py-20 sm:py-28">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
