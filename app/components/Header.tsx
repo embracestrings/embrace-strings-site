@@ -5,28 +5,31 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 
-const chinrestItems = [
-  { label: "Original", href: "/chinrest/original" },
-  { label: "Bean", href: "/chinrest/bean" },
-  { label: "Morawetz", href: "/chinrest/morawetz" },
-  { label: "Tall", href: "/chinrest/tall" },
-];
-
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Chinrest", href: "/chinrest", dropdown: chinrestItems },
+const chinrestDropdown = [
+  { label: "Chinrests", href: "/chinrest" },
   { label: "Setup", href: "/setup" },
   { label: "Testing", href: "/testing" },
+];
+
+const leftLinks = [
+  { label: "Home", href: "/" },
+  { label: "Chinrests", href: "/chinrest", dropdown: chinrestDropdown },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+];
+
+const rightLinks = [
+  { label: "Notes", href: "/notes" },
 ];
 
 export default function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [chinrestOpen, setChinrestOpen] = useState(false);
+  const [chinrestHover, setChinrestHover] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
+  const hoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 8);
@@ -34,10 +37,11 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close desktop dropdown on outside click
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setChinrestOpen(false);
+        setChinrestHover(false);
       }
     }
     document.addEventListener("mousedown", handleClick);
@@ -47,23 +51,32 @@ export default function Header() {
   useEffect(() => {
     setMobileOpen(false);
     setChinrestOpen(false);
+    setChinrestHover(false);
   }, [pathname]);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
+  function onDropdownEnter() {
+    if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+    setChinrestHover(true);
+  }
+  function onDropdownLeave() {
+    hoverTimeout.current = setTimeout(() => setChinrestHover(false), 120);
+  }
+
+  const dropdownVisible = chinrestHover;
+
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "bg-white/55 backdrop-blur-sm"
-          : "bg-white/45 backdrop-blur"
+        scrolled ? "bg-white/55 backdrop-blur-sm" : "bg-white/45 backdrop-blur"
       }`}
     >
       <nav className="relative w-full">
         <div className="relative flex min-h-16 w-full items-center justify-between px-4 sm:px-6 md:min-h-20 lg:px-0 lg:py-2">
 
-          {/* Left: desktop nav */}
+          {/* ── Left nav ──────────────────────────────────────────── */}
           <div className="relative z-10 flex min-h-0 min-w-0 flex-1 items-center gap-2 lg:absolute lg:left-0 lg:top-0 lg:bottom-0 lg:z-20 lg:flex-none lg:max-w-[40%] lg:pl-4 xl:pl-6">
             {/* Mobile hamburger */}
             <button
@@ -79,15 +92,21 @@ export default function Header() {
               </svg>
             </button>
 
-            {/* Desktop nav links */}
+            {/* Desktop left links */}
             <ul
               className="hidden min-w-0 flex-nowrap items-center justify-start gap-x-4 gap-y-1 font-display text-[14px] font-medium tracking-[0.12em] lg:flex xl:gap-x-6 xl:text-[16px]"
               style={{ fontFamily: "var(--font-cormorant, serif)" }}
               aria-label="Primary navigation"
             >
-              {navLinks.map((link) =>
+              {leftLinks.map((link) =>
                 link.dropdown ? (
-                  <li key={link.href} className="relative flex items-center gap-1" ref={dropdownRef}>
+                  <li
+                    key={link.href}
+                    className="relative flex items-center gap-1"
+                    ref={dropdownRef}
+                    onMouseEnter={onDropdownEnter}
+                    onMouseLeave={onDropdownLeave}
+                  >
                     <Link
                       href={link.href}
                       className={`inline-block border-b-[3px] pb-0.5 transition-colors duration-200 ${
@@ -98,40 +117,38 @@ export default function Header() {
                     >
                       {link.label}
                     </Link>
-                    <button
-                      onClick={() => setChinrestOpen((o) => !o)}
-                      aria-expanded={chinrestOpen}
-                      aria-label="Toggle chinrest models menu"
-                      className="text-[#16335b] transition-colors duration-200 hover:text-[#ba9e78]"
-                    >
+                    <span className={`text-[#16335b] transition-colors duration-200 ${dropdownVisible ? "text-[#ba9e78]" : ""}`}>
                       <svg
-                        className={`h-3 w-3 transition-transform duration-200 ${chinrestOpen ? "rotate-180" : ""}`}
+                        className={`h-3 w-3 transition-transform duration-200 ${dropdownVisible ? "rotate-180" : ""}`}
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
+                        aria-hidden="true"
                       >
                         <path d="m6 9 6 6 6-6" />
                       </svg>
-                    </button>
+                    </span>
 
-                    {/* Dropdown */}
+                    {/* Hover dropdown */}
                     <ul
                       className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-max list-none py-1.5 font-display text-[14px] font-medium tracking-[0.15em] bg-[#f2f2f3]/88 backdrop-blur-md border border-[#ba9e78]/35 rounded-lg shadow-[0_16px_40px_rgba(22,51,91,0.08)] transition-all duration-200 xl:text-[16px] ${
-                        chinrestOpen
+                        dropdownVisible
                           ? "opacity-100 visible pointer-events-auto"
                           : "opacity-0 invisible pointer-events-none"
                       }`}
                       style={{ fontFamily: "var(--font-cormorant, serif)" }}
+                      onMouseEnter={onDropdownEnter}
+                      onMouseLeave={onDropdownLeave}
                     >
                       {link.dropdown.map((item) => (
                         <li key={item.href}>
                           <Link
                             href={item.href}
-                            className={`block px-3.5 py-1.5 text-center whitespace-nowrap transition-colors duration-150 ${
-                              pathname === item.href
+                            className={`block px-5 py-1.5 text-center whitespace-nowrap transition-colors duration-150 ${
+                              pathname === item.href || (item.href !== "/chinrest" && pathname.startsWith(item.href))
                                 ? "text-[#ba9e78]"
                                 : "text-[#16335b] hover:text-[#ba9e78]"
                             }`}
@@ -160,7 +177,7 @@ export default function Header() {
             </ul>
           </div>
 
-          {/* Center: Logo (absolutely positioned) */}
+          {/* ── Center: Logo ───────────────────────────────────────── */}
           <div className="pointer-events-none absolute inset-0 z-30 flex items-center justify-center lg:z-40">
             <Link
               href="/"
@@ -185,13 +202,35 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Right: spacer (balances the hamburger on mobile) */}
+          {/* ── Right nav ──────────────────────────────────────────── */}
           <div className="relative z-10 flex min-h-0 min-w-0 flex-1 items-center justify-end gap-2 lg:absolute lg:right-0 lg:top-0 lg:bottom-0 lg:flex-none lg:pr-4 xl:pr-6">
+            {/* Mobile spacer */}
             <span className="inline-block h-10 w-10 shrink-0 lg:hidden" aria-hidden="true" />
+
+            {/* Desktop right links */}
+            <ul
+              className="hidden flex-nowrap items-center gap-x-4 font-display text-[14px] font-medium tracking-[0.12em] lg:flex xl:gap-x-6 xl:text-[16px]"
+              style={{ fontFamily: "var(--font-cormorant, serif)" }}
+            >
+              {rightLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={`inline-block border-b-[3px] pb-0.5 transition-colors duration-200 ${
+                      isActive(link.href)
+                        ? "border-[#ba9e78] text-[#ba9e78]"
+                        : "border-transparent text-[#16335b] hover:text-[#ba9e78]"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* ── Mobile menu ────────────────────────────────────────────── */}
         <div
           className={`absolute inset-x-0 top-full z-40 mt-2 px-4 pb-2 sm:px-6 lg:hidden transition-all duration-300 ${
             mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
@@ -202,7 +241,7 @@ export default function Header() {
               className="space-y-3 text-center text-[15px] font-medium tracking-[0.15em]"
               style={{ fontFamily: "var(--font-cormorant, serif)" }}
             >
-              {navLinks.map((link) =>
+              {[...leftLinks, ...rightLinks].map((link) =>
                 link.dropdown ? (
                   <li key={link.href}>
                     <button
@@ -213,7 +252,7 @@ export default function Header() {
                     </button>
                     <ul
                       className={`overflow-hidden transition-all duration-200 ${
-                        chinrestOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                        chinrestOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
                       }`}
                     >
                       {link.dropdown.map((item) => (
