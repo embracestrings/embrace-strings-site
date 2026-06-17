@@ -228,10 +228,12 @@ export default function ShopMap() {
                 const logo = SHOP_LOGOS[name];
                 if (!logo) return null;
                 return (
-                  <button
+                  <motion.button
                     key={`${name}-${i}`}
                     onClick={() => focusShop(logo.focusIndex)}
-                    className="mx-4 flex h-20 w-[11rem] shrink-0 items-center justify-center rounded-lg border border-[#ba9e78]/30 bg-white px-3 shadow-sm transition-shadow duration-200 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ba9e78] sm:h-24 sm:w-52"
+                    whileHover={{ y: -6 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="mx-4 flex h-20 w-[11rem] shrink-0 items-center justify-center rounded-lg border border-[#ba9e78]/30 bg-white px-3 shadow-sm transition-shadow duration-200 hover:shadow-[0_8px_24px_rgba(22,51,91,0.14)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ba9e78] sm:h-24 sm:w-52"
                   >
                     <Image
                       src={logo.src}
@@ -240,7 +242,7 @@ export default function ShopMap() {
                       height={100}
                       className="max-h-12 w-auto max-w-[9rem] object-contain object-center sm:max-h-14 sm:max-w-[11rem]"
                     />
-                  </button>
+                  </motion.button>
                 );
               })}
             </div>
