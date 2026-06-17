@@ -88,6 +88,7 @@ export default function FromTheStandPage() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.55, ease: "easeOut", delay: i * 0.1 }}
             >
+              <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.25, ease: "easeOut" }}>
               <Link
                 href={`/from-the-stand/${post.slug}`}
                 className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#ba9e78]/20 bg-white shadow-[0_4px_20px_rgba(22,51,91,0.05)] transition-shadow duration-300 hover:shadow-[0_12px_32px_rgba(22,51,91,0.11)]"
@@ -122,6 +123,7 @@ export default function FromTheStandPage() {
                   </p>
                 </div>
               </Link>
+              </motion.div>
             </motion.div>
           ))}
         </div>
