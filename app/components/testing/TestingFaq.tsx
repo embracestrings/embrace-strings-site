@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
@@ -26,6 +27,8 @@ const faqs = [
 ];
 
 export default function TestingFaq() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <section className="border-y border-[#ba9e78]/30 bg-[#f2f2f3]/50">
       <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-16">
@@ -48,21 +51,48 @@ export default function TestingFaq() {
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
           className="mx-auto mt-10 max-w-3xl divide-y divide-[#16335b]/15 overflow-hidden rounded-2xl border border-[#ba9e78]/30 bg-white/80 shadow-sm"
         >
-          {faqs.map((faq) => (
-            <details key={faq.q} className="group p-4 sm:p-5">
-              <summary className="flex w-full cursor-pointer list-none items-center justify-between gap-3 text-left text-sm font-medium text-[#16335b] marker:hidden [&::-webkit-details-marker]:hidden sm:text-base">
-                <span className="min-w-0 pr-2">{faq.q}</span>
-                <span
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#ba9e78]/50 text-lg leading-none text-[#ba9e78]"
-                  aria-hidden="true"
+          {faqs.map((faq, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <div key={faq.q} className="p-4 sm:p-5">
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  className="flex w-full items-center justify-between gap-3 text-left text-sm font-medium text-[#16335b] sm:text-base"
+                  aria-expanded={isOpen}
                 >
-                  <span className="inline group-open:hidden">+</span>
-                  <span className="hidden group-open:inline">−</span>
-                </span>
-              </summary>
-              <p className="mt-3 text-sm font-light leading-relaxed text-[#16335b]/80 sm:text-base">{faq.a}</p>
-            </details>
-          ))}
+                  <span className="min-w-0 pr-2">{faq.q}</span>
+                  <span
+                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#ba9e78]/50 text-lg leading-none text-[#ba9e78]"
+                    aria-hidden="true"
+                  >
+                    <motion.span
+                      animate={{ rotate: isOpen ? 45 : 0 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className="inline-block"
+                    >
+                      +
+                    </motion.span>
+                  </span>
+                </button>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="answer"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <p className="mt-3 text-sm font-light leading-relaxed text-[#16335b]/80 sm:text-base">
+                        {faq.a}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

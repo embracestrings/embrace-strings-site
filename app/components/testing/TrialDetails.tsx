@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 const steps = [
   {
+    number: "01",
     title: "The test kit",
     body: (
       <>
@@ -13,8 +14,12 @@ const steps = [
         adjustment in your daily playing.
       </>
     ),
+    image: "/adjustable-violin-chinrest.JPG",
+    imageAlt: "Embrace Strings adjustable chinrest on a violin",
+    textLeft: true,
   },
   {
+    number: "02",
     title: "14 days of music",
     body: (
       <>
@@ -23,8 +28,12 @@ const steps = [
         of the side dials refine height and tilt in seconds.
       </>
     ),
+    image: "/embrace-violin-chinrest-side.JPG",
+    imageAlt: "Side view of Embrace Strings chinrest on a violin",
+    textLeft: false,
   },
   {
+    number: "03",
     title: "Take it or leave it",
     body: (
       <>
@@ -43,123 +52,176 @@ const steps = [
         </ul>
       </>
     ),
+    image: "/violin-chinrest-contact.jpg",
+    imageAlt: "Embrace Strings chinrest detail",
+    textLeft: true,
   },
 ];
 
 export default function TrialDetails() {
   return (
     <article className="bg-[#f2f2f3] text-[#16335b]">
-      <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-        <motion.header
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center"
-        >
-          <h2 className="text-2xl font-medium tracking-[0.02em] text-[#16335b] sm:text-3xl">
-            Embrace Strings Chinrest Test Kit — $25
-          </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-center text-sm font-light leading-relaxed text-[#16335b]/85 sm:text-base">
-            Try our chinrest where it matters most: on your instrument, in real practice and performance conditions.
-            The test kit program gives you <strong className="font-medium text-[#16335b]">14 days</strong> to decide
-            if Embrace Strings is right for you—with clear pricing and a straightforward return path if it is not.
-          </p>
-        </motion.header>
 
-        <div className="mt-12 border-t border-[#ba9e78]/25 pt-10">
-          <motion.h3
+      {/* ── Kit intro — navy band ──────────────────────────────── */}
+      <section className="bg-[#16335b] py-20 sm:py-28">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-lg font-medium tracking-[0.02em] text-[#16335b] sm:text-xl"
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="font-[var(--font-cormorant)] text-4xl font-medium tracking-[0.02em] text-[#f2f2f3] sm:text-5xl"
           >
-            How it works
-          </motion.h3>
-          <ol className="mt-6 space-y-8 text-sm font-light leading-relaxed text-[#16335b]/85 sm:text-base">
-            {steps.map((step, i) => (
-              <motion.li
-                key={step.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.1 }}
-                className="flex gap-4"
-              >
-                <span
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#ba9e78]/50 bg-[#f2f2f3]/80 text-xs font-semibold tracking-wide text-[#16335b]"
-                  aria-hidden="true"
-                >
-                  {i + 1}
-                </span>
-                <div>
-                  <p className="font-medium text-[#16335b]">{step.title}</p>
-                  <div className="mt-2">{step.body}</div>
-                </div>
-              </motion.li>
-            ))}
-          </ol>
+            Embrace Strings Chinrest Test Kit — $25
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.12 }}
+            className="mx-auto mt-6 max-w-xl text-base font-light leading-relaxed text-[#f2f2f3]/65"
+            style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
+          >
+            Try our chinrest where it matters most: on your instrument, in real practice and performance conditions.
+          </motion.p>
         </div>
+      </section>
 
+      {/* ── How it works — alternating blocks ─────────────────── */}
+      <section>
+        {steps.map((step, i) => (
+          <div key={step.number}>
+            <div className="mx-auto grid max-w-6xl items-center gap-0 px-4 py-16 sm:px-6 sm:py-24 md:grid-cols-2 md:gap-16">
+
+              {/* Text column */}
+              <motion.div
+                initial={{ opacity: 0, x: step.textLeft ? -40 : 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className={`flex flex-col justify-center ${step.textLeft ? "md:order-1" : "md:order-2"}`}
+              >
+                <p
+                  className="font-[var(--font-cormorant)] text-6xl font-medium leading-none text-[#ba9e78]/30 sm:text-8xl"
+                >
+                  {step.number}
+                </p>
+                <h3
+                  className="mt-4 font-[var(--font-cormorant)] text-3xl font-medium tracking-[0.02em] text-[#16335b] sm:text-4xl"
+                >
+                  {step.title}
+                </h3>
+                <div className="mt-5 text-sm font-light leading-relaxed text-[#16335b]/75 sm:text-base">
+                  {step.body}
+                </div>
+              </motion.div>
+
+              {/* Image column */}
+              <motion.div
+                initial={{ opacity: 0, x: step.textLeft ? 40 : -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+                className={`${step.textLeft ? "md:order-2" : "md:order-1"} mt-10 md:mt-0`}
+              >
+                <div className="overflow-hidden rounded-2xl border border-[#ba9e78]/25 shadow-[0_16px_40px_rgba(22,51,91,0.08)]">
+                  <Image
+                    src={step.image}
+                    alt={step.imageAlt}
+                    width={800}
+                    height={600}
+                    className="h-auto w-full object-cover object-center"
+                  />
+                </div>
+              </motion.div>
+
+            </div>
+
+            {/* Divider between blocks */}
+            {i < steps.length - 1 && (
+              <div className="mx-auto max-w-6xl border-t border-[#ba9e78]/20 px-4 sm:px-6" />
+            )}
+          </div>
+        ))}
+      </section>
+
+      {/* ── CTA — Ready to find your fit ──────────────────────── */}
+      <section className="border-t border-[#ba9e78]/25 py-20 sm:py-28">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mt-12 flex flex-col gap-4 sm:mx-auto sm:max-w-md"
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="mx-auto max-w-xl px-4 text-center sm:px-6"
         >
-          <a
-            href="https://buy.stripe.com/aFaeVfec14IAdL4dJSafS01"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex w-full items-center justify-center rounded-lg bg-[#16335b] px-6 py-3.5 text-center font-medium tracking-[0.14em] text-[#f2f2f3] transition hover:bg-[#ba9e78] hover:text-[#16335b]"
+          <h2 className="font-[var(--font-cormorant)] text-4xl font-medium tracking-[0.02em] text-[#16335b] sm:text-5xl">
+            Ready to find your fit?
+          </h2>
+          <p
+            className="mt-4 text-base font-light text-[#16335b]/60"
+            style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
           >
-            Start My Trial
-          </a>
-          <p className="text-center text-sm font-light text-[#16335b]/75">
-            Review our{" "}
+            14 days. No tools. No commitment.
+          </p>
+          <div className="mt-8 flex flex-col items-center gap-4">
             <a
-              href="/Chinrest Testing Terms and Conditions.pdf"
+              href="https://buy.stripe.com/aFaeVfec14IAdL4dJSafS01"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-[#16335b] underline decoration-[#ba9e78]/50 underline-offset-2 transition hover:text-[#ba9e78]"
+              className="inline-flex w-full items-center justify-center rounded-lg bg-[#16335b] px-8 py-3.5 font-medium tracking-[0.14em] text-[#f2f2f3] transition hover:bg-[#ba9e78] hover:text-[#16335b] sm:w-auto"
+              style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
             >
-              Trial Terms
-            </a>{" "}
-            before purchasing.
-          </p>
-        </motion.div>
-
-        <motion.figure
-          initial={{ opacity: 0, scale: 0.96 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="mt-14"
-        >
-          <div className="overflow-hidden rounded-2xl border border-[#ba9e78]/25 shadow-[0_16px_40px_rgba(22,51,91,0.08)]">
-            <Image
-              src="/adjustable-violin-chinrest.JPG"
-              alt="Close-up of the Embrace Strings adjustable chinrest mounted on a violin"
-              width={1200}
-              height={800}
-              className="h-auto w-full object-cover object-center"
-            />
-          </div>
-          <figcaption className="mt-3 text-center text-xs font-light leading-relaxed text-[#16335b]/65 sm:text-sm">
-            For full program rules, shipping details, and billing timing, review the trial terms document above or
-            reach us at{" "}
-            <a
-              href="mailto:info@embracestrings.com"
-              className="font-medium text-[#16335b] underline decoration-[#ba9e78]/50 underline-offset-2 transition hover:text-[#ba9e78]"
-            >
-              info@embracestrings.com
+              Start My Trial
             </a>
-            .
-          </figcaption>
-        </motion.figure>
-      </div>
+            <p
+              className="text-sm font-light text-[#16335b]/75"
+              style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
+            >
+              Review our{" "}
+              <a
+                href="/Chinrest Testing Terms and Conditions.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[#16335b] underline decoration-[#ba9e78]/50 underline-offset-2 transition hover:text-[#ba9e78]"
+              >
+                Trial Terms
+              </a>{" "}
+              before purchasing.
+            </p>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ── Product image + contact ────────────────────────────── */}
+      <motion.figure
+        initial={{ opacity: 0, scale: 0.96 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="border-t border-[#ba9e78]/25 px-4 pb-16 pt-14 sm:px-6 sm:pb-20"
+      >
+        <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-[#ba9e78]/25 shadow-[0_16px_40px_rgba(22,51,91,0.08)]">
+          <Image
+            src="/adjustable-violin-chinrest.JPG"
+            alt="Close-up of the Embrace Strings adjustable chinrest mounted on a violin"
+            width={1200}
+            height={800}
+            className="h-auto w-full object-cover object-center"
+          />
+        </div>
+        <figcaption className="mt-4 text-center text-xs font-light leading-relaxed text-[#16335b]/65 sm:text-sm">
+          For full program rules, shipping details, and billing timing, review the trial terms document above or
+          reach us at{" "}
+          <a
+            href="mailto:info@embracestrings.com"
+            className="font-medium text-[#16335b] underline decoration-[#ba9e78]/50 underline-offset-2 transition hover:text-[#ba9e78]"
+          >
+            info@embracestrings.com
+          </a>
+          .
+        </figcaption>
+      </motion.figure>
+
     </article>
   );
 }
