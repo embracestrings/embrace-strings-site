@@ -64,9 +64,23 @@ a:hover, a:focus-visible, button:hover, button:focus-visible {
   to   { transform: translateX(-50%); }
 }
 
+.from-the-stand-marquee {
+  display: flex;
+  width: max-content;
+  animation: from-the-stand-scroll 40s linear infinite;
+}
+.from-the-stand-marquee:hover {
+  animation-play-state: paused;
+}
+@keyframes from-the-stand-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .shop-marquee-inner,
-  .shop-map-strip {
+  .shop-map-strip,
+  .from-the-stand-marquee {
     animation: none;
   }
 }
