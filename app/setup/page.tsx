@@ -11,7 +11,6 @@ export default function SetupPage() {
   return (
     <>
       <SetupHero />
-      <div className="h-px w-full bg-[#ba9e78]/35" />
       <SetupGuide />
       <SetupStruggles />
     </>

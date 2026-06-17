@@ -1,140 +1,156 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const steps = [
   {
-    title: "1. Attach the Chinrest Clamp Barrels",
+    number: "01",
+    title: "Attach the Chinrest Clamp Barrels",
     body: (
-      <p className="mt-3">
+      <p className="mt-4 text-sm font-light leading-relaxed text-[#16335b]/75 sm:text-base">
         Screw the clamp barrels onto the chinrest. These barrels are what secure the chinrest to your instrument, so make sure they are firmly in place before moving on.
       </p>
     ),
+    image: "/adjustable-violin-chinrest.JPG",
+    imageAlt: "Embrace Strings adjustable chinrest",
   },
   {
-    title: "2. Position and Secure the Chinrest",
+    number: "02",
+    title: "Position and Secure the Chinrest",
     body: (
       <>
-        <p className="mt-3">
+        <p className="mt-4 text-sm font-light leading-relaxed text-[#16335b]/75 sm:text-base">
           Place the chinrest to the left of the tailpiece and tighten the clamp using the tightener until snug.
         </p>
-        <aside className="mt-4 rounded-r-lg border-l-4 border-[#ba9e78] bg-[#f2f2f3]/60 px-4 py-3 text-[#16335b]/90">
+        <aside className="mt-5 rounded-r-lg border-l-4 border-[#ba9e78] bg-[#f2f2f3]/60 px-4 py-3 text-[#16335b]/90">
           <p className="font-medium text-[#16335b]">Important:</p>
-          <p className="mt-1">
+          <p className="mt-1 text-sm font-light leading-relaxed sm:text-base">
             Don&apos;t overtighten — this could damage your instrument. The chinrest should sit firmly but without forcing your instrument.
           </p>
         </aside>
       </>
     ),
+    image: "/embrace-violin-chinrest-side.JPG",
+    imageAlt: "Chinrest mounted on a violin, side view",
   },
   {
-    title: "3. Set Your Shoulder and Instrument",
+    number: "03",
+    title: "Set Your Shoulder and Instrument",
     body: (
-      <p className="mt-3">
+      <p className="mt-4 text-sm font-light leading-relaxed text-[#16335b]/75 sm:text-base">
         Place your instrument on your shoulder and look straight ahead — don&apos;t worry about your chin yet. Adjust your shoulder rest so the instrument sits comfortably on your collarbone. The instrument should come out at roughly a 45° angle and stay in place with just your shoulder and left hand. This ensures that your chinrest fills in the natural space between your chin and the instrument, rather than forcing your neck into tension.
       </p>
     ),
+    image: "/turner-chinrest-about-embrace.jpg",
+    imageAlt: "Turner Rey playing violin with Embrace Strings chinrest",
   },
   {
-    title: "4. Adjust Height and Tilt",
+    number: "04",
+    title: "Adjust Height and Tilt",
     body: (
       <>
-        <p className="mt-3">Use the top dials to set the chinrest&apos;s height and tilt:</p>
-        <ul className="mt-3 list-none space-y-3 pl-0">
-          <li>
-            <span className="text-[#ba9e78]" aria-hidden="true">— </span>Fill the gap between your chin and the instrument comfortably.
-          </li>
-          <li>
-            <span className="text-[#ba9e78]" aria-hidden="true">— </span>Chinrest should be at the same angle as your jawline.
-          </li>
-          <li>
-            <span className="text-[#ba9e78]" aria-hidden="true">— </span>Ideally, it rests about 2 fingers below your head, allowing your head&apos;s natural weight to help secure the instrument.
-          </li>
-          <li>
-            <span className="text-[#ba9e78]" aria-hidden="true">— </span>Think of the chinrest as a pillow for your jaw, helping you Embrace the instrument.
-          </li>
+        <p className="mt-4 text-sm font-light leading-relaxed text-[#16335b]/75 sm:text-base">Use the top dials to set the chinrest&apos;s height and tilt:</p>
+        <ul className="mt-3 list-none space-y-3 pl-0 text-sm font-light leading-relaxed text-[#16335b]/75 sm:text-base">
+          <li><span className="text-[#ba9e78]" aria-hidden="true">— </span>Fill the gap between your chin and the instrument comfortably.</li>
+          <li><span className="text-[#ba9e78]" aria-hidden="true">— </span>Chinrest should be at the same angle as your jawline.</li>
+          <li><span className="text-[#ba9e78]" aria-hidden="true">— </span>Ideally, it rests about 2 fingers below your head, allowing your head&apos;s natural weight to help secure the instrument.</li>
+          <li><span className="text-[#ba9e78]" aria-hidden="true">— </span>Think of the chinrest as a pillow for your jaw, helping you Embrace the instrument.</li>
         </ul>
       </>
     ),
+    image: "/violin-chinrest-contact.jpg",
+    imageAlt: "Detail view of Embrace Strings chinrest",
   },
   {
-    title: "5. Lock the Chinrest in Place",
+    number: "05",
+    title: "Lock the Chinrest in Place",
     body: (
       <>
-        <p className="mt-3">Once the height and tilt feel right, use the center dial to stabilize the chinrest:</p>
-        <p className="mt-3">Turn until it cannot easily rotate.</p>
-        <p className="mt-3">You do not need to overtighten — firm is enough.</p>
+        <p className="mt-4 text-sm font-light leading-relaxed text-[#16335b]/75 sm:text-base">Once the height and tilt feel right, use the center dial to stabilize the chinrest:</p>
+        <p className="mt-3 text-sm font-light leading-relaxed text-[#16335b]/75 sm:text-base">Turn until it cannot easily rotate.</p>
+        <p className="mt-3 text-sm font-light leading-relaxed text-[#16335b]/75 sm:text-base">You do not need to overtighten — firm is enough.</p>
       </>
     ),
+    image: null,
+    imageAlt: "",
   },
   {
-    title: "6. Tips and Troubleshooting",
+    number: "06",
+    title: "Tips and Troubleshooting",
     body: (
-      <ul className="mt-3 list-disc space-y-3 pl-5 marker:text-[#ba9e78]">
+      <ul className="mt-4 list-disc space-y-3 pl-5 text-sm font-light leading-relaxed marker:text-[#ba9e78] text-[#16335b]/75 sm:text-base">
         <li>If the top part of the chinrest comes off, simply pull it back down onto the threaded rod and retighten the top dial.</li>
         <li>Always unlock the center dial before making further adjustments.</li>
         <li>After playing, it&apos;s best practice to unlock the center dial to prolong the life of your chinrest.</li>
       </ul>
     ),
+    image: null,
+    imageAlt: "",
   },
 ];
 
 export default function SetupGuide() {
   return (
-    <section id="setup-guide" className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="text-center text-4xl font-medium"
-      >
-        How to Use Your Chinrest:
-      </motion.h2>
+    <section id="setup-guide" className="bg-[#f2f2f3]">
+      {steps.map((step, i) => {
+        const textLeft = i % 2 === 0;
+        return (
+          <div key={step.number}>
+            <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-16 sm:px-6 sm:py-24 md:grid-cols-2 md:gap-16">
 
-      <motion.article
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-        className="mx-auto mt-8 w-full max-w-6xl rounded-2xl border border-[#ba9e78]/35 bg-white px-6 py-10 shadow-[0_16px_40px_rgba(22,51,91,0.08)] sm:px-10 sm:py-12 lg:px-14 lg:py-14"
-        aria-labelledby="setup-guide-title"
-      >
-        <header className="border-b border-[#ba9e78]/25 pb-8 text-center">
-          <h3 id="setup-guide-title" className="text-3xl font-medium tracking-[0.02em] text-[#16335b] sm:text-[2rem]">
-            Chinrest Setup Guide
-          </h3>
-          <p className="mx-auto mt-5 max-w-none text-left text-sm leading-relaxed text-[#16335b]/85 sm:text-[15px] lg:text-base">
-            Follow these steps to adjust your Embrace Strings chinrest for natural posture, comfort, and effortless play. Take your time, and remember: small adjustments make a big difference.
-          </p>
-        </header>
+              {/* Text column */}
+              <motion.div
+                initial={{ opacity: 0, x: textLeft ? -40 : 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className={`flex flex-col justify-center ${textLeft ? "md:order-1" : "md:order-2"}`}
+              >
+                <p className="font-[var(--font-cormorant)] text-6xl font-medium leading-none text-[#ba9e78]/25 sm:text-8xl">
+                  {step.number}
+                </p>
+                <h2 className="mt-4 font-[var(--font-cormorant)] text-3xl font-medium tracking-[0.02em] text-[#16335b] sm:text-4xl">
+                  {step.title}
+                </h2>
+                {step.body}
+              </motion.div>
 
-        <div className="mt-10 space-y-10 text-sm leading-relaxed text-[#16335b]/85 sm:text-[15px] lg:text-base">
-          {steps.map((step, i) => (
-            <motion.section
-              key={step.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.05 }}
-            >
-              <h4 className="text-lg font-medium tracking-[0.02em] text-[#16335b]">{step.title}</h4>
-              {step.body}
-            </motion.section>
-          ))}
-        </div>
-      </motion.article>
+              {/* Image column */}
+              <motion.div
+                initial={{ opacity: 0, x: textLeft ? 40 : -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+                className={`${textLeft ? "md:order-2" : "md:order-1"} mt-6 md:mt-0`}
+              >
+                {step.image ? (
+                  <div className="overflow-hidden rounded-2xl border border-[#ba9e78]/25 shadow-[0_16px_40px_rgba(22,51,91,0.08)]">
+                    <Image
+                      src={step.image}
+                      alt={step.imageAlt}
+                      width={800}
+                      height={600}
+                      className="h-auto w-full object-cover object-center"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex aspect-[4/3] w-full items-center justify-center rounded-2xl border border-[#ba9e78]/20 bg-[#e8e4de]">
+                    <span className="font-[var(--font-cormorant)] text-5xl font-medium text-[#ba9e78]/40">
+                      {step.number}
+                    </span>
+                  </div>
+                )}
+              </motion.div>
 
-      <div className="mt-8 flex justify-center">
-        <a
-          href="/Chinrest Setup Document.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center rounded-lg bg-[#16335b] px-8 py-3 font-medium tracking-[0.12em] text-[#f2f2f3] transition hover:bg-[#ba9e78] hover:text-[#16335b]"
-        >
-          Download Setup Guide (PDF)
-        </a>
-      </div>
+            </div>
+
+            {i < steps.length - 1 && (
+              <div className="mx-auto max-w-6xl border-t border-[#ba9e78]/20 px-4 sm:px-6" />
+            )}
+          </div>
+        );
+      })}
     </section>
   );
 }
