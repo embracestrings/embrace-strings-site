@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const headline =
-  "A world where no musician is held back from giving everything to their music.";
+  "A world where no musician is held back from fully Embracing their music.";
 
 const wordVariants = {
   hidden: { opacity: 0, y: 16 },
@@ -56,14 +56,6 @@ export default function Hero() {
             ))}
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 + words.length * 0.08 + 0.4 }}
-            className="mt-6 font-[var(--font-cormorant)] text-lg italic tracking-[0.04em] text-[#ba9e78] sm:text-xl"
-          >
-            We build for the player.
-          </motion.p>
         </div>
       </div>
     </section>
