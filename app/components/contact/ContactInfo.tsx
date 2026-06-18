@@ -2,64 +2,31 @@
 
 import { motion } from "framer-motion";
 
-const socials = [
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/embracestrings/",
-    icon: (
-      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-    ),
-  },
-  {
-    name: "Facebook",
-    href: "https://www.facebook.com/people/Embrace-Strings/61565017010129/?sk=about",
-    icon: (
-      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-    ),
-  },
-  {
-    name: "TikTok",
-    href: "https://www.tiktok.com/@embracestrings",
-    icon: (
-      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z" />
-    ),
-  },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/company/embrace-strings/",
-    icon: (
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-    ),
-  },
-];
-
 export default function ContactInfo() {
   return (
-    <>
+    <div className="mt-0 grid gap-6 sm:grid-cols-2">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="mt-12 rounded-2xl border border-[#ba9e78]/35 bg-white/40 p-6 shadow-[0_16px_40px_rgba(22,51,91,0.08)] sm:p-8"
+        className="rounded-2xl border border-[#16335b] bg-[#f2f2f3] p-8 sm:p-10"
       >
-        <h2 className="text-2xl font-medium text-[#16335b]">Social Links</h2>
-        <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          {socials.map((s) => (
-            <a
-              key={s.name}
-              href={s.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#16335b] px-4 py-2.5 font-medium tracking-[0.12em] text-[#f2f2f3] transition hover:bg-[#ba9e78] hover:text-[#16335b]"
-            >
-              <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                {s.icon}
-              </svg>
-              {s.name}
-            </a>
-          ))}
-        </div>
+        <h2 className="font-[var(--font-cormorant)] text-2xl font-medium tracking-[0.02em] text-[#16335b] sm:text-3xl">
+          Free Fitting
+        </h2>
+        <p className="mt-4 text-sm font-light leading-relaxed text-[#16335b]/75 sm:text-base">
+          Not sure if Embrace Strings is right for you? We offer free video consultations to help find your
+          perfect setup—no obligation.
+        </p>
+        <p className="mt-4 text-sm text-[#16335b]/75">
+          <a
+            href="/setup#setup-struggles"
+            className="font-medium text-[#16335b] underline decoration-[#ba9e78]/50 underline-offset-2 transition hover:text-[#ba9e78]"
+          >
+            Schedule a free fitting
+          </a>
+        </p>
       </motion.div>
 
       <motion.div
@@ -67,33 +34,23 @@ export default function ContactInfo() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-        className="mt-8 grid gap-6 sm:grid-cols-2"
+        className="rounded-2xl border border-[#16335b] bg-[#f2f2f3] p-8 sm:p-10"
       >
-        <div className="rounded-2xl border border-[#ba9e78]/35 bg-white/40 p-6 shadow-[0_16px_40px_rgba(22,51,91,0.08)] sm:p-8">
-          <h2 className="text-2xl font-medium text-[#16335b]">Free Fitting</h2>
-          <p className="mt-3 text-sm font-light leading-relaxed text-[#16335b]/80">
-            Not sure if Embrace Strings is right for you? We offer free video consultations to help find your
-            perfect setup—no obligation.
-          </p>
-          <p className="mt-3 text-sm text-[#16335b]/80">
-            <a href="/setup#setup-struggles" className="font-medium text-[#16335b] underline decoration-[#ba9e78]/50 underline-offset-2 transition hover:text-[#ba9e78]">
-              Schedule a free fitting
-            </a>
-          </p>
-        </div>
-
-        <div className="rounded-2xl border border-[#ba9e78]/35 bg-white/40 p-6 shadow-[0_16px_40px_rgba(22,51,91,0.08)] sm:p-8">
-          <h2 className="text-2xl font-medium text-[#16335b]">Wholesale Inquiries</h2>
-          <p className="mt-3 text-sm font-light leading-relaxed text-[#16335b]/80">
-            Interested in carrying Embrace Strings products? Email us for retailer and distributor details.
-          </p>
-          <p className="mt-3 text-sm text-[#16335b]/80">
-            <a href="mailto:wholesale@embracestrings.com" className="break-all font-medium text-[#16335b] underline decoration-[#ba9e78]/50 underline-offset-2 transition hover:text-[#ba9e78]">
-              wholesale@embracestrings.com
-            </a>
-          </p>
-        </div>
+        <h2 className="font-[var(--font-cormorant)] text-2xl font-medium tracking-[0.02em] text-[#16335b] sm:text-3xl">
+          Wholesale Inquiries
+        </h2>
+        <p className="mt-4 text-sm font-light leading-relaxed text-[#16335b]/75 sm:text-base">
+          Interested in carrying Embrace Strings products? Email us for retailer and distributor details.
+        </p>
+        <p className="mt-4 text-sm text-[#16335b]/75">
+          <a
+            href="mailto:wholesale@embracestrings.com"
+            className="break-all font-medium text-[#16335b] underline decoration-[#ba9e78]/50 underline-offset-2 transition hover:text-[#ba9e78]"
+          >
+            wholesale@embracestrings.com
+          </a>
+        </p>
       </motion.div>
-    </>
+    </div>
   );
 }
