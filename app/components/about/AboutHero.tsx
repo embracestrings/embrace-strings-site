@@ -24,9 +24,7 @@ export default function AboutHero() {
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
               className="mt-4 font-[var(--font-cormorant)] text-4xl font-medium leading-tight tracking-[0.02em] text-white drop-shadow-sm sm:text-5xl lg:text-6xl"
             >
-              Built by Musicians.{" "}
-              <br className="hidden sm:block" />
-              For Musicians.
+              Why We Built Embrace Strings
             </motion.h1>
           </div>
         </div>
