@@ -7,21 +7,21 @@ import { motion } from "framer-motion";
 const cards = [
   {
     label: "Chinrest",
-    description: "Tool-free. Fully adjustable. Built for every player.",
+    description: "Tool-free adjustment, built for every setup.",
     href: "/chinrest",
     image: "/adjustable-violin-chinrest.JPG",
     imagePosition: "object-[50%_32%]",
   },
   {
     label: "Setup",
-    description: "Dialing in your fit, step by step.",
+    description: "Your fit, dialed in step by step.",
     href: "/setup",
     image: "/violin-chinrest-contact.jpg",
     imagePosition: "object-center",
   },
   {
     label: "About",
-    description: "Who we are and why we build.",
+    description: "The story behind Embrace Strings.",
     href: "/about",
     image: "/turner-chinrest-about-embrace.jpg",
     imagePosition: "object-center",
@@ -39,7 +39,7 @@ export default function HowWeDoIt() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center font-[var(--font-cormorant)] text-4xl font-medium tracking-[0.02em] text-[#16335b] sm:text-5xl"
         >
-          How we do it.
+          How We Embrace.
         </motion.h2>
 
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
