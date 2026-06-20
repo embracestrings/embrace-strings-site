@@ -21,25 +21,17 @@ export default function ContactLayout() {
             <ContactForm />
           </motion.div>
 
-          {/* Right: navy panel */}
+          {/* Right: team photo placeholder */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-            className="flex items-center justify-center rounded-2xl bg-[#16335b] px-10 py-16 sm:px-14 sm:py-20"
+            className="flex min-h-[280px] items-center justify-center overflow-hidden rounded-2xl border border-[#ba9e78]/30 bg-[#d4bc99]/20 shadow-[0_16px_40px_rgba(22,51,91,0.08)]"
           >
-            <div className="text-center">
-              <p className="font-[var(--font-cormorant)] text-4xl font-medium leading-snug tracking-[0.02em] text-[#f2f2f3] sm:text-5xl">
-                Play freely.
-              </p>
-              <p
-                className="mt-4 text-sm font-light leading-relaxed text-[#f2f2f3]/55 sm:text-base"
-                style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
-              >
-                We&rsquo;re here to help you get there.
-              </p>
-            </div>
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#ba9e78]/60">
+              Team photo coming soon
+            </p>
           </motion.div>
 
         </div>
