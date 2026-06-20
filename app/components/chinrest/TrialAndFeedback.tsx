@@ -32,33 +32,6 @@ export default function TrialAndFeedback() {
         </div>
       </motion.section>
 
-      <motion.section
-        {...fadeUp}
-        id="chinrest-feedback"
-        className="border-t border-[#ba9e78]/25 bg-[#f2f2f3]"
-        aria-labelledby="chinrest-feedback-heading"
-      >
-        <div className="mx-auto max-w-3xl px-4 py-12 text-center sm:px-6 sm:py-16">
-          <div className="rounded-2xl border border-[#ba9e78]/30 bg-[#f2f2f3]/50 p-6 shadow-sm sm:p-8">
-            <h2 id="chinrest-feedback-heading" className="text-2xl font-medium tracking-[0.02em] text-[#16335b] sm:text-3xl">
-              Leave a Review
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-sm font-light leading-relaxed text-[#16335b]/85 sm:text-base">
-              If you have tried or are using an Embrace Strings chinrest, we would love your feedback—what is working well, what is not, and anything that would help us support players better. A short survey helps us hear from you in one place.
-            </p>
-            <div className="mt-6 flex justify-center">
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-lg bg-[#16335b] px-8 py-3 text-center font-medium tracking-[0.12em] text-[#f2f2f3] transition hover:bg-[#ba9e78] hover:text-[#16335b]"
-              >
-                Take Feedback Survey
-              </a>
-            </div>
-          </div>
-        </div>
-      </motion.section>
     </>
   );
 }
