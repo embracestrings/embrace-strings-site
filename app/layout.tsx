@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Cormorant_Garamond } from "next/font/google";
+import { Montserrat, Cormorant_Garamond, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -15,6 +15,13 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],
   weight: ["500", "600", "700"],
+  display: "swap",
+});
+
+const dancingScript = Dancing_Script({
+  variable: "--font-dancing-script",
+  subsets: ["latin"],
+  weight: ["400", "700"],
   display: "swap",
 });
 
@@ -41,7 +48,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${montserrat.variable} ${cormorant.variable} h-full antialiased`}
+      className={`${montserrat.variable} ${cormorant.variable} ${dancingScript.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#f2f2f3] text-[#16335b]">
         <Header />

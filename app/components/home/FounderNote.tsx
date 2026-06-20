@@ -8,7 +8,7 @@ const wordVariants = {
 };
 
 const quoteWords =
-  "Embrace means [placeholder — founder's note on what Embrace means goes here].".split(" ");
+  "We built Embrace to remove the barriers that get between a musician and their music — in setup, in practice, in performance. Once free from limitations, the music inside you can finally come out. Play freely.".split(" ");
 
 export default function FounderNote() {
   return (
@@ -40,12 +40,20 @@ export default function FounderNote() {
           ))}
         </motion.blockquote>
 
-        <p
-          className="mt-8 text-sm font-light tracking-[0.08em] text-[#16335b]/70 sm:text-base"
-          style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
-        >
-          — Turner Rey, Founder &amp; CEO
-        </p>
+        <div className="mt-8">
+          <p
+            className="text-4xl text-[#ba9e78] sm:text-5xl"
+            style={{ fontFamily: "var(--font-dancing-script, cursive)" }}
+          >
+            Turner Rey
+          </p>
+          <p
+            className="mt-1 text-xs font-light tracking-[0.12em] text-[#16335b]/55 sm:text-sm"
+            style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
+          >
+            Founder &amp; CEO, Embrace Strings
+          </p>
+        </div>
       </div>
     </section>
   );
