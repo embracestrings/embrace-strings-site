@@ -7,8 +7,9 @@ const wordVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const quoteWords =
-  "We built Embrace to remove the barriers that get between a musician and their music — in setup, in practice, in performance. Once free from limitations, the music inside you can finally come out. Play freely.".split(" ");
+const mainWords =
+  "We built Embrace to remove the barriers between a musician and their music — in setup, in practice, in performance. Once free from limitations, the music inside you can finally come out.".split(" ");
+const closingWords = ["Play", "freely."];
 
 export default function FounderNote() {
   return (
@@ -28,9 +29,20 @@ export default function FounderNote() {
           transition={{ staggerChildren: 0.06 }}
           className="mt-6 font-[var(--font-cormorant)] text-xl font-medium leading-relaxed tracking-[0.01em] text-[#ba9e78] sm:text-2xl lg:text-3xl"
         >
-          {quoteWords.map((word, i) => (
+          {mainWords.map((word, i) => (
             <motion.span
               key={i}
+              variants={wordVariants}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="mr-[0.28em] inline-block"
+            >
+              {word}
+            </motion.span>
+          ))}
+          <br />
+          {closingWords.map((word, i) => (
+            <motion.span
+              key={`closing-${i}`}
               variants={wordVariants}
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="mr-[0.28em] inline-block"
