@@ -45,7 +45,7 @@ export default function YourEmbrace() {
           className="text-center"
         >
           <h2 className="font-[var(--font-cormorant)] text-4xl font-medium tracking-[0.02em] text-[#16335b] sm:text-5xl">
-            Your Embrace
+            Personalize Your Embrace
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm font-light leading-relaxed text-[#16335b]/65 sm:text-base">
             Every chinrest can be personalized. Yours should feel like it was made for you.

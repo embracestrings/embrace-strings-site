@@ -18,7 +18,7 @@ const team = [
   },
   {
     name: "Akemi Nunez",
-    role: "Marketing Intern",
+    role: "Marketing Manager",
     image: "/akemi-headshot.jpg",
     href: "https://www.linkedin.com/in/akeminunez/",
   },

@@ -12,7 +12,7 @@ import { useRef } from "react";
 const STAGGER = 0.08;
 const START = 0.15;
 
-type Token = { word: string; delay: number } | null; // null = <br>
+type Token = { word: string; delay: number } | null | "mobile-br"; // null = <br>, "mobile-br" = mobile-only <br>
 
 const line1: Token[] = [
   { word: "A",          delay: START + 0 * STAGGER },
@@ -29,6 +29,7 @@ const line2: Token[] = [
   { word: "from",       delay: START + 8  * STAGGER },
   { word: "fully",      delay: START + 9  * STAGGER },
   { word: "Embracing",  delay: 0 }, // anchor — animates immediately
+  "mobile-br",
   { word: "their",      delay: START + 10 * STAGGER },
   { word: "music.",     delay: START + 11 * STAGGER },
 ];
@@ -61,6 +62,7 @@ export default function Hero() {
           <h1 className="font-[var(--font-cormorant)] text-3xl font-medium leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
             {allTokens.map((token, i) => {
               if (token === null) return <br key={`br-${i}`} />;
+              if (token === "mobile-br") return <br key={`mbr-${i}`} className="sm:hidden" />;
 
               if (token.word === "Embracing") {
                 return (

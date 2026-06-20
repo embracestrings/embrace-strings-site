@@ -18,15 +18,6 @@ export default function SetupHero() {
 
         <div className="relative flex min-h-[min(72vh,520px)] items-center justify-center px-4 py-20 sm:min-h-[420px] lg:min-h-[460px]">
           <div className="mx-auto max-w-4xl text-center">
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-xs font-medium uppercase tracking-[0.28em] text-[#ba9e78] sm:text-sm"
-              style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
-            >
-              Setup Guide
-            </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
