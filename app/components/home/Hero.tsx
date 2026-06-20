@@ -54,7 +54,7 @@ export default function Hero() {
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   className="mr-[0.3em] inline-block"
                 >
-                  {word}
+                  {word === "Embracing" ? <em>{word}</em> : word}
                 </motion.span>
               )
             )}
