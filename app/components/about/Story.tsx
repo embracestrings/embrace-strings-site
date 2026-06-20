@@ -57,25 +57,6 @@ export default function Story() {
         </div>
       </div>
 
-      {/* ── Pull quote ──────────────────────────────────────────── */}
-      <div className="bg-[#f2f2f3] py-16 sm:py-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="mx-auto max-w-3xl px-4 text-center sm:px-6"
-        >
-          <div className="mx-auto mb-8 h-px w-16 bg-[#ba9e78]/40" />
-          <p
-            className="font-[var(--font-cormorant)] text-2xl font-medium italic leading-snug tracking-[0.01em] text-[#ba9e78] sm:text-3xl lg:text-4xl"
-          >
-            &ldquo;Comfort existed in theory, but rarely when it was actually needed.&rdquo;
-          </p>
-          <div className="mx-auto mt-8 h-px w-16 bg-[#ba9e78]/40" />
-        </motion.div>
-      </div>
-
       {/* ── Act 2: centered full-width ──────────────────────────── */}
       <div className="bg-[#eceae6] py-20 sm:py-28">
         <motion.div
