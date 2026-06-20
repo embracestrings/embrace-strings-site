@@ -13,7 +13,7 @@ const quoteWords =
 export default function FounderNote() {
   return (
     <section className="bg-[#f2f2f3] px-6 py-24 sm:py-32">
-      <div className="mx-auto max-w-3xl text-center">
+      <div className="mx-auto max-w-5xl text-center">
         <p
           className="text-xs font-medium uppercase tracking-[0.28em] text-[#ba9e78] sm:text-sm"
           style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
@@ -26,7 +26,7 @@ export default function FounderNote() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.4 }}
           transition={{ staggerChildren: 0.06 }}
-          className="mt-6 font-[var(--font-cormorant)] text-3xl font-medium italic leading-snug tracking-[0.01em] text-[#ba9e78] sm:text-4xl lg:text-5xl"
+          className="mt-6 font-[var(--font-cormorant)] text-xl font-medium leading-relaxed tracking-[0.01em] text-[#ba9e78] sm:text-2xl lg:text-3xl"
         >
           {quoteWords.map((word, i) => (
             <motion.span
@@ -43,7 +43,7 @@ export default function FounderNote() {
         <div className="mt-8">
           <p
             className="text-4xl text-[#ba9e78] sm:text-5xl"
-            style={{ fontFamily: "var(--font-dancing-script, cursive)" }}
+            style={{ fontFamily: "var(--font-pinyon-script, cursive)" }}
           >
             Turner Rey
           </p>
