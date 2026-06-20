@@ -12,29 +12,30 @@ import { useRef } from "react";
 const STAGGER = 0.08;
 const START = 0.15;
 
-type Token = { word: string; delay: number } | null | "mobile-br"; // null = <br>, "mobile-br" = mobile-only <br>
+// Desktop 2 lines: "A world where no musician is held back" / "from fully Embracing their music."
+// Mobile 3 lines:  "A world where no musician" / "is held back from fully" / "Embracing their music."
+// "desktop-br" = hidden sm:block  |  "mobile-br" = sm:hidden
 
-const line1: Token[] = [
-  { word: "A",          delay: START + 0 * STAGGER },
-  { word: "world",      delay: START + 1 * STAGGER },
-  { word: "where",      delay: START + 2 * STAGGER },
-  { word: "no",         delay: START + 3 * STAGGER },
-  { word: "musician",   delay: START + 4 * STAGGER },
-  { word: "is",         delay: START + 5 * STAGGER },
-  { word: "held",       delay: START + 6 * STAGGER },
-  { word: "back",       delay: START + 7 * STAGGER },
-];
+type Token = { word: string; delay: number } | "desktop-br" | "mobile-br";
 
-const line2: Token[] = [
+const allTokens: Token[] = [
+  { word: "A",          delay: START + 0  * STAGGER },
+  { word: "world",      delay: START + 1  * STAGGER },
+  { word: "where",      delay: START + 2  * STAGGER },
+  { word: "no",         delay: START + 3  * STAGGER },
+  { word: "musician",   delay: START + 4  * STAGGER },
+  "mobile-br",
+  { word: "is",         delay: START + 5  * STAGGER },
+  { word: "held",       delay: START + 6  * STAGGER },
+  { word: "back",       delay: START + 7  * STAGGER },
+  "desktop-br",
   { word: "from",       delay: START + 8  * STAGGER },
   { word: "fully",      delay: START + 9  * STAGGER },
-  { word: "Embracing",  delay: 0 }, // anchor — animates immediately
   "mobile-br",
+  { word: "Embracing",  delay: 0 }, // anchor — animates immediately
   { word: "their",      delay: START + 10 * STAGGER },
   { word: "music.",     delay: START + 11 * STAGGER },
 ];
-
-const allTokens: Token[] = [...line1, null, ...line2];
 
 export default function Hero() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -61,7 +62,7 @@ export default function Hero() {
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
           <h1 className="font-[var(--font-cormorant)] text-3xl font-medium leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
             {allTokens.map((token, i) => {
-              if (token === null) return <br key={`br-${i}`} />;
+              if (token === "desktop-br") return <br key={`dbr-${i}`} className="hidden sm:block" />;
               if (token === "mobile-br") return <br key={`mbr-${i}`} className="sm:hidden" />;
 
               if (token.word === "Embracing") {
