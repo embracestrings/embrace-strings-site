@@ -8,14 +8,14 @@ import { motion } from "framer-motion";
 const cards = [
   {
     label: "Your Name",
-    price: "+$125",
+    price: "$125",
     description:
       "Your name, engraved on the front of your chinrest. Clean, elegant, and entirely yours.",
     leadTime: "2–4 week lead time for custom orders.",
   },
   {
     label: "Music Notes Design",
-    price: "+$125",
+    price: "$125",
     description:
       "A flowing music note pattern across the surface of your chinrest. Subtle, beautiful, and unmistakably musical.",
     leadTime: "2–4 week lead time for custom orders.",
@@ -45,7 +45,7 @@ export default function YourEmbrace() {
           className="text-center"
         >
           <h2 className="font-[var(--font-cormorant)] text-4xl font-medium tracking-[0.02em] text-[#16335b] sm:text-5xl">
-            Personalize Your Embrace
+            Customize Your Chinrest
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm font-light leading-relaxed text-[#16335b]/65 sm:text-base">
             Every chinrest can be personalized. Yours should feel like it was made for you.

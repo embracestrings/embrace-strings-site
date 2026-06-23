@@ -8,28 +8,28 @@ import { useState } from "react";
 const models = [
   {
     name: "Original",
-    identity: "Classic",
+    identity: "Built to Adapt. Designed to Embrace.",
     href: "/chinrest/original",
     image: "/adjustable-violin-chinrest.JPG",
     imagePos: "object-[50%_32%]",
   },
   {
     name: "Bean",
-    identity: "Open",
+    identity: "Built to Free. Designed to Embrace.",
     href: "/chinrest/bean",
     image: "/adjustable-violin-chinrest.JPG",
     imagePos: "object-[50%_32%]",
   },
   {
     name: "Morawetz",
-    identity: "Exact",
+    identity: "Built to Settle. Designed to Embrace.",
     href: "/chinrest/morawetz",
     image: "/adjustable-violin-chinrest.JPG",
     imagePos: "object-[50%_32%]",
   },
   {
     name: "Tall",
-    identity: "Necessary",
+    identity: "Built to Reach. Designed to Embrace.",
     href: "/chinrest/tall",
     image: "/adjustable-violin-chinrest.JPG",
     imagePos: "object-[50%_32%]",
@@ -100,9 +100,10 @@ export default function ProductHighlight() {
                     <h3 className="font-[var(--font-cormorant)] text-2xl font-medium tracking-[0.02em] text-[#16335b]">
                       {model.name}
                     </h3>
-                    <p className="mt-0.5 font-[var(--font-cormorant)] text-base italic tracking-[0.06em] text-[#ba9e78]">
+                    <p className="mt-0.5 font-[var(--font-cormorant)] text-sm italic tracking-[0.04em] text-[#ba9e78]">
                       {model.identity}
                     </p>
+                    <p className="mt-2 text-sm font-medium text-[#16335b]">$99</p>
                   </div>
                 </Link>
 
@@ -118,7 +119,7 @@ export default function ProductHighlight() {
                     href={`${model.href}#your-embrace`}
                     className="flex-1 rounded-lg border border-[#16335b]/30 bg-transparent px-4 py-2 text-center text-xs font-medium tracking-[0.1em] text-[#16335b] transition-[color,border-color] duration-200 hover:border-[#ba9e78] hover:text-[#ba9e78]"
                   >
-                    Custom
+                    $125
                   </Link>
                 </div>
               </motion.div>
