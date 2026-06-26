@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const team = [
   {
     name: "Turner Rey",
-    role: "CEO",
+    role: "Chief Embrace Officer",
     image: "/turner-embrac-founder-headshot.jpg",
     href: "https://www.linkedin.com/in/turnerrey/",
   },
