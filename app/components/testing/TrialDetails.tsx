@@ -168,7 +168,7 @@ export default function TrialDetails() {
               href="https://buy.stripe.com/aFaeVfec14IAdL4dJSafS01"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover-navy inline-flex w-full items-center justify-center rounded-lg bg-[#16335b] px-8 py-3.5 font-medium tracking-[0.14em] text-[#f2f2f3] transition hover:bg-[#ba9e78] sm:w-auto"
+              className="inline-flex w-full items-center justify-center rounded-lg bg-[#16335b] px-8 py-3.5 font-medium tracking-[0.14em] text-[#f2f2f3] transition hover:bg-[#ba9e78] sm:w-auto"
               style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
             >
               Start My Trial
