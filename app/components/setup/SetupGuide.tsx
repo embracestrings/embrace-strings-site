@@ -52,10 +52,10 @@ const steps = [
       <>
         <p className="mt-4 text-sm font-light leading-relaxed text-[#16335b]/75 sm:text-base">Use the top dials to set the chinrest&apos;s height and tilt:</p>
         <ul className="mt-3 list-none space-y-3 pl-0 text-sm font-light leading-relaxed text-[#16335b]/75 sm:text-base">
-          <li><span className="text-[#ba9e78]" aria-hidden="true">— </span>Fill the gap between your chin and the instrument comfortably.</li>
-          <li><span className="text-[#ba9e78]" aria-hidden="true">— </span>Chinrest should be at the same angle as your jawline.</li>
-          <li><span className="text-[#ba9e78]" aria-hidden="true">— </span>Ideally, it rests about 2 fingers below your head, allowing your head&apos;s natural weight to help secure the instrument.</li>
-          <li><span className="text-[#ba9e78]" aria-hidden="true">— </span>Think of the chinrest as a pillow for your jaw, helping you Embrace the instrument.</li>
+          <li className="flex gap-2"><span className="shrink-0 text-[#ba9e78]" aria-hidden="true">♪</span>Fill the gap between your chin and the instrument comfortably.</li>
+          <li className="flex gap-2"><span className="shrink-0 text-[#ba9e78]" aria-hidden="true">♪</span>Chinrest should be at the same angle as your jawline.</li>
+          <li className="flex gap-2"><span className="shrink-0 text-[#ba9e78]" aria-hidden="true">♪</span>Ideally, it rests about 2 fingers below your head, allowing your head&apos;s natural weight to help secure the instrument.</li>
+          <li className="flex gap-2"><span className="shrink-0 text-[#ba9e78]" aria-hidden="true">♪</span>Think of the chinrest as a pillow for your jaw, helping you Embrace the instrument.</li>
         </ul>
       </>
     ),
@@ -79,10 +79,10 @@ const steps = [
     number: "06",
     title: "Tips and Troubleshooting",
     body: (
-      <ul className="mt-4 list-disc space-y-3 pl-5 text-sm font-light leading-relaxed marker:text-[#ba9e78] text-[#16335b]/75 sm:text-base">
-        <li>If the top part of the chinrest comes off, simply pull it back down onto the threaded rod and retighten the top dial.</li>
-        <li>Always unlock the center dial before making further adjustments.</li>
-        <li>After playing, it&apos;s best practice to unlock the center dial to prolong the life of your chinrest.</li>
+      <ul className="mt-4 list-none space-y-3 pl-0 text-sm font-light leading-relaxed text-[#16335b]/75 sm:text-base">
+        <li className="flex gap-2"><span className="shrink-0 text-[#ba9e78]" aria-hidden="true">♪</span>If the top part of the chinrest comes off, simply pull it back down onto the threaded rod and retighten the top dial.</li>
+        <li className="flex gap-2"><span className="shrink-0 text-[#ba9e78]" aria-hidden="true">♪</span>Always unlock the center dial before making further adjustments.</li>
+        <li className="flex gap-2"><span className="shrink-0 text-[#ba9e78]" aria-hidden="true">♪</span>After playing, it&apos;s best practice to unlock the center dial to prolong the life of your chinrest.</li>
       </ul>
     ),
     image: null,
