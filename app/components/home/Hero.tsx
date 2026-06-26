@@ -72,7 +72,7 @@ export default function Hero() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4, ease: "easeOut", delay: token.delay }}
-                    className="mr-[0.3em] inline-block"
+                    className="mr-[0.3em] inline-block text-[#ba9e78]"
                   >
                     {token.word}
                   </motion.span>

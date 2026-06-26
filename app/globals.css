@@ -43,6 +43,11 @@ a:hover, a:focus-visible, button:hover, button:focus-visible {
   color: #f2f2f3;
 }
 
+/* Navy→gold buttons: icon/text turns navy on the gold background (visible contrast) */
+.hover-navy:hover {
+  color: #16335b;
+}
+
 ::selection {
   background-color: #ba9e78;
   color: #f2f2f3;
