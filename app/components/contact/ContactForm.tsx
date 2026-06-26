@@ -83,7 +83,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="inline-flex min-h-[2.75rem] min-w-[6.5rem] items-center justify-center rounded-md border border-[#16335b] bg-[#16335b] px-8 py-3 text-sm font-semibold tracking-[0.12em] text-white transition hover:border-[#ba9e78] hover:bg-[#ba9e78] hover:text-[#16335b] disabled:cursor-wait disabled:opacity-85"
+        className="hover-white inline-flex min-h-[2.75rem] min-w-[6.5rem] items-center justify-center rounded-md border border-[#16335b] bg-[#16335b] px-8 py-3 text-sm font-semibold tracking-[0.12em] text-white transition hover:border-[#ba9e78] hover:bg-[#ba9e78] disabled:cursor-wait disabled:opacity-85"
       >
         {status === "sending" ? "Sending..." : "Send"}
       </button>

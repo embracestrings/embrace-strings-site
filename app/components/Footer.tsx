@@ -61,7 +61,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#16335b] text-[#f2f2f3] transition-colors duration-200 hover:bg-[#ba9e78] hover:text-[#16335b] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ba9e78] focus-visible:ring-offset-2"
+                  className="hover-white inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#16335b] text-[#f2f2f3] transition-colors duration-200 hover:bg-[#ba9e78] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ba9e78] focus-visible:ring-offset-2"
                 >
                   {s.icon}
                 </Link>

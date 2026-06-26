@@ -156,7 +156,7 @@ export default function YourEmbrace() {
         >
           <Link
             href="/contact"
-            className="inline-flex w-full items-center justify-center rounded-lg bg-[#16335b] px-8 py-3 font-medium tracking-[0.12em] text-[#f2f2f3] transition hover:bg-[#ba9e78] hover:text-[#16335b] sm:w-auto"
+            className="hover-white inline-flex w-full items-center justify-center rounded-lg bg-[#16335b] px-8 py-3 font-medium tracking-[0.12em] text-[#f2f2f3] transition hover:bg-[#ba9e78] sm:w-auto"
           >
             Inquire About Customization
           </Link>

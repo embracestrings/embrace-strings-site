@@ -67,7 +67,7 @@ export default function StayConnected() {
           <button
             type="submit"
             disabled={submitted}
-            className="mx-auto min-h-12 w-full max-w-[200px] whitespace-nowrap rounded-lg bg-[#16335b] px-6 py-3 font-medium tracking-[0.12em] text-[#f2f2f3] transition hover:bg-[#ba9e78] hover:text-[#16335b] disabled:cursor-default disabled:opacity-100 disabled:bg-[#16335b] disabled:text-[#f2f2f3] sm:w-[200px]"
+            className="hover-white mx-auto min-h-12 w-full max-w-[200px] whitespace-nowrap rounded-lg bg-[#16335b] px-6 py-3 font-medium tracking-[0.12em] text-[#f2f2f3] transition hover:bg-[#ba9e78] disabled:cursor-default disabled:opacity-100 disabled:bg-[#16335b] disabled:text-[#f2f2f3] sm:w-[200px]"
           >
             {submitted ? "Thanks for joining!" : "Join Now!"}
           </button>

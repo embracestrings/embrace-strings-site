@@ -155,7 +155,7 @@ export default function ProductHighlight() {
                   onClick={() => setActiveModel(model)}
                   className={`rounded-full px-5 py-1.5 text-xs font-medium tracking-[0.1em] transition-colors ${
                     activeModel === model
-                      ? "bg-[#ba9e78] text-[#16335b] hover:text-[#16335b]"
+                      ? "hover-white bg-[#ba9e78] text-[#16335b]"
                       : "border border-[#f2f2f3]/40 text-[#f2f2f3] hover:border-[#f2f2f3]/70 hover:text-[#f2f2f3]"
                   }`}
                 >
@@ -168,7 +168,7 @@ export default function ProductHighlight() {
           <div className="mt-6">
             <Link
               href={`/chinrest/${modelSlugs[activeModel]}#your-embrace`}
-              className="inline-flex items-center justify-center rounded-lg bg-[#ba9e78] px-8 py-3 font-medium tracking-[0.12em] text-[#16335b] transition-[background-color,color] duration-200 hover:bg-[#16335b] hover:text-[#ba9e78]"
+              className="hover-white inline-flex items-center justify-center rounded-lg bg-[#ba9e78] px-8 py-3 font-medium tracking-[0.12em] text-[#16335b] transition-[background-color,color] duration-200 hover:bg-[#16335b]"
             >
               Explore Customization
             </Link>

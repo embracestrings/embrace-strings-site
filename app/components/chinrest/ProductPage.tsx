@@ -162,7 +162,7 @@ export default function ProductPage({
           >
             <Link
               href="/testing"
-              className="inline-flex w-full items-center justify-center rounded-lg bg-[#16335b] px-8 py-3 font-medium tracking-[0.12em] text-[#f2f2f3] transition hover:bg-[#ba9e78] hover:text-[#16335b] sm:w-auto"
+              className="hover-white inline-flex w-full items-center justify-center rounded-lg bg-[#16335b] px-8 py-3 font-medium tracking-[0.12em] text-[#f2f2f3] transition hover:bg-[#ba9e78] sm:w-auto"
               style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
             >
               Start a 14-Day Trial
@@ -171,7 +171,7 @@ export default function ProductPage({
               href="https://buy.stripe.com/00w28t4Br2AsdL48pyafS02"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center rounded-lg bg-[#ba9e78] px-8 py-3 font-medium tracking-[0.12em] text-[#16335b] transition hover:bg-[#16335b] hover:text-[#ba9e78] sm:w-auto"
+              className="hover-white inline-flex w-full items-center justify-center rounded-lg bg-[#ba9e78] px-8 py-3 font-medium tracking-[0.12em] text-[#16335b] transition hover:bg-[#16335b] sm:w-auto"
               style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
             >
               Purchase
