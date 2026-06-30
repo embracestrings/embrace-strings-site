@@ -107,21 +107,6 @@ export default function ProductHighlight() {
                   </div>
                 </Link>
 
-                {/* Sub-buttons */}
-                <div className="mt-3 flex gap-3">
-                  <Link
-                    href={model.href}
-                    className="flex-1 rounded-lg bg-[#16335b] px-4 py-2 text-center text-xs font-medium tracking-[0.1em] text-[#f2f2f3] transition hover:bg-[#1c3e6e]"
-                  >
-                    Standard
-                  </Link>
-                  <Link
-                    href={`${model.href}#your-embrace`}
-                    className="flex-1 rounded-lg border border-[#16335b]/30 bg-transparent px-4 py-2 text-center text-xs font-medium tracking-[0.1em] text-[#16335b] transition-[color,border-color] duration-200 hover:border-[#ba9e78] hover:text-[#ba9e78]"
-                  >
-                    Customize
-                  </Link>
-                </div>
               </motion.div>
             ))}
           </motion.div>
