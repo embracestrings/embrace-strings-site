@@ -38,16 +38,18 @@ const steps = [
     body: (
       <>
         <p>At the end of your trial, choose what works best for you:</p>
-        <ul className="mt-3 list-disc space-y-2 pl-5 marker:text-[#ba9e78]">
-          <li>
-            <strong className="font-medium text-[#16335b]">Love it?</strong> Keep the chinrest. A final charge of{" "}
+        <ul className="mt-3 list-none space-y-3 pl-0">
+          <li className="flex gap-2">
+            <span className="shrink-0 text-[#ba9e78]" aria-hidden="true">♪</span>
+            <span><strong className="font-medium text-[#16335b]">Love it?</strong> Keep the chinrest. A final charge of{" "}
             <strong className="font-medium text-[#16335b]">$74</strong> applies (billed after a short grace period
-            following day 14—see trial terms for exact timing).
+            following day 14—see trial terms for exact timing).</span>
           </li>
-          <li>
-            <strong className="font-medium text-[#16335b]">Not a fit?</strong> Return the chinrest using the{" "}
+          <li className="flex gap-2">
+            <span className="shrink-0 text-[#ba9e78]" aria-hidden="true">♪</span>
+            <span><strong className="font-medium text-[#16335b]">Not a fit?</strong> Return the chinrest using the{" "}
             <strong className="font-medium text-[#16335b]">prepaid label</strong> we provide. You will not owe the
-            $74 purchase amount; only the original $25 trial fee is retained.
+            $74 purchase amount; only the original $25 trial fee is retained.</span>
           </li>
         </ul>
       </>
