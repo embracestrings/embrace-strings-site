@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import EmbeddedCheckoutButton from "@/app/components/checkout/EmbeddedCheckout";
 
 const steps = [
   {
@@ -60,7 +61,7 @@ const steps = [
   },
 ];
 
-export default function TrialDetails() {
+export default function TrialDetails({ trialProductId }: { trialProductId: string }) {
   return (
     <article className="bg-[#f2f2f3] text-[#16335b]">
 
@@ -166,15 +167,11 @@ export default function TrialDetails() {
             14 days. No tools. No commitment.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4">
-            <a
-              href="https://buy.stripe.com/aFaeVfec14IAdL4dJSafS01"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center rounded-lg bg-[#16335b] px-8 py-3.5 font-medium tracking-[0.14em] text-[#f2f2f3] transition hover:bg-[#ba9e78] sm:w-auto"
-              style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
-            >
-              Start My Trial
-            </a>
+            <EmbeddedCheckoutButton
+              productId={trialProductId}
+              buttonLabel="Start My Trial — $25"
+              buttonClassName="inline-flex w-full items-center justify-center rounded-lg bg-[#16335b] px-8 py-3.5 font-medium tracking-[0.14em] text-[#f2f2f3] transition hover:bg-[#ba9e78] sm:w-auto"
+            />
             <p
               className="text-sm font-light text-[#16335b]/75"
               style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}

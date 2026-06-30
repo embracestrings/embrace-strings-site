@@ -16,6 +16,7 @@ export default function BeanPage() {
       specHeight='0.9″ – 1.5″'
       specMaterial="3D-printed nylon"
       specInstruments="Violin and Viola"
+      stripeProductId={process.env.STRIPE_PRODUCT_CHINREST}
       features={[
         {
           title: "Wider Contact Surface",

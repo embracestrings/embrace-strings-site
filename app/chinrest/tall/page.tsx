@@ -16,6 +16,7 @@ export default function TallPage() {
       specHeight='1.5″ – 2″'
       specMaterial="3D-printed nylon"
       specInstruments="Violin and Viola"
+      stripeProductId={process.env.STRIPE_PRODUCT_CHINREST}
       features={[
         {
           title: "Extended Height Range",

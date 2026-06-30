@@ -13,7 +13,7 @@ export default function TestingPage() {
   return (
     <>
       <TestingHero />
-      <TrialDetails />
+      <TrialDetails trialProductId={process.env.STRIPE_PRODUCT_TRIAL ?? ""} />
       <TestingFaq />
     </>
   );

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import YourEmbrace from "./YourEmbrace";
+import EmbeddedCheckoutButton from "@/app/components/checkout/EmbeddedCheckout";
 
 export type ProductFeature = {
   title: string;
@@ -21,6 +22,7 @@ export type ProductPageProps = {
   specMaterial: string;
   specInstruments: string;
   features: ProductFeature[];
+  stripeProductId?: string;
 };
 
 export default function ProductPage({
@@ -33,6 +35,7 @@ export default function ProductPage({
   specMaterial,
   specInstruments,
   features,
+  stripeProductId,
 }: ProductPageProps) {
   const featuresRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -167,15 +170,12 @@ export default function ProductPage({
             >
               Start a 14-Day Trial
             </Link>
-            <a
-              href="https://buy.stripe.com/00w28t4Br2AsdL48pyafS02"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover-white inline-flex w-full items-center justify-center rounded-lg bg-[#ba9e78] px-8 py-3 font-medium tracking-[0.12em] text-[#16335b] transition hover:bg-[#16335b] sm:w-auto"
-              style={{ fontFamily: "var(--font-montserrat, sans-serif)" }}
-            >
-              Purchase
-            </a>
+            {stripeProductId && (
+              <EmbeddedCheckoutButton
+                productId={stripeProductId}
+                buttonLabel="Purchase — $99"
+              />
+            )}
           </motion.div>
 
         </div>
