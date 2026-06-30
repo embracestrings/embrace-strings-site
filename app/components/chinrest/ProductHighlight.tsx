@@ -119,7 +119,7 @@ export default function ProductHighlight() {
                     href={`${model.href}#your-embrace`}
                     className="flex-1 rounded-lg border border-[#16335b]/30 bg-transparent px-4 py-2 text-center text-xs font-medium tracking-[0.1em] text-[#16335b] transition-[color,border-color] duration-200 hover:border-[#ba9e78] hover:text-[#ba9e78]"
                   >
-                    $125
+                    Customize
                   </Link>
                 </div>
               </motion.div>
